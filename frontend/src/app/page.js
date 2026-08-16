@@ -2380,14 +2380,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 text-center text-xs space-y-2 text-slate-400 border-t border-slate-800/80">
-            <p className="font-medium">
+          <div className="pt-8 text-center text-[10px] text-slate-500 border-t border-slate-800/60">
+            <p className="font-normal">
               © {new Date().getFullYear()} Haat Furniture Limited | All rights reserved | Design & Development By —{' '}
               <a
                 href="https://shoeb-devops.github.io"
                 target="_blank"
                 rel="noreferrer"
-                className="text-amber-400 font-extrabold hover:text-amber-300 hover:underline transition-colors"
+                className="text-slate-500 hover:text-slate-300 transition-colors"
               >
                 shoeb-devops.github.io
               </a>
