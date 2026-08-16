@@ -290,14 +290,14 @@ export default function Home() {
     {
       title: "Crafting Teak Masterpieces",
       subtitle: "Sets your home as a trend — aesthetically handcrafted 100% solid Chittagong Teak wood dining sets.",
-      cta: "EXPLORE DINING — ৳ 188,000 BDT",
+      cta: "EXPLORE DINING COLLECTION",
       badge: "Royal Dining Collection 2026",
       bgImage: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Luxury Segun Master Bedroom",
       subtitle: "Crafted for peaceful living — solid borer-proof teak bed with premium lacquer finish.",
-      cta: "VIEW BEDROOM SETS — ৳ 85,000 BDT",
+      cta: "EXPLORE BEDROOM SETS",
       badge: "20 Years Guarantee",
       bgImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&auto=format&fit=crop&q=80"
     },
