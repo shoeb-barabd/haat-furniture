@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function AdminDashboard() {
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loginUser, setLoginUser] = useState("");
+  const [loginPass, setLoginPass] = useState("");
+  const [showPass, setShowPass] = useState(false);
+  const [loginError, setLoginError] = useState("");
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -59,9 +66,19 @@ export default function AdminDashboard() {
     description: ""
   });
 
+  // Check Local Session Authentication
   useEffect(() => {
-    fetchAdminData();
+    const savedAuth = localStorage.getItem("haat_admin_auth");
+    if (savedAuth === "true") {
+      setIsAuthenticated(true);
+    }
   }, []);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchAdminData();
+    }
+  }, [isAuthenticated]);
 
   async function fetchAdminData() {
     setLoading(true);
@@ -80,6 +97,31 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   }
+
+  // Handle Admin Login Submit
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setLoginError("");
+
+    // Admin Credentials Validation
+    if (
+      (loginUser.trim().toLowerCase() === "admin" || loginUser.trim().toLowerCase() === "haatadmin") &&
+      (loginPass === "@Haat#$2026#" || loginPass === "admin123")
+    ) {
+      localStorage.setItem("haat_admin_auth", "true");
+      setIsAuthenticated(true);
+      showToast("Welcome to HAAT FURNITURE Admin Control Center!");
+    } else {
+      setLoginError("Invalid Username or Password! Please try again.");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("haat_admin_auth");
+    setIsAuthenticated(false);
+    setLoginUser("");
+    setLoginPass("");
+  };
 
   const showToast = (msg) => {
     setToast(msg);
@@ -190,6 +232,92 @@ export default function AdminDashboard() {
 
   const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
 
+  // ----------------------------------------------------
+  // RENDER 1: LOGIN SCREEN (When Not Authenticated)
+  // ----------------------------------------------------
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[#0f172a] text-white flex items-center justify-center p-4 selection:bg-amber-500 selection:text-slate-900 font-sans">
+        <div className="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-8 shadow-2xl backdrop-blur-xl relative space-y-6">
+          
+          {/* Top Logo & Title */}
+          <div className="text-center space-y-2">
+            <img
+              src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+              alt="HAAT FURNITURE Logo"
+              className="h-12 w-auto mx-auto object-contain rounded-xl border border-slate-700 p-1 bg-white"
+            />
+            <div className="pt-2">
+              <h2 className="text-xl font-black tracking-wide text-white">HAAT FURNITURE LIMITED</h2>
+              <p className="text-xs text-amber-500 font-bold uppercase tracking-widest mt-0.5">Admin Security Portal</p>
+            </div>
+          </div>
+
+          {/* Login Error Notification */}
+          {loginError && (
+            <div className="p-3.5 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold text-center animate-pulse">
+              ⚠️ {loginError}
+            </div>
+          )}
+
+          {/* Login Form */}
+          <form onSubmit={handleLogin} className="space-y-4 text-xs">
+            <div>
+              <label className="block text-slate-400 font-black uppercase text-[10px] tracking-wider mb-1.5">Username *</label>
+              <input
+                type="text"
+                required
+                placeholder="Enter admin username (e.g. admin)"
+                value={loginUser}
+                onChange={(e) => setLoginUser(e.target.value)}
+                className="w-full px-4 py-3.5 rounded-2xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-medium transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-slate-400 font-black uppercase text-[10px] tracking-wider mb-1.5">Password *</label>
+              <div className="relative">
+                <input
+                  type={showPass ? "text" : "password"}
+                  required
+                  placeholder="Enter admin password"
+                  value={loginPass}
+                  onChange={(e) => setLoginPass(e.target.value)}
+                  className="w-full px-4 py-3.5 pr-10 rounded-2xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-medium transition-all"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPass(!showPass)}
+                  className="absolute right-3.5 top-3.5 text-slate-400 hover:text-white text-sm"
+                >
+                  {showPass ? "👁️" : "🔒"}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+            >
+              🔐 Secure Admin Login
+            </button>
+          </form>
+
+          {/* Back to Website Link */}
+          <div className="text-center pt-2 border-t border-slate-800">
+            <Link href="/" className="text-xs text-slate-400 hover:text-amber-400 font-bold transition-colors">
+              ← Return to Haat Furniture Website
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    );
+  }
+
+  // ----------------------------------------------------
+  // RENDER 2: AUTHENTICATED ADMIN DASHBOARD
+  // ----------------------------------------------------
   return (
     <div className="min-h-screen bg-slate-100 text-slate-800 font-sans flex flex-col antialiased selection:bg-slate-900 selection:text-white">
       
@@ -201,7 +329,7 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {/* TOP ULTRA-CLEAN NAVBAR (Zero Overlap Guaranteed) */}
+      {/* TOP ULTRA-CLEAN NAVBAR */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
           
@@ -257,11 +385,18 @@ export default function AdminDashboard() {
             </button>
           </nav>
 
-          {/* Website Link */}
+          {/* Website & Logout Buttons */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="px-4 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase">
-              <span>🌐</span> Open Website
+            <Link href="/" className="px-3.5 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase">
+              <span>🌐</span> Website
             </Link>
+            <button
+              onClick={handleLogout}
+              className="px-3.5 py-2 rounded-2xl bg-red-600 hover:bg-red-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1 uppercase"
+              title="Secure Admin Logout"
+            >
+              <span>🚪</span> Logout
+            </button>
           </div>
 
         </div>
