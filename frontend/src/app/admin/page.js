@@ -203,16 +203,16 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {/* Admin Sidebar Navigation */}
-      <aside className="w-64 bg-white border-r border-slate-200 p-6 flex flex-col justify-between hidden md:flex shadow-sm">
+      {/* Admin Sidebar Navigation - Fixed Width Non-Shrinking */}
+      <aside className="w-64 flex-shrink-0 bg-white border-r border-slate-200 p-6 flex flex-col justify-between hidden lg:flex shadow-sm min-h-screen">
         <div className="space-y-8">
           
           {/* Admin Header Official Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pb-6 border-b border-slate-100">
             <img
               src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
               alt="HAAT FURNITURE LIMITED Logo"
-              className="h-9 w-auto object-contain"
+              className="h-9 w-auto object-contain flex-shrink-0"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.style.display = 'none';
@@ -231,7 +231,7 @@ export default function AdminDashboard() {
           <nav className="space-y-2 text-xs font-extrabold uppercase tracking-wider">
             <button
               onClick={() => setActiveTab("products")}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${activeTab === "products" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "products" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>📦</span>
               <span>All Products ({products.length})</span>
@@ -239,7 +239,7 @@ export default function AdminDashboard() {
 
             <button
               onClick={() => { resetForm(); setActiveTab("add-product"); }}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${activeTab === "add-product" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "add-product" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>➕</span>
               <span>{editingProduct ? 'Edit Product' : 'Add New Product'}</span>
@@ -247,7 +247,7 @@ export default function AdminDashboard() {
 
             <button
               onClick={() => setActiveTab("orders")}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${activeTab === "orders" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "orders" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>🛒</span>
               <span>Live Orders ({orders.length})</span>
@@ -255,7 +255,7 @@ export default function AdminDashboard() {
 
             <button
               onClick={() => setActiveTab("categories")}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${activeTab === "categories" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "categories" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>🗂️</span>
               <span>Categories ({categories.length})</span>
@@ -272,7 +272,42 @@ export default function AdminDashboard() {
       </aside>
 
       {/* Main Admin Content Area */}
-      <main className="flex-1 p-6 md:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto w-full">
+        
+        {/* Mobile & Tablet Header Navigation (Visible when sidebar hidden) */}
+        <div className="lg:hidden bg-white border border-slate-200 rounded-3xl p-4 mb-6 shadow-sm flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <img
+                src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+                alt="HAAT FURNITURE Logo"
+                className="h-8 w-auto object-contain"
+              />
+              <div>
+                <span className="text-sm font-black text-red-600">HAAT </span>
+                <span className="text-xs font-black text-slate-900 uppercase">ADMIN</span>
+              </div>
+            </div>
+            <Link href="/" className="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[11px] font-black uppercase">
+              🌐 Website
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-black uppercase">
+            <button onClick={() => setActiveTab("products")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "products" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+              📦 Products ({products.length})
+            </button>
+            <button onClick={() => { resetForm(); setActiveTab("add-product"); }} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "add-product" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+              ➕ Add Product
+            </button>
+            <button onClick={() => setActiveTab("orders")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "orders" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+              🛒 Orders ({orders.length})
+            </button>
+            <button onClick={() => setActiveTab("categories")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "categories" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+              🗂️ Categories ({categories.length})
+            </button>
+          </div>
+        </div>
         
         {/* Top Bar Header */}
         <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-8 border-b border-slate-200">
