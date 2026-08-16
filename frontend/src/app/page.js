@@ -285,8 +285,22 @@ export default function Home() {
   const [startX, setStartX] = useState(0);
   const [scrollLeftState, setScrollLeftState] = useState(0);
 
-  // TOP HERO BANNER: 5 ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
+  // TOP HERO BANNER: ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
   const slides = [
+    {
+      title: "Luxury Modern Living Interior",
+      subtitle: "Aesthetically handcrafted 100% solid Chittagong Segun wood furniture tailored for your home.",
+      cta: "EXPLORE LIVING COLLECTION",
+      badge: "Nordic Minimalist Segun 2026",
+      bgImage: "/images/hero_slide_1.jpg"
+    },
+    {
+      title: "Elegant Segun Sectional Lounge",
+      subtitle: "Crafted for timeless comfort — borer-proof teak wood living sofa sets with premium finish.",
+      cta: "EXPLORE SOFA COLLECTION",
+      badge: "Contemporary Living Luxury",
+      bgImage: "/images/hero_slide_2.jpg"
+    },
     {
       title: "Crafting Teak Masterpieces",
       subtitle: "Sets your home as a trend — aesthetically handcrafted 100% solid Chittagong Teak wood dining sets.",
@@ -300,20 +314,6 @@ export default function Home() {
       cta: "EXPLORE BEDROOM SETS",
       badge: "20 Years Guarantee",
       bgImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Sets You As A Trend",
-      subtitle: "Ergonomic & luxury workspace furniture crafted for modern offices and executive suites.",
-      cta: "EXPLORE EXECUTIVE SUITE",
-      badge: "Commercial Luxury Grade",
-      bgImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Aesthetically Stylish Living Room",
-      subtitle: "Handcrafted 100% solid teak sofa sets and living room furniture built for generations.",
-      cta: "EXPLORE SOFA COLLECTION",
-      badge: "Handcrafted Living Luxury",
-      bgImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Architectural Teak Entrance Doors",
