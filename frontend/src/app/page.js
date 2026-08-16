@@ -609,11 +609,11 @@ export default function Home() {
     { title: "Solid Wood Suite", image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg", query: "suite" }
   ];
 
-  // Auto-play Hero Slider every 4 seconds
+  // Auto-play Hero Slider every 7 seconds (Cinematic Slow Motion)
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -893,7 +893,7 @@ export default function Home() {
             key={heroSlide}
             src={slides[heroSlide].bgImage}
             alt={slides[heroSlide].title}
-            className="w-full h-full object-cover transition-all duration-1000 animate-entrance filter brightness-90"
+            className="w-full h-full object-cover transition-all duration-[2000ms] ease-in-out filter brightness-90 animate-slow-kenburns"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/40"></div>
         </div>
@@ -925,32 +925,6 @@ export default function Home() {
               >
                 20 YEARS GUARANTEE
               </a>
-            </div>
-
-            <div className="flex items-center gap-4 pt-8">
-              <button
-                onClick={prevSlide}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
-              >
-                ‹
-              </button>
-              
-              <div className="flex items-center gap-2">
-                {slides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setHeroSlide(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-500 ${heroSlide === idx ? 'w-10 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/70'}`}
-                  ></button>
-                ))}
-              </div>
-
-              <button
-                onClick={nextSlide}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
-              >
-                ›
-              </button>
             </div>
           </div>
         </div>

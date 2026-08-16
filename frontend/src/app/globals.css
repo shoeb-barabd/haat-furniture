@@ -38,6 +38,27 @@ body {
   animation: slowMotionZoom 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes slowKenburns {
+  0% {
+    opacity: 0.15;
+    transform: scale(1.18);
+    filter: blur(8px);
+  }
+  25% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: blur(0px);
+  }
+}
+
+.animate-slow-kenburns {
+  animation: slowKenburns 7s ease-out forwards;
+}
+
 @keyframes slideInRight {
   0% {
     opacity: 0;
