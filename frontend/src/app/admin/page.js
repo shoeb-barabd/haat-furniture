@@ -6,7 +6,7 @@ export default function AdminDashboard() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("products"); // products | add-product | categories | orders | stats
+  const [activeTab, setActiveTab] = useState("products"); // products | add-product | categories | orders
   const [searchQuery, setSearchQuery] = useState("");
   const [toast, setToast] = useState("");
   const [editingProduct, setEditingProduct] = useState(null);
@@ -94,7 +94,6 @@ export default function AdminDashboard() {
     }
 
     if (editingProduct) {
-      // Edit Existing Product
       const updated = products.map((p) =>
         p.id === editingProduct.id
           ? {
@@ -116,7 +115,6 @@ export default function AdminDashboard() {
       showToast(`Updated Product: "${formData.name}"`);
       setEditingProduct(null);
     } else {
-      // Create New Product
       const newProd = {
         id: Date.now(),
         name: formData.name,
@@ -193,7 +191,7 @@ export default function AdminDashboard() {
   const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans flex antialiased">
+    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans flex flex-col antialiased selection:bg-slate-900 selection:text-white">
       
       {/* Toast Alert */}
       {toast && (
@@ -203,35 +201,32 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {/* Admin Sidebar Navigation - Fixed Width Non-Shrinking */}
-      <aside className="w-64 flex-shrink-0 bg-white border-r border-slate-200 p-6 flex flex-col justify-between hidden lg:flex shadow-sm min-h-screen">
-        <div className="space-y-8">
+      {/* TOP ULTRA-CLEAN NAVBAR (Zero Overlap Guaranteed) */}
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
           
-          {/* Admin Header Official Logo */}
-          <div className="flex items-center gap-3 pb-6 border-b border-slate-100">
+          {/* Logo Branding */}
+          <div className="flex items-center gap-3">
             <img
               src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
               alt="HAAT FURNITURE LIMITED Logo"
-              className="h-9 w-auto object-contain flex-shrink-0"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.style.display = 'none';
-              }}
+              className="h-9 w-auto object-contain"
+              onError={(e) => { e.target.style.display = 'none'; }}
             />
-            <div>
+            <div className="border-l border-slate-200 pl-3">
               <div className="flex items-baseline gap-1">
-                <span className="text-base font-black text-red-600">HAAT</span>
-                <span className="text-xs font-black text-slate-900 uppercase">FURNITURE</span>
+                <span className="text-base font-black text-red-600 tracking-tight">HAAT</span>
+                <span className="text-xs font-black text-slate-900 uppercase tracking-tight">FURNITURE</span>
               </div>
-              <span className="text-[10px] text-amber-700 font-extrabold uppercase tracking-wider block">Admin Control Center</span>
+              <span className="text-[10px] text-amber-700 font-black uppercase tracking-wider block">Admin Control Center</span>
             </div>
           </div>
 
-          {/* Sidebar Menu Links */}
-          <nav className="space-y-2 text-xs font-extrabold uppercase tracking-wider">
+          {/* Navigation Tabs */}
+          <nav className="flex flex-wrap items-center gap-1.5 text-xs font-black uppercase tracking-wider">
             <button
               onClick={() => setActiveTab("products")}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "products" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "products" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>📦</span>
               <span>All Products ({products.length})</span>
@@ -239,15 +234,15 @@ export default function AdminDashboard() {
 
             <button
               onClick={() => { resetForm(); setActiveTab("add-product"); }}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "add-product" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "add-product" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>➕</span>
-              <span>{editingProduct ? 'Edit Product' : 'Add New Product'}</span>
+              <span>{editingProduct ? 'Edit Product' : 'Add Product'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab("orders")}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "orders" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "orders" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>🛒</span>
               <span>Live Orders ({orders.length})</span>
@@ -255,81 +250,50 @@ export default function AdminDashboard() {
 
             <button
               onClick={() => setActiveTab("categories")}
-              className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all ${activeTab === "categories" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "categories" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
             >
               <span>🗂️</span>
               <span>Categories ({categories.length})</span>
             </button>
           </nav>
-        </div>
 
-        {/* Back to Live Site Link */}
-        <div className="pt-6 border-t border-slate-200">
-          <Link href="/" className="w-full py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-black flex items-center justify-center gap-2 shadow-md uppercase tracking-wider">
-            <span>🌐</span> View Storefront
-          </Link>
-        </div>
-      </aside>
-
-      {/* Main Admin Content Area */}
-      <main className="flex-1 p-4 sm:p-6 lg:p-10 overflow-y-auto w-full">
-        
-        {/* Mobile & Tablet Header Navigation (Visible when sidebar hidden) */}
-        <div className="lg:hidden bg-white border border-slate-200 rounded-3xl p-4 mb-6 shadow-sm flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <img
-                src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
-                alt="HAAT FURNITURE Logo"
-                className="h-8 w-auto object-contain"
-              />
-              <div>
-                <span className="text-sm font-black text-red-600">HAAT </span>
-                <span className="text-xs font-black text-slate-900 uppercase">ADMIN</span>
-              </div>
-            </div>
-            <Link href="/" className="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-[11px] font-black uppercase">
-              🌐 Website
+          {/* Website Link */}
+          <div className="flex items-center gap-2">
+            <Link href="/" className="px-4 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase">
+              <span>🌐</span> Open Website
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-black uppercase">
-            <button onClick={() => setActiveTab("products")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "products" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
-              📦 Products ({products.length})
-            </button>
-            <button onClick={() => { resetForm(); setActiveTab("add-product"); }} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "add-product" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
-              ➕ Add Product
-            </button>
-            <button onClick={() => setActiveTab("orders")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "orders" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
-              🛒 Orders ({orders.length})
-            </button>
-            <button onClick={() => setActiveTab("categories")} className={`py-2 px-3 rounded-xl transition-all ${activeTab === "categories" ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
-              🗂️ Categories ({categories.length})
-            </button>
-          </div>
         </div>
+      </header>
+
+      {/* MAIN CONTENT BODY */}
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
         
-        {/* Top Bar Header */}
-        <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-8 border-b border-slate-200">
+        {/* Section Title Header */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
           <div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
               {activeTab === "products" && "Product Catalog Management"}
-              {activeTab === "add-product" && (editingProduct ? "Edit Existing Product" : "Publish New Product")}
+              {activeTab === "add-product" && (editingProduct ? "Edit Product Details" : "Publish New Furniture Entry")}
               {activeTab === "categories" && "Furniture Collections"}
               {activeTab === "orders" && "Live Customer Order Tracking"}
             </h1>
             <p className="text-xs text-slate-500 mt-1 font-medium">Manage product inventory, pricing, images, and live customer orders in real-time</p>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Link href="https://haat.barabdonline.com" target="_blank" className="px-4 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase">
-              <span>🚀</span> Live Domain
-            </Link>
-          </div>
-        </header>
+          {activeTab === "products" && (
+            <button
+              onClick={() => { resetForm(); setActiveTab("add-product"); }}
+              className="px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-black uppercase tracking-wider shadow-md"
+            >
+              + Add New Product
+            </button>
+          )}
+        </div>
 
-        {/* Overview Stats Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 my-8">
+        {/* Overview Analytics Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
             <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Total Live Products</span>
             <p className="text-3xl font-black text-slate-900 mt-1">{products.length}</p>
@@ -359,22 +323,16 @@ export default function AdminDashboard() {
         {activeTab === "products" && (
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="relative w-full sm:w-80">
+              <div className="relative w-full sm:w-96">
                 <input
                   type="text"
                   placeholder="Search products by title or category..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-white border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 shadow-sm"
+                  className="w-full pl-9 pr-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 shadow-sm"
                 />
-                <span className="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+                <span className="absolute left-3 top-3 text-slate-400 text-xs">🔍</span>
               </div>
-              <button
-                onClick={() => { resetForm(); setActiveTab("add-product"); }}
-                className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-black uppercase tracking-wider shadow-md"
-              >
-                + Add New Product
-              </button>
             </div>
 
             <div className="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm">
@@ -433,9 +391,9 @@ export default function AdminDashboard() {
 
         {/* TAB 2: ADD / EDIT PRODUCT FORM */}
         {activeTab === "add-product" && (
-          <div className="max-w-2xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div className="max-w-3xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm mx-auto">
             <h3 className="text-xl font-black text-slate-900 mb-6">
-              {editingProduct ? `Edit Product (ID: #${editingProduct.id})` : "Publish New Furniture Item"}
+              {editingProduct ? `Edit Product Entry (#${editingProduct.id})` : "Publish New Furniture Item"}
             </h3>
             
             <form onSubmit={handleAddProduct} className="space-y-5 text-xs">
@@ -451,7 +409,7 @@ export default function AdminDashboard() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Regular Price (BDT) *</label>
                   <input
@@ -476,7 +434,7 @@ export default function AdminDashboard() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Category</label>
                   <select
