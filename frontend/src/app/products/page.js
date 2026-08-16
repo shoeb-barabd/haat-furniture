@@ -1745,7 +1745,7 @@ export default function AllProductsPage() {
             <div className="relative flex-1 w-full">
               <input
                 type="text"
-                placeholder="Search across all 128 products (যেমন: Bed, Sofa, Dining, Almirah)..."
+                placeholder="Search across all 128 products (e.g. Bed, Sofa, Dining, Almirah)..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
                 className="w-full pl-10 pr-10 py-3 rounded-2xl bg-white border border-slate-300 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 shadow-sm transition-all"

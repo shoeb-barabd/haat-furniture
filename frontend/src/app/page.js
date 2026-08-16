@@ -1401,7 +1401,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Dining", "dining")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Dining (সবগুলো দেখুন) →
+                  View All Dining →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1556,7 +1556,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Living Room", "sofa")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Living (সবগুলো দেখুন) →
+                  View All Living →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1711,7 +1711,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Bed Room", "bed")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Bedroom (সবগুলো দেখুন) →
+                  View All Bedroom →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1880,7 +1880,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Office", "desk")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Office & Doors (সবগুলো দেখুন) →
+                  View All Office & Doors →
                 </button>
 
                 <div className="flex items-center gap-2">
