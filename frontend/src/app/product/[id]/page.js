@@ -81,9 +81,9 @@ export default function ProductDetailPage({ params }) {
     if (cat.includes("dining") || cat.includes("dinning") || cat.includes("table") || cat.includes("chair")) {
       return [
         { url: mainImg, label: "Full Set View / সম্পূর্ণ ডাইনিং সেট" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg", label: "Single Chair Angle / চেয়ার আলাদা ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Glass & Wood Top / টেবিল ও গ্লাস ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Side Perspective / সাইড ভিউ" }
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Single Chair View / সলিড সেগুন চেয়ার ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Dining Table View / টেবিল ও গ্লাস ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg", label: "Side Perspective / সাইড ভিউ" }
       ];
     }
     
