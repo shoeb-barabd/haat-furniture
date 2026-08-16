@@ -233,34 +233,74 @@ export default function ProductDetailPage({ params }) {
                 </button>
               </div>
 
-              {/* Main Display Product Image */}
-              <div className="w-full h-80 sm:h-96 rounded-2xl border border-slate-200 bg-slate-50/50 p-4 flex flex-col items-center justify-center relative group overflow-hidden">
-                <img
-                  key={activeImageIndex}
-                  src={galleryList[activeImageIndex]?.url || product?.image}
-                  alt={product?.name}
-                  className="max-h-full max-w-full object-contain filter drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80";
-                  }}
-                />
+              {/* Main Display Product Image & Sub-Product Component Controls */}
+              <div className="w-full flex-1 space-y-3">
+                <div className="w-full h-80 sm:h-96 rounded-2xl border border-slate-200 bg-slate-50/50 p-4 flex flex-col items-center justify-center relative group overflow-hidden">
+                  <img
+                    key={activeImageIndex}
+                    src={galleryList[activeImageIndex]?.url || product?.image}
+                    alt={product?.name}
+                    className="max-h-full max-w-full object-contain filter drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80";
+                    }}
+                  />
 
-                {/* View Angle Label Badge */}
-                {galleryList[activeImageIndex]?.label && (
-                  <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-md">
-                    📷 {galleryList[activeImageIndex].label}
+                  {/* View Angle Label Badge */}
+                  {galleryList[activeImageIndex]?.label && (
+                    <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-md">
+                      📷 {galleryList[activeImageIndex].label}
+                    </div>
+                  )}
+
+                  {/* Zoom Icon Button */}
+                  <button
+                    type="button"
+                    className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center text-sm shadow-md border border-slate-200"
+                    title="Expand Fullview"
+                  >
+                    ⛶
+                  </button>
+                </div>
+
+                {/* Sub-Product / Package Component Multi-View Switcher Bar */}
+                <div className="w-full p-3 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                  <div className="text-[10px] font-black text-slate-700 uppercase tracking-wider flex items-center justify-between">
+                    <span>🔍 Component View / আলাদা আলাদা পার্ট দেখুন:</span>
+                    <span className="text-amber-600 font-extrabold text-[9px]">3 Sub-Views</span>
                   </div>
-                )}
+                  
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex(0)}
+                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 0 ? 'bg-slate-900 text-white border-slate-900 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
+                    >
+                      <span className="text-xs">🍽️</span>
+                      <span className="text-[10px]">Full Set / এক সাথে</span>
+                    </button>
 
-                {/* Zoom Icon Button */}
-                <button
-                  type="button"
-                  className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center text-sm shadow-md border border-slate-200"
-                  title="Expand Fullview"
-                >
-                  ⛶
-                </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex(1)}
+                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 1 ? 'bg-amber-600 text-white border-amber-600 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
+                    >
+                      <span className="text-xs">🪑</span>
+                      <span className="text-[10px]">Chair / চেয়ার আলাদা</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex(2)}
+                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 2 ? 'bg-blue-600 text-white border-blue-600 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
+                    >
+                      <span className="text-xs">🪵</span>
+                      <span className="text-[10px]">Table / টেবিল আলাদা</span>
+                    </button>
+                  </div>
+                </div>
+
               </div>
 
             </div>
