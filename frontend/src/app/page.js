@@ -2340,10 +2340,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-black text-xl text-white">
-                  H
+                <div className="px-3 py-1.5 bg-white rounded-xl shadow-sm border border-slate-200">
+                  <img
+                    src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+                    alt="HAAT FURNITURE LIMITED Logo"
+                    className="h-8 w-auto object-contain"
+                  />
                 </div>
-                <h4 className="text-lg font-bold text-white">HAAT FURNITURE</h4>
               </div>
               <p className="text-xs leading-relaxed text-slate-400">
                 Premium solid Chittagong Teak wood furniture handcrafted for luxury living dining, office, and bedroom spaces in Bangladesh.
