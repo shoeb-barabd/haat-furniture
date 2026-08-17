@@ -2,11 +2,9 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import productsData from '../../products_128_data.json';
 
-// Category taxonomy definitions matching WooCommerce DB
 const CATEGORIES_TREE = [
   {
     name: 'Home Furniture',
@@ -92,13 +90,22 @@ const CATEGORIES_TREE = [
   }
 ];
 
+const ROOT_CAT_COUNTS = [
+  { name: 'ACCESSORIES', count: '0 Products', slug: 'accessories' },
+  { name: 'DOOR', count: '0 Products', slug: 'door' },
+  { name: 'HOME FURNITURE', count: '126 Products', slug: 'home-furniture' },
+  { name: 'MATTRESS', count: '1 Product', slug: 'mattress' },
+  { name: 'MISCELLANEOUS', count: '1 Product', slug: 'miscellaneous' },
+  { name: 'OFFICE FURNITURE', count: '2 Products', slug: 'office-furniture' }
+];
+
 export default function CategoryPage() {
   const params = useParams();
   const slugArray = params?.slug ? (Array.isArray(params.slug) ? params.slug : [params.slug]) : ['home-furniture'];
   const currentSlug = slugArray[slugArray.length - 1];
 
-  // State for filters & layout
-  const [maxPrice, setMaxPrice] = useState(150000);
+  const [minPrice, setMinPrice] = useState(5000);
+  const [maxPrice, setMaxPrice] = useState(64000);
   const [sortOption, setSortOption] = useState('default');
   const [itemsPerPage, setItemsPerPage] = useState(12);
   const [gridCols, setGridCols] = useState(3);
@@ -126,27 +133,20 @@ export default function CategoryPage() {
     const found = findInTree(CATEGORIES_TREE);
     if (found) return found;
 
-    // Fallback format title
     const formattedTitle = currentSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
     return { title: formattedTitle, breadcrumbs: breadcrumbPath };
   }, [currentSlug]);
 
-  // Filter products by category slug & price & search
+  // Filter products by category slug
   const filteredProducts = useMemo(() => {
     return productsData.filter(p => {
-      // Category match
       const pCats = p.categories || [];
       const matchesCategory = pCats.includes(currentSlug) || currentSlug === 'all';
-      
-      // Price match
-      const matchesPrice = p.price <= maxPrice;
-
-      // Search match
+      const matchesPrice = p.price >= minPrice && p.price <= maxPrice;
       const matchesSearch = !searchQuery || p.name.toLowerCase().includes(searchQuery.toLowerCase());
-
       return matchesCategory && matchesPrice && matchesSearch;
     });
-  }, [currentSlug, maxPrice, searchQuery]);
+  }, [currentSlug, minPrice, maxPrice, searchQuery]);
 
   // Sorted products
   const sortedProducts = useMemo(() => {
@@ -164,10 +164,9 @@ export default function CategoryPage() {
   const displayedProducts = sortedProducts.slice(0, itemsPerPage);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
-      {/* 1. Official Brand Header */}
+    <div className="min-h-screen bg-white text-slate-800 font-sans">
+      {/* 1. Official Header Bar */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        {/* Top Helpline Bar */}
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <img 
@@ -231,7 +230,7 @@ export default function CategoryPage() {
                             {childCat.children && childCat.children.length > 0 && <span className="text-[10px] text-slate-400">›</span>}
                           </Link>
 
-                          {/* Nested Sub-Sub Menu (Hover Flyout) */}
+                          {/* Nested Sub-Sub Menu */}
                           {childCat.children && childCat.children.length > 0 && (
                             <div className="absolute left-full top-0 hidden group-hover/child:block bg-white text-slate-800 shadow-2xl rounded-lg border border-slate-200 min-w-[200px] p-2 z-50">
                               {childCat.children.map((subChild) => (
@@ -259,32 +258,34 @@ export default function CategoryPage() {
         </nav>
       </header>
 
-      {/* 2. Hero Category Title & Breadcrumb Header */}
-      <div className="bg-[#0f172a] text-white py-12 px-4 shadow-inner relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Breadcrumb Trail */}
-          <div className="flex items-center gap-2 text-xs text-slate-400 mb-3 font-medium">
-            {categoryInfo.breadcrumbs.map((crumb, idx) => (
-              <React.Fragment key={crumb.url + idx}>
-                {idx > 0 && <span>/</span>}
-                <Link href={crumb.url} className="hover:text-amber-400 transition">
-                  {crumb.name}
-                </Link>
-              </React.Fragment>
-            ))}
+      {/* 2. Black Woodmart Hero Header Banner */}
+      <div className="bg-[#0b0c10] text-white py-12 px-4 shadow-inner text-center border-b border-slate-800">
+        <div className="max-w-7xl mx-auto">
+          {/* Title with Back Arrow */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="text-2xl font-light text-slate-400">←</span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-white capitalize">
+              {categoryInfo.title}
+            </h1>
           </div>
 
-          {/* Category Title */}
-          <h1 className="text-4xl font-extrabold tracking-tight text-white mb-2">
-            {categoryInfo.title}
-          </h1>
-          <p className="text-xs text-slate-400">
-            Showing {filteredProducts.length} high-quality solid Segun teak wood products
-          </p>
+          {/* Root Category Counters Strip */}
+          <div className="flex flex-wrap items-center justify-center gap-8 text-[11px] font-bold tracking-wider uppercase text-slate-300">
+            {ROOT_CAT_COUNTS.map((cat) => (
+              <Link 
+                key={cat.slug} 
+                href={`/product-category/${cat.slug}`}
+                className="hover:text-amber-400 transition text-center"
+              >
+                <div className="text-white font-extrabold">{cat.name}</div>
+                <div className="text-[10px] text-slate-400 font-normal lowercase">{cat.count}</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* 3. Main Content Grid (Sidebar + Products) */}
+      {/* 3. Main Product Area */}
       <main className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         
         {/* Left Sidebar */}
@@ -293,85 +294,42 @@ export default function CategoryPage() {
           {/* Filter By Price Widget */}
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
-              Filter By Price
+              FILTER BY PRICE
             </h3>
             
             <div className="space-y-4">
-              <input 
-                type="range" 
-                min="5000" 
-                max="150000" 
-                step="2500"
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-full accent-lime-600 cursor-pointer"
-              />
-              <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
-                <span>Price: ৳5,000 — ৳{maxPrice.toLocaleString()}</span>
-                <button className="bg-slate-900 text-white px-3 py-1.5 rounded text-[11px] font-bold tracking-wider hover:bg-amber-700 transition">
+              {/* Range Green Bar */}
+              <div className="relative pt-2">
+                <input 
+                  type="range" 
+                  min="5000" 
+                  max="100000" 
+                  step="1000"
+                  value={maxPrice}
+                  onChange={(e) => setMaxPrice(Number(e.target.value))}
+                  className="w-full accent-lime-600 cursor-pointer"
+                />
+              </div>
+
+              <div className="flex items-center justify-between text-xs font-bold text-slate-700">
+                <span>Price: ৳{minPrice.toLocaleString()} — ৳{maxPrice.toLocaleString()}</span>
+                <button 
+                  onClick={() => {}}
+                  className="bg-slate-100 text-slate-800 px-3 py-1.5 rounded text-[11px] font-bold tracking-wider hover:bg-slate-900 hover:text-white transition"
+                >
                   FILTER
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Category Hierarchy Accordion Widget */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
-              Product Categories
-            </h3>
-            <div className="space-y-2 text-xs font-medium">
-              {CATEGORIES_TREE.map((root) => (
-                <div key={root.slug} className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <Link 
-                      href={`/product-category/${root.slug}`}
-                      className={`hover:text-amber-700 transition ${currentSlug === root.slug ? 'font-bold text-amber-700' : 'text-slate-700'}`}
-                    >
-                      {root.name}
-                    </Link>
-                  </div>
-                  
-                  {root.children && root.children.length > 0 && (
-                    <div className="pl-4 border-l-2 border-slate-100 space-y-1.5 mt-1">
-                      {root.children.map((child) => (
-                        <div key={child.slug}>
-                          <Link 
-                            href={`/product-category/${root.slug}/${child.slug}`}
-                            className={`block hover:text-amber-700 transition ${currentSlug === child.slug ? 'font-bold text-amber-700' : 'text-slate-500'}`}
-                          >
-                            {child.name}
-                          </Link>
-
-                          {child.children && child.children.length > 0 && (
-                            <div className="pl-3 space-y-1 mt-1">
-                              {child.children.map((sub) => (
-                                <Link 
-                                  key={sub.slug}
-                                  href={`/product-category/${root.slug}/${child.slug}/${sub.slug}`}
-                                  className={`block text-[11px] hover:text-amber-700 transition ${currentSlug === sub.slug ? 'font-bold text-amber-700' : 'text-slate-400'}`}
-                                >
-                                  • {sub.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Top Rated Products Widget */}
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
-              Top Rated Products
+              TOP RATED PRODUCTS
             </h3>
             <div className="space-y-4">
-              {productsData.slice(0, 4).map((topP) => (
+              {productsData.slice(0, 3).map((topP) => (
                 <div key={topP.id} className="flex items-center gap-3">
                   <img 
                     src={topP.image} 
@@ -382,10 +340,7 @@ export default function CategoryPage() {
                     <Link href={`/product/${topP.id}`} className="text-xs font-bold text-slate-800 hover:text-amber-700 transition line-clamp-1">
                       {topP.name}
                     </Link>
-                    <div className="text-[10px] text-amber-500 font-bold mt-0.5">
-                      ★★★★★ <span className="text-slate-400 font-normal">({topP.reviews || 10})</span>
-                    </div>
-                    <p className="text-xs font-extrabold text-amber-700 mt-0.5">
+                    <p className="text-xs font-extrabold text-amber-800 mt-1">
                       ৳{topP.price.toLocaleString()}
                     </p>
                   </div>
@@ -396,66 +351,92 @@ export default function CategoryPage() {
 
         </aside>
 
-        {/* Right Main Product Grid Area */}
+        {/* Right Main Grid */}
         <section className="lg:col-span-3 space-y-6">
           
-          {/* Top Control Toolbar (Grid options & Sorting) */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-4">
+          {/* Top Control Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200 text-xs text-slate-600">
             
-            {/* Show count selector */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-              <span>Show :</span>
-              {[9, 12, 18, 24].map((num) => (
-                <button
-                  key={num}
-                  onClick={() => setItemsPerPage(num)}
-                  className={`px-2.5 py-1 rounded text-xs transition ${itemsPerPage === num ? 'bg-slate-900 text-white font-bold' : 'hover:bg-slate-100 text-slate-600'}`}
-                >
-                  {num}
-                </button>
+            {/* Breadcrumb Trail */}
+            <div className="flex items-center gap-1 font-medium">
+              {categoryInfo.breadcrumbs.map((crumb, idx) => (
+                <React.Fragment key={crumb.url + idx}>
+                  {idx > 0 && <span className="text-slate-300">/</span>}
+                  <Link href={crumb.url} className="hover:text-amber-700 transition">
+                    {crumb.name}
+                  </Link>
+                </React.Fragment>
               ))}
             </div>
 
-            {/* View Mode Controls & Sort Dropdown */}
-            <div className="flex items-center gap-4">
-              {/* Grid Column Toggles */}
-              <div className="hidden sm:flex items-center gap-1 text-xs border border-slate-200 rounded p-0.5">
-                {[2, 3, 4].map((cols) => (
+            {/* Pagination / Grid Toggles / Sort Dropdown */}
+            <div className="flex items-center gap-6">
+              
+              {/* Show selector */}
+              <div className="flex items-center gap-1.5 font-medium">
+                <span>Show :</span>
+                {[9, 12, 18, 24].map((num) => (
                   <button
-                    key={cols}
-                    onClick={() => setGridCols(cols)}
-                    className={`px-2 py-1 rounded transition ${gridCols === cols ? 'bg-slate-900 text-white font-bold' : 'text-slate-500 hover:bg-slate-100'}`}
+                    key={num}
+                    onClick={() => setItemsPerPage(num)}
+                    className={`px-1.5 py-0.5 rounded text-xs transition ${itemsPerPage === num ? 'font-bold text-slate-900' : 'text-slate-400 hover:text-slate-800'}`}
                   >
-                    {cols} Col
+                    {num}
                   </button>
                 ))}
+              </div>
+
+              {/* Grid Column Toggles */}
+              <div className="hidden sm:flex items-center gap-1">
+                <button 
+                  onClick={() => setGridCols(2)}
+                  className={`p-1 rounded ${gridCols === 2 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
+                  title="2 Columns"
+                >
+                  <span className="font-bold text-xs">⊞</span>
+                </button>
+                <button 
+                  onClick={() => setGridCols(3)}
+                  className={`p-1 rounded ${gridCols === 3 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
+                  title="3 Columns"
+                >
+                  <span className="font-bold text-xs">▦</span>
+                </button>
+                <button 
+                  onClick={() => setGridCols(4)}
+                  className={`p-1 rounded ${gridCols === 4 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
+                  title="4 Columns"
+                >
+                  <span className="font-bold text-xs">▩</span>
+                </button>
               </div>
 
               {/* Sorting Dropdown */}
               <select
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
-                className="text-xs font-semibold border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-700 focus:outline-none focus:border-amber-700"
+                className="text-xs font-semibold border-0 bg-transparent text-slate-700 focus:outline-none cursor-pointer"
               >
                 <option value="default">Default sorting</option>
                 <option value="price-low">Sort by price: low to high</option>
                 <option value="price-high">Sort by price: high to low</option>
                 <option value="rating">Sort by popularity & rating</option>
               </select>
+
             </div>
 
           </div>
 
-          {/* Product Grid */}
+          {/* Product Grid displaying ONLY products belonging to Almirah / selected category */}
           {displayedProducts.length > 0 ? (
             <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${gridCols} gap-6`}>
               {displayedProducts.map((product) => (
                 <div 
                   key={product.id}
-                  className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between"
+                  className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between"
                 >
                   <div>
-                    {/* Image Container */}
+                    {/* Aspect-square Woodmart style image */}
                     <div className="relative aspect-square overflow-hidden bg-slate-100">
                       <img 
                         src={product.image} 
@@ -463,28 +444,24 @@ export default function CategoryPage() {
                         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                       />
                       {product.badge && (
-                        <span className="absolute top-3 left-3 bg-amber-700 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow">
+                        <span className="absolute top-3 left-3 bg-amber-800 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
                           {product.badge}
                         </span>
                       )}
                     </div>
 
                     {/* Content */}
-                    <div className="p-4">
-                      <p className="text-[10px] uppercase font-bold text-amber-700 tracking-wider mb-1">
-                        {product.category_names ? product.category_names[0] : 'Solid Segun'}
-                      </p>
-
-                      <Link href={`/product/${product.id}`} className="font-bold text-sm text-slate-800 hover:text-amber-700 transition line-clamp-2 mb-2">
+                    <div className="p-4 text-center">
+                      <Link href={`/product/${product.id}`} className="font-bold text-sm text-slate-800 hover:text-amber-800 transition line-clamp-1 mb-1">
                         {product.name}
                       </Link>
 
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-amber-700 font-extrabold text-base">
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-amber-800 font-extrabold text-sm">
                           ৳{product.price.toLocaleString()}
                         </span>
                         {product.oldPrice && (
-                          <span className="text-slate-400 text-xs line-through font-medium">
+                          <span className="text-slate-400 text-xs line-through font-normal">
                             ৳{product.oldPrice.toLocaleString()}
                           </span>
                         )}
@@ -492,13 +469,13 @@ export default function CategoryPage() {
                     </div>
                   </div>
 
-                  {/* Card Footer Actions */}
+                  {/* Quick View & Select Options Button */}
                   <div className="p-4 pt-0">
                     <Link 
                       href={`/product/${product.id}`}
-                      className="w-full block text-center bg-slate-900 hover:bg-amber-700 text-white py-2 rounded-lg font-bold text-xs transition shadow"
+                      className="w-full block text-center bg-slate-900 hover:bg-amber-800 text-white py-2 rounded font-bold text-xs transition"
                     >
-                      View Options & Order →
+                      Select Options →
                     </Link>
                   </div>
 
@@ -507,10 +484,10 @@ export default function CategoryPage() {
             </div>
           ) : (
             <div className="bg-white p-12 rounded-xl border border-slate-200 text-center space-y-4">
-              <span className="text-4xl">🪵</span>
-              <h3 className="text-lg font-bold text-slate-800">No products found in this category</h3>
-              <p className="text-xs text-slate-500">Try adjusting your price filter or select another category from the sidebar.</p>
-              <Link href="/product-category/home-furniture" className="inline-block bg-amber-700 text-white px-6 py-2 rounded-lg font-bold text-xs hover:bg-amber-800 transition">
+              <span className="text-4xl">🚪</span>
+              <h3 className="text-lg font-bold text-slate-800">No {categoryInfo.title} products found</h3>
+              <p className="text-xs text-slate-500">Try adjusting your price filter range.</p>
+              <Link href="/product-category/home-furniture" className="inline-block bg-amber-800 text-white px-6 py-2 rounded font-bold text-xs hover:bg-amber-900 transition">
                 Browse All Home Furniture
               </Link>
             </div>
