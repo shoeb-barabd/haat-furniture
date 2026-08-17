@@ -25,6 +25,7 @@ export default function AdminDashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [toast, setToast] = useState("");
   const [editingProduct, setEditingProduct] = useState(null);
+
   // Category Editing & Creation State
   const [editingCategory, setEditingCategory] = useState(null);
   const [showCatModal, setShowCatModal] = useState(false);
@@ -34,60 +35,6 @@ export default function AdminDashboard() {
     icon: "🪑",
     count: "0 Products"
   });
-
-  const handleSaveCategory = (e) => {
-    e.preventDefault();
-    if (!catFormData.name) {
-      alert("Please enter a category name!");
-      return;
-    }
-
-    const slug = catFormData.slug ? catFormData.slug.toLowerCase().replace(/\s+/g, '-') : catFormData.name.toLowerCase().replace(/\s+/g, '-');
-
-    if (editingCategory) {
-      setCategories(categories.map(c => c.id === editingCategory.id ? {
-        ...c,
-        name: catFormData.name,
-        slug: slug,
-        icon: catFormData.icon,
-        count: catFormData.count
-      } : c));
-      showToast(`Updated Category: "${catFormData.name}"`);
-    } else {
-      const newCat = {
-        id: Date.now(),
-        name: catFormData.name,
-        slug: slug,
-        icon: catFormData.icon || "🪑",
-        count: "0 Products"
-      };
-      setCategories([...categories, newCat]);
-      showToast(`Created New Category: "${catFormData.name}"`);
-    }
-
-    setShowCatModal(false);
-    setEditingCategory(null);
-    setCatFormData({ name: "", slug: "", icon: "🪑", count: "0 Products" });
-  };
-
-  const startEditCategory = (cat) => {
-    setEditingCategory(cat);
-    setCatFormData({
-      name: cat.name,
-      slug: cat.slug,
-      icon: cat.icon || "🪑",
-      count: cat.count || "0 Products"
-    });
-    setShowCatModal(true);
-  };
-
-  const handleDeleteCategory = (catId) => {
-    if (confirm("Are you sure you want to delete this category?")) {
-      setCategories(categories.filter(c => c.id !== catId));
-      showToast("Category removed successfully!");
-    }
-  };
-
 
   // Sample Live Customer Orders
   const [orders, setOrders] = useState([
@@ -145,7 +92,6 @@ export default function AdminDashboard() {
     }
   }, []);
 
-  // Handle Admin Login Submit
   const handleLogin = (e) => {
     e.preventDefault();
     setLoginError("");
@@ -175,6 +121,59 @@ export default function AdminDashboard() {
   const showToast = (msg) => {
     setToast(msg);
     setTimeout(() => setToast(""), 3500);
+  };
+
+  const handleSaveCategory = (e) => {
+    e.preventDefault();
+    if (!catFormData.name) {
+      alert("Please enter a category name!");
+      return;
+    }
+
+    const slug = catFormData.slug ? catFormData.slug.toLowerCase().replace(/\s+/g, '-') : catFormData.name.toLowerCase().replace(/\s+/g, '-');
+
+    if (editingCategory) {
+      setCategories(categories.map(c => c.id === editingCategory.id ? {
+        ...c,
+        name: catFormData.name,
+        slug: slug,
+        icon: catFormData.icon,
+        count: catFormData.count
+      } : c));
+      showToast(`Updated Category: "${catFormData.name}"`);
+    } else {
+      const newCat = {
+        id: Date.now(),
+        name: catFormData.name,
+        slug: slug,
+        icon: catFormData.icon || "🪑",
+        count: "0 Products"
+      };
+      setCategories([...categories, newCat]);
+      showToast(`Created New Category: "${catFormData.name}"`);
+    }
+
+    setShowCatModal(false);
+    setEditingCategory(null);
+    setCatFormData({ name: "", slug: "", icon: "🪑", count: "0 Products" });
+  };
+
+  const startEditCategory = (cat) => {
+    setEditingCategory(cat);
+    setCatFormData({
+      name: cat.name,
+      slug: cat.slug,
+      icon: cat.icon || "🪑",
+      count: cat.count || "0 Products"
+    });
+    setShowCatModal(true);
+  };
+
+  const handleDeleteCategory = (catId) => {
+    if (confirm("Are you sure you want to delete this category?")) {
+      setCategories(categories.filter(c => c.id !== catId));
+      showToast("Category removed successfully!");
+    }
   };
 
   const handleAddProduct = (e) => {
@@ -460,10 +459,10 @@ export default function AdminDashboard() {
             <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
               {activeTab === "products" && "Product Catalog Management"}
               {activeTab === "add-product" && (editingProduct ? "Edit Product Details" : "Publish New Furniture Entry")}
-              {activeTab === "categories" && "Furniture Collections"}
+              {activeTab === "categories" && "Furniture Collections & Categories"}
               {activeTab === "orders" && "Live Customer Order Tracking"}
             </h1>
-            <p className="text-xs text-slate-500 mt-1 font-medium">Manage product inventory, pricing, images, and live customer orders in real-time</p>
+            <p className="text-xs text-slate-500 mt-1 font-medium">Manage product inventory, category editing, pricing, images, and live customer orders in real-time</p>
           </div>
 
           {activeTab === "products" && (
@@ -472,6 +471,15 @@ export default function AdminDashboard() {
               className="px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-black uppercase tracking-wider shadow-md"
             >
               + Add New Product
+            </button>
+          )}
+
+          {activeTab === "categories" && (
+            <button
+              onClick={() => { setEditingCategory(null); setCatFormData({ name: "", slug: "", icon: "🪑", count: "0 Products" }); setShowCatModal(true); }}
+              className="px-6 py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-2"
+            >
+              <span>➕</span> Add New Category
             </button>
           )}
         </div>
@@ -760,19 +768,100 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* TAB 4: CATEGORIES */}
+        {/* TAB 4: CATEGORIES MANAGEMENT (WITH EDIT & ADD OPTIONS) */}
         {activeTab === "categories" && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {categories.map((cat) => (
-              <div key={cat.id || cat.slug} className="p-6 rounded-3xl bg-white border border-slate-200 space-y-3 shadow-sm">
-                <div className="text-4xl">{cat.icon || '🪑'}</div>
-                <h4 className="text-lg font-black text-slate-900">{cat.name}</h4>
-                <p className="text-xs text-amber-700 font-black">{cat.count || 'Active Collection'}</p>
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-mono border border-slate-200">
-                  slug: {cat.slug}
-                </span>
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {categories.map((cat) => (
+                <div key={cat.id || cat.slug} className="p-6 rounded-3xl bg-white border border-slate-200 space-y-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="text-4xl">{cat.icon || '🪑'}</div>
+                      <span className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-mono border border-slate-200">
+                        slug: {cat.slug}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-black text-slate-900">{cat.name}</h4>
+                    <p className="text-xs text-amber-700 font-black">{cat.count || 'Active Collection'}</p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
+                    <button
+                      onClick={() => startEditCategory(cat)}
+                      className="flex-1 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-black transition text-center"
+                    >
+                      ✏️ Edit Category
+                    </button>
+                    <button
+                      onClick={() => handleDeleteCategory(cat.id)}
+                      className="px-3.5 py-2.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-xs font-black transition"
+                      title="Delete Category"
+                    >
+                      🗑️
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* CATEGORY EDIT / CREATE MODAL */}
+        {showCatModal && (
+          <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-200 space-y-5">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 className="text-lg font-black text-slate-900">
+                  {editingCategory ? `Edit Category: "${editingCategory.name}"` : "Add New Category"}
+                </h3>
+                <button onClick={() => setShowCatModal(false)} className="text-slate-400 hover:text-slate-700 text-sm font-bold">✕</button>
               </div>
-            ))}
+
+              <form onSubmit={handleSaveCategory} className="space-y-4 text-xs">
+                <div>
+                  <label className="block font-black text-slate-700 uppercase tracking-wider text-[10px] mb-1">Category Name *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Dining Room"
+                    value={catFormData.name}
+                    onChange={(e) => setCatFormData({ ...catFormData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-amber-500 font-bold"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-black text-slate-700 uppercase tracking-wider text-[10px] mb-1">URL Slug (Optional)</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. dinning-room"
+                    value={catFormData.slug}
+                    onChange={(e) => setCatFormData({ ...catFormData, slug: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-amber-500 font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-black text-slate-700 uppercase tracking-wider text-[10px] mb-1">Icon / Emoji</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. 🪑, 🛏️, 🛋️, 🚪"
+                    value={catFormData.icon}
+                    onChange={(e) => setCatFormData({ ...catFormData, icon: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-amber-500 text-lg text-center"
+                  />
+                </div>
+
+                <div className="pt-3 flex gap-3">
+                  <button type="submit" className="flex-1 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-black uppercase tracking-wider text-xs shadow-md">
+                    {editingCategory ? "Save Category Changes" : "Create Category"}
+                  </button>
+                  <button type="button" onClick={() => setShowCatModal(false)} className="px-5 py-3.5 rounded-2xl bg-slate-100 text-slate-700 font-bold text-xs">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         )}
 
