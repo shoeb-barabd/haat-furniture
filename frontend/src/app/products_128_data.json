@@ -11,14 +11,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood crown royal segun teak bed (model #101) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -33,30 +33,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood purley luxury marble-top dining set (model #102) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "showcase",
-      "dinning-room",
-      "shoe-rack",
-      "home-furniture",
-      "almirah",
-      "bed-room",
-      "wardrobe",
-      "dressing-table",
       "dinning-set",
-      "living-room",
-      "chest-of-drawer"
+      "home-furniture",
+      "dinning-room"
     ],
     "category_names": [
-      "Living room",
-      "Shoe Rack",
-      "Home Furniture",
-      "Chest of Drawer",
-      "Wardrobe",
-      "Almirah",
-      "Showcase",
-      "Dinning Set",
-      "Bed Room",
       "Dinning Room",
-      "Dressing Table"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -72,13 +56,13 @@
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chesterfield genuine leather 3-seater sofa (model #103) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
       "home-furniture",
-      "bed-room",
-      "chest-of-drawer"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
+      "Sofa",
       "Home Furniture",
-      "Chest of Drawer",
-      "Bed Room"
+      "Living room"
     ]
   },
   {
@@ -92,8 +76,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved heritage executive writing desk (model #104) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 5,
@@ -106,8 +98,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood waterproof lacquer polish interior bedroom door (model #105) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "bed",
+      "home-furniture",
+      "bed-room"
+    ],
+    "category_names": [
+      "Bed Room",
+      "Bed",
+      "Home Furniture"
+    ]
   },
   {
     "id": 6,
@@ -126,9 +126,9 @@
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Home Furniture"
     ]
   },
   {
@@ -142,8 +142,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/purley-dining.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #7 (model #107) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 8,
@@ -157,14 +165,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood imperial luxury velvet headboard bed (model #108) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -179,14 +187,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood beijing 6-chair solid segun dining set (model #109) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -201,9 +209,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood classic 3+1+1 segun carved velvet sofa (model #110) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -222,8 +230,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/door-1.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive boss desk with side cabinet & lock (model #111) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 12,
@@ -236,8 +252,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood cnc deep engraved floral teak wooden door (model #112) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 13,
@@ -251,14 +273,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood lily 3-door solid segun wardrobe almirah (model #113) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -272,8 +296,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #14 (model #114) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 15,
@@ -287,14 +319,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal windsor heavy wood bed (model #115) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -309,14 +341,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive office meeting & dining desk (model #116) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -331,9 +363,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal 5-seater l-shape sectional sofa (model #117) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -352,8 +384,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood ergonomic dual computer workstation desk (model #118) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 19,
@@ -367,14 +407,12 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved double leaf entrance gate door (model #119) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "bed-side-table",
-      "home-furniture",
-      "bed-room"
+      "wooden-door",
+      "door"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Home Furniture",
-      "Bed Room"
+      "Wooden Door",
+      "Door"
     ]
   },
   {
@@ -391,11 +429,13 @@
     "categories": [
       "home-furniture",
       "almirah",
-      "bed-room"
+      "dinning-room",
+      "showcase"
     ],
     "category_names": [
+      "Showcase",
+      "Dinning Room",
       "Home Furniture",
-      "Bed Room",
       "Almirah"
     ]
   },
@@ -410,8 +450,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #21 (model #121) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 22,
@@ -425,14 +473,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood victoria carved master bed (model #122) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -447,14 +495,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage solid wood round dining table with lazy susan (model #123) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -469,9 +517,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal gold brocade velvet cushion sofa (model #124) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -490,8 +538,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive school & institution student bench set (model #125) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 26,
@@ -504,8 +560,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid chittagong segun main entrance security door (model #126) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 27,
@@ -519,14 +581,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved 2-door segun bedroom almirah (model #127) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "bed",
       "home-furniture",
-      "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -540,8 +602,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #28 (model #128) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 29,
@@ -554,8 +624,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood presidential master bedroom suite (model #129) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "bed",
+      "home-furniture",
+      "bed-room"
+    ],
+    "category_names": [
+      "Bed Room",
+      "Bed",
+      "Home Furniture"
+    ]
   },
   {
     "id": 30,
@@ -569,13 +647,13 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood imperial glass-top 8-chair dining suite (model #130) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "bed",
       "home-furniture",
-      "dinning-set",
-      "dinning-room"
+      "bed-room"
     ],
     "category_names": [
-      "Dinning Set",
-      "Dinning Room",
+      "Bed Room",
+      "Bed",
       "Home Furniture"
     ]
   },
@@ -591,9 +669,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood minimalist studio corner l-sofa set (model #131) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -612,8 +690,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong segun solid wood manager table (model #132) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 33,
@@ -626,8 +712,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern horizontal panel segun door (model #133) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 34,
@@ -641,14 +733,16 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern sliding door mirror wardrobe almirah (model #134) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -662,8 +756,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/door-1.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #35 (model #135) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 36,
@@ -677,18 +779,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood pentagon teak bed (model #136) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
-      "almirah",
       "bed",
-      "bed-room",
-      "dressing-table"
+      "home-furniture",
+      "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
-      "Almirah",
-      "Bed",
       "Bed Room",
-      "Dressing Table"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -703,14 +801,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood minimalist modern 4-chair segun dining table (model #137) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -725,9 +823,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood luxury recliner sectional living room sofa (model #138) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -746,8 +844,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved heritage executive writing desk (model #139) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 40,
@@ -760,8 +866,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood waterproof lacquer polish interior bedroom door (model #140) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "bed",
+      "home-furniture",
+      "bed-room"
+    ],
+    "category_names": [
+      "Bed Room",
+      "Bed",
+      "Home Furniture"
+    ]
   },
   {
     "id": 41,
@@ -775,14 +889,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage teak 3-drawer dressing almirah (model #141) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "dressing-table",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
@@ -796,8 +912,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #42 (model #142) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 43,
@@ -811,14 +935,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood orchid heavy carving teak bed (model #143) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -833,14 +957,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved 6-seater oval dining table (model #144) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -855,9 +979,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong teak heavy wood carved sofa set (model #145) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -876,8 +1000,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/exec-desk.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive boss desk with side cabinet & lock (model #146) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 47,
@@ -890,8 +1022,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/door-1.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood cnc deep engraved floral teak wooden door (model #147) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 48,
@@ -910,9 +1048,9 @@
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Home Furniture"
     ]
   },
   {
@@ -926,8 +1064,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #49 (model #149) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 50,
@@ -941,30 +1087,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood purley teak king bed (model #150) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "showcase",
-      "dinning-room",
-      "shoe-rack",
-      "home-furniture",
-      "almirah",
       "bed",
-      "bed-room",
-      "wardrobe",
-      "dressing-table",
-      "living-room",
-      "chest-of-drawer"
+      "home-furniture",
+      "bed-room"
     ],
     "category_names": [
-      "Living room",
-      "Shoe Rack",
-      "Home Furniture",
-      "Chest of Drawer",
-      "Wardrobe",
-      "Almirah",
-      "Showcase",
-      "Bed",
       "Bed Room",
-      "Dinning Room",
-      "Dressing Table"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -979,14 +1109,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong teak 8-chair executive dining table (model #151) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1001,9 +1131,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern scandinavian fabric sofa set 3+2 (model #152) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1022,8 +1152,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood ergonomic dual computer workstation desk (model #153) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 54,
@@ -1037,14 +1175,12 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved double leaf entrance gate door (model #154) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "bed-side-table",
-      "home-furniture",
-      "bed-room"
+      "wooden-door",
+      "door"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Home Furniture",
-      "Bed Room"
+      "Wooden Door",
+      "Door"
     ]
   },
   {
@@ -1059,14 +1195,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood lily 3-door solid segun wardrobe almirah (model #155) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -1080,8 +1218,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #56 (model #156) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 57,
@@ -1095,14 +1241,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood regal solid wood queen bed (model #157) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -1117,30 +1263,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood purley luxury marble-top dining set (model #158) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "showcase",
-      "dinning-room",
-      "shoe-rack",
-      "home-furniture",
-      "almirah",
-      "bed-room",
-      "wardrobe",
-      "dressing-table",
       "dinning-set",
-      "living-room",
-      "chest-of-drawer"
+      "home-furniture",
+      "dinning-room"
     ],
     "category_names": [
-      "Living room",
-      "Shoe Rack",
-      "Home Furniture",
-      "Chest of Drawer",
-      "Wardrobe",
-      "Almirah",
-      "Showcase",
-      "Dinning Set",
-      "Bed Room",
       "Dinning Room",
-      "Dressing Table"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1156,13 +1286,13 @@
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chesterfield genuine leather 3-seater sofa (model #159) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
       "home-furniture",
-      "bed-room",
-      "chest-of-drawer"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
+      "Sofa",
       "Home Furniture",
-      "Chest of Drawer",
-      "Bed Room"
+      "Living room"
     ]
   },
   {
@@ -1176,8 +1306,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive school & institution student bench set (model #160) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 61,
@@ -1190,8 +1328,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid chittagong segun main entrance security door (model #161) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 62,
@@ -1207,11 +1351,13 @@
     "categories": [
       "home-furniture",
       "almirah",
-      "bed-room"
+      "dinning-room",
+      "showcase"
     ],
     "category_names": [
+      "Showcase",
+      "Dinning Room",
       "Home Furniture",
-      "Bed Room",
       "Almirah"
     ]
   },
@@ -1226,8 +1372,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #63 (model #163) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 64,
@@ -1241,14 +1395,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood minimalist scandinavian teak bed (model #164) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -1263,14 +1417,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood beijing 6-chair solid segun dining set (model #165) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1285,9 +1439,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood classic 3+1+1 segun carved velvet sofa (model #166) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1306,8 +1460,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/purley-dining.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong segun solid wood manager table (model #167) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 68,
@@ -1320,8 +1482,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern horizontal panel segun door (model #168) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 69,
@@ -1335,14 +1503,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved 2-door segun bedroom almirah (model #169) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "bed",
       "home-furniture",
-      "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -1356,8 +1524,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/exec-desk.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #70 (model #170) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 71,
@@ -1371,14 +1547,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage chittagong segun bed (model #171) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -1393,14 +1569,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive office meeting & dining desk (model #172) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1415,9 +1591,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal 5-seater l-shape sectional sofa (model #173) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1436,8 +1612,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved heritage executive writing desk (model #174) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 75,
@@ -1450,8 +1634,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood waterproof lacquer polish interior bedroom door (model #175) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "bed",
+      "home-furniture",
+      "bed-room"
+    ],
+    "category_names": [
+      "Bed Room",
+      "Bed",
+      "Home Furniture"
+    ]
   },
   {
     "id": 76,
@@ -1465,14 +1657,16 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern sliding door mirror wardrobe almirah (model #176) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -1486,8 +1680,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #77 (model #177) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 78,
@@ -1501,14 +1703,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood floral cnc engraved teak bed (model #178) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -1523,14 +1725,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage solid wood round dining table with lazy susan (model #179) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1545,9 +1747,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal gold brocade velvet cushion sofa (model #180) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1566,8 +1768,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive boss desk with side cabinet & lock (model #181) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 82,
@@ -1580,8 +1790,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/exec-desk.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood cnc deep engraved floral teak wooden door (model #182) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 83,
@@ -1595,14 +1811,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage teak 3-drawer dressing almirah (model #183) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "dressing-table",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
@@ -1616,8 +1834,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #84 (model #184) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 85,
@@ -1631,24 +1857,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood galaxy teak bed (model #185) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
-      "almirah",
       "bed",
-      "bed-room",
-      "wardrobe",
-      "bed-side-table",
-      "dressing-table",
-      "chest-of-drawer"
+      "home-furniture",
+      "bed-room"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Home Furniture",
-      "Chest of Drawer",
-      "Wardrobe",
-      "Almirah",
-      "Bed",
       "Bed Room",
-      "Dressing Table"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -1663,13 +1879,13 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood imperial glass-top 8-chair dining suite (model #186) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "bed",
       "home-furniture",
-      "dinning-set",
-      "dinning-room"
+      "bed-room"
     ],
     "category_names": [
-      "Dinning Set",
-      "Dinning Room",
+      "Bed Room",
+      "Bed",
       "Home Furniture"
     ]
   },
@@ -1685,9 +1901,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood minimalist studio corner l-sofa set (model #187) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1706,8 +1922,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood ergonomic dual computer workstation desk (model #188) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 89,
@@ -1721,14 +1945,12 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved double leaf entrance gate door (model #189) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "bed-side-table",
-      "home-furniture",
-      "bed-room"
+      "wooden-door",
+      "door"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Home Furniture",
-      "Bed Room"
+      "Wooden Door",
+      "Door"
     ]
   },
   {
@@ -1748,9 +1970,9 @@
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Home Furniture"
     ]
   },
   {
@@ -1764,8 +1986,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/purley-dining.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #91 (model #191) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 92,
@@ -1779,20 +2009,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood diamond panel solid segun bed (model #192) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "shoe-rack",
-      "home-furniture",
       "bed",
-      "bed-room",
-      "bed-side-table",
-      "living-room"
+      "home-furniture",
+      "bed-room"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Living room",
-      "Shoe Rack",
-      "Home Furniture",
+      "Bed Room",
       "Bed",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -1807,14 +2031,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood minimalist modern 4-chair segun dining table (model #193) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1829,9 +2053,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood luxury recliner sectional living room sofa (model #194) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1850,8 +2074,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/door-1.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive school & institution student bench set (model #195) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 96,
@@ -1864,8 +2096,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid chittagong segun main entrance security door (model #196) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 97,
@@ -1879,14 +2117,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood lily 3-door solid segun wardrobe almirah (model #197) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -1900,8 +2140,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #98 (model #198) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 99,
@@ -1915,18 +2163,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood wheel solid teak bed (model #199) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
-      "almirah",
       "bed",
-      "bed-room",
-      "dressing-table"
+      "home-furniture",
+      "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
-      "Almirah",
-      "Bed",
       "Bed Room",
-      "Dressing Table"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -1941,14 +2185,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved 6-seater oval dining table (model #200) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -1963,9 +2207,9 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong teak heavy wood carved sofa set (model #201) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -1984,8 +2228,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong segun solid wood manager table (model #202) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 103,
@@ -1998,8 +2250,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/purley-dining.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern horizontal panel segun door (model #203) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 104,
@@ -2015,11 +2273,13 @@
     "categories": [
       "home-furniture",
       "almirah",
-      "bed-room"
+      "dinning-room",
+      "showcase"
     ],
     "category_names": [
+      "Showcase",
+      "Dinning Room",
       "Home Furniture",
-      "Bed Room",
       "Almirah"
     ]
   },
@@ -2034,8 +2294,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #105 (model #205) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 106,
@@ -2049,14 +2317,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood monarch executive king bed (model #206) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -2071,14 +2339,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chittagong teak 8-chair executive dining table (model #207) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -2093,9 +2361,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern scandinavian fabric sofa set 3+2 (model #208) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -2114,8 +2382,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved heritage executive writing desk (model #209) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 110,
@@ -2128,8 +2404,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood waterproof lacquer polish interior bedroom door (model #210) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "bed",
+      "home-furniture",
+      "bed-room"
+    ],
+    "category_names": [
+      "Bed Room",
+      "Bed",
+      "Home Furniture"
+    ]
   },
   {
     "id": 111,
@@ -2143,14 +2427,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved 2-door segun bedroom almirah (model #211) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "bed",
       "home-furniture",
-      "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Bed",
+      "Home Furniture"
     ]
   },
   {
@@ -2164,8 +2448,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #112 (model #212) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 113,
@@ -2179,14 +2471,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood crown royal segun teak bed (model #213) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -2201,30 +2493,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood purley luxury marble-top dining set (model #214) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "showcase",
-      "dinning-room",
-      "shoe-rack",
-      "home-furniture",
-      "almirah",
-      "bed-room",
-      "wardrobe",
-      "dressing-table",
       "dinning-set",
-      "living-room",
-      "chest-of-drawer"
+      "home-furniture",
+      "dinning-room"
     ],
     "category_names": [
-      "Living room",
-      "Shoe Rack",
-      "Home Furniture",
-      "Chest of Drawer",
-      "Wardrobe",
-      "Almirah",
-      "Showcase",
-      "Dinning Set",
-      "Bed Room",
       "Dinning Room",
-      "Dressing Table"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -2240,13 +2516,13 @@
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood chesterfield genuine leather 3-seater sofa (model #215) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
       "home-furniture",
-      "bed-room",
-      "chest-of-drawer"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
+      "Sofa",
       "Home Furniture",
-      "Chest of Drawer",
-      "Bed Room"
+      "Living room"
     ]
   },
   {
@@ -2260,8 +2536,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive boss desk with side cabinet & lock (model #216) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 117,
@@ -2274,8 +2558,14 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/sofa-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood cnc deep engraved floral teak wooden door (model #217) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "wooden-door",
+      "door"
+    ],
+    "category_names": [
+      "Wooden Door",
+      "Door"
+    ]
   },
   {
     "id": 118,
@@ -2289,14 +2579,16 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood modern sliding door mirror wardrobe almirah (model #218) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "wardrobe",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
+      "Almirah",
+      "Wardrobe",
       "Home Furniture",
-      "Bed Room",
-      "Almirah"
+      "Bed Room"
     ]
   },
   {
@@ -2310,8 +2602,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/door-1.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #119 (model #219) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 120,
@@ -2325,14 +2625,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood imperial luxury velvet headboard bed (model #220) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -2347,14 +2647,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood beijing 6-chair solid segun dining set (model #221) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   },
   {
@@ -2369,9 +2669,9 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood classic 3+1+1 segun carved velvet sofa (model #222) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "sofa",
       "home-furniture",
-      "living-room"
+      "living-room",
+      "sofa"
     ],
     "category_names": [
       "Sofa",
@@ -2390,8 +2690,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood ergonomic dual computer workstation desk (model #223) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "table",
+      "office-furniture",
+      "work-station"
+    ],
+    "category_names": [
+      "Work Station",
+      "Office Furniture",
+      "Table"
+    ]
   },
   {
     "id": 124,
@@ -2405,14 +2713,12 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal carved double leaf entrance gate door (model #224) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "bed-side-table",
-      "home-furniture",
-      "bed-room"
+      "wooden-door",
+      "door"
     ],
     "category_names": [
-      "Bed Side Table",
-      "Home Furniture",
-      "Bed Room"
+      "Wooden Door",
+      "Door"
     ]
   },
   {
@@ -2427,14 +2733,16 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood heritage teak 3-drawer dressing almirah (model #225) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
+      "dressing-table",
       "home-furniture",
       "almirah",
       "bed-room"
     ],
     "category_names": [
-      "Home Furniture",
+      "Almirah",
       "Bed Room",
-      "Almirah"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
@@ -2448,8 +2756,16 @@
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood solid segun teak furniture item #126 (model #226) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
-    "categories": [],
-    "category_names": []
+    "categories": [
+      "living-room",
+      "center-table",
+      "home-furniture"
+    ],
+    "category_names": [
+      "Home Furniture",
+      "Center Table",
+      "Living room"
+    ]
   },
   {
     "id": 127,
@@ -2463,14 +2779,14 @@
     "badge": "Solid Segun",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood royal windsor heavy wood bed (model #227) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "bed",
+      "home-furniture",
       "bed-room"
     ],
     "category_names": [
+      "Bed Room",
       "Bed",
-      "Home Furniture",
-      "Bed Room"
+      "Home Furniture"
     ]
   },
   {
@@ -2485,14 +2801,14 @@
     "badge": "20 Yrs Warranty",
     "description": "Handcrafted 100% genuine Chittagong Segun teak wood executive office meeting & dining desk (model #228) with 20-year anti-borer & termite proof guarantee. Safe delivery in Dhaka City.",
     "categories": [
-      "home-furniture",
       "dinning-set",
+      "home-furniture",
       "dinning-room"
     ],
     "category_names": [
-      "Dinning Set",
       "Dinning Room",
-      "Home Furniture"
+      "Home Furniture",
+      "Dinning Set"
     ]
   }
 ]
