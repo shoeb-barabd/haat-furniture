@@ -1,10 +1,10 @@
 'use client';
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import productsData from "../products_128_data.json";
 
-export default function WordPressAdminPanel() {
+export default function AdminDashboard() {
+  // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loginUser, setLoginUser] = useState("");
   const [loginPass, setLoginPass] = useState("");
@@ -12,79 +12,77 @@ export default function WordPressAdminPanel() {
   const [loginError, setLoginError] = useState("");
 
   const [products, setProducts] = useState(productsData);
-  const [activeMenu, setActiveMenu] = useState("products-all"); // dashboard | products-all | products-add | orders | categories | settings
+  const [categories, setCategories] = useState([
+    { id: 1, name: "Home Furniture", slug: "home-furniture", icon: "🏠", count: "126 Products" },
+    { id: 2, name: "Bed Room", slug: "bed-room", icon: "🛏️", count: "54 Products" },
+    { id: 3, name: "Dinning Room", slug: "dinning-room", icon: "🍽️", count: "28 Products" },
+    { id: 4, name: "Living Room", slug: "living-room", icon: "🛋️", count: "32 Products" },
+    { id: 5, name: "Office Furniture", slug: "office-furniture", icon: "🏢", count: "2 Products" },
+    { id: 6, name: "Door Collection", slug: "door", icon: "🚪", count: "10 Products" }
+  ]);
+  const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState("products"); // products | add-product | categories | orders
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategoryFilter, setSelectedCategoryFilter] = useState("all");
   const [toast, setToast] = useState("");
   const [editingProduct, setEditingProduct] = useState(null);
 
-  // WooCommerce Live Orders
+  // Sample Live Customer Orders
   const [orders, setOrders] = useState([
     {
-      id: "12891",
+      id: "ORD-9821",
       customer: "Mahin Ahmed",
-      email: "haatfurniture@gmail.com",
-      phone: "01957909186",
+      phone: "+8801957909186",
       address: "House #12, Road #4, Badda, Dhaka",
-      district: "Dhaka",
-      items: "Beijing Dining 4 Chair Set × 1, Bullet Teak Door × 1",
-      subtotal: 62500,
-      shipping: 60,
+      items: "Beijing Dining 4 Chair Set (x1), Bullet Teak Door (x1)",
       total: 62560,
       status: "Processing",
-      paymentMethod: "Cash on delivery",
-      date: "2026-08-17"
+      date: "2026-08-17 10:30 AM"
     },
     {
-      id: "12890",
+      id: "ORD-9822",
       customer: "Walid Ahmed",
-      email: "walid@barabdonline.com",
-      phone: "01711223344",
+      phone: "+8801711223344",
       address: "Sector 3, Uttara, Dhaka",
-      district: "Dhaka",
-      items: "Wheel Dressing Table × 1",
-      subtotal: 22500,
-      shipping: 60,
+      items: "Wheel Dressing Table (x1)",
       total: 22560,
-      status: "Completed",
-      paymentMethod: "bKash Mobile Banking",
-      date: "2026-08-16"
+      status: "Delivered",
+      date: "2026-08-16 02:15 PM"
     },
     {
-      id: "12889",
+      id: "ORD-9823",
       customer: "Tanvir Hossain",
-      email: "tanvir@gmail.com",
-      phone: "01811223344",
+      phone: "+8801811223344",
       address: "GEC Circle, Chittagong",
-      district: "Chittagong",
-      items: "Crown Royal Segun Teak Bed × 1",
-      subtotal: 30000,
-      shipping: 150,
+      items: "Crown Royal Segun Teak Bed (x1)",
       total: 30150,
-      status: "Processing",
-      paymentMethod: "Cash on delivery",
-      date: "2026-08-16"
+      status: "Pending",
+      date: "2026-08-16 03:40 PM"
     }
   ]);
 
-  // Form State
+  // Form State for Add / Edit Product
   const [formData, setFormData] = useState({
     name: "",
     price: "",
     old_price: "",
-    sku: "",
-    category: "bed-room",
+    category: "Home Furniture",
+    category_slug: "home-furniture",
     image: "",
+    wood_type: "100% Solid Chittagong Teak Wood",
+    warranty: "20 Years Guarantee",
+    badge: "New Arrival",
     description: ""
   });
 
+  // Check Local Session Authentication
   useEffect(() => {
-    const savedAuth = localStorage.getItem("haat_wp_admin_auth");
+    const savedAuth = localStorage.getItem("haat_admin_auth");
     if (savedAuth === "true") {
       setIsAuthenticated(true);
     }
   }, []);
 
+  // Handle Admin Login Submit
   const handleLogin = (e) => {
     e.preventDefault();
     setLoginError("");
@@ -96,17 +94,19 @@ export default function WordPressAdminPanel() {
       validUsers.includes(loginUser.trim().toLowerCase()) &&
       validPasses.includes(loginPass)
     ) {
-      localStorage.setItem("haat_wp_admin_auth", "true");
+      localStorage.setItem("haat_admin_auth", "true");
       setIsAuthenticated(true);
-      showToast("Welcome to WordPress Dashboard!");
+      showToast("Welcome to HAAT FURNITURE Admin Control Center!");
     } else {
-      setLoginError("ERROR: The password you entered for the username is incorrect.");
+      setLoginError("Invalid Username or Password! Please try again.");
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("haat_wp_admin_auth");
+    localStorage.removeItem("haat_admin_auth");
     setIsAuthenticated(false);
+    setLoginUser("");
+    setLoginPass("");
   };
 
   const showToast = (msg) => {
@@ -114,7 +114,7 @@ export default function WordPressAdminPanel() {
     setTimeout(() => setToast(""), 3500);
   };
 
-  const handleAddOrUpdateProduct = (e) => {
+  const handleAddProduct = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.price) {
       alert("Please fill in Product Name and Price!");
@@ -122,31 +122,47 @@ export default function WordPressAdminPanel() {
     }
 
     if (editingProduct) {
-      setProducts(products.map(p => p.id === editingProduct.id ? {
-        ...p,
-        name: formData.name,
-        price: parseFloat(formData.price),
-        oldPrice: formData.old_price ? parseFloat(formData.old_price) : null,
-        image: formData.image || p.image,
-        description: formData.description
-      } : p));
-      showToast(`Updated product: "${formData.name}"`);
+      const updated = products.map((p) =>
+        p.id === editingProduct.id
+          ? {
+              ...p,
+              name: formData.name,
+              price: parseFloat(formData.price),
+              oldPrice: formData.old_price ? parseFloat(formData.old_price) : null,
+              category: formData.category,
+              category_slug: formData.category_slug,
+              image: formData.image || p.image,
+              wood_type: formData.wood_type,
+              warranty: formData.warranty,
+              badge: formData.badge,
+              description: formData.description
+            }
+          : p
+      );
+      setProducts(updated);
+      showToast(`Updated Product: "${formData.name}"`);
+      setEditingProduct(null);
     } else {
-      const newP = {
+      const newProd = {
         id: Date.now(),
         name: formData.name,
+        slug: formData.name.toLowerCase().replace(/\s+/g, '-'),
         price: parseFloat(formData.price),
         oldPrice: formData.old_price ? parseFloat(formData.old_price) : null,
-        categories: [formData.category],
-        category_names: [formData.category.replace('-', ' ')],
+        categories: [formData.category_slug],
+        category_names: [formData.category],
         image: formData.image || "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
-        description: formData.description || "Solid Chittagong Segun Teak Wood."
+        wood_type: formData.wood_type,
+        warranty: formData.warranty,
+        rating: 5.0,
+        badge: formData.badge,
+        description: formData.description || "Premium handcrafted solid Chittagong Segun teak furniture by Haat Furniture Limited."
       };
-      setProducts([newP, ...products]);
-      showToast(`Published new product: "${formData.name}"`);
+      setProducts([newProd, ...products]);
+      showToast(`Successfully Published Product: "${newProd.name}"`);
     }
 
-    setActiveMenu("products-all");
+    setActiveTab("products");
     resetForm();
   };
 
@@ -156,111 +172,128 @@ export default function WordPressAdminPanel() {
       name: product.name,
       price: product.price,
       old_price: product.oldPrice || "",
-      sku: `HAAT-${product.id}`,
-      category: product.categories ? product.categories[0] : "home-furniture",
-      image: product.image,
+      category: product.category || "Home Furniture",
+      category_slug: product.categories ? product.categories[0] : "home-furniture",
+      image: product.image || "",
+      wood_type: product.wood_type || "100% Solid Chittagong Teak Wood",
+      warranty: product.warranty || "20 Years Guarantee",
+      badge: product.badge || "New Arrival",
       description: product.description || ""
     });
-    setActiveMenu("products-add");
+    setActiveTab("add-product");
   };
 
   const resetForm = () => {
     setEditingProduct(null);
-    setFormData({ name: "", price: "", old_price: "", sku: "", category: "bed-room", image: "", description: "" });
+    setFormData({
+      name: "",
+      price: "",
+      old_price: "",
+      category: "Home Furniture",
+      category_slug: "home-furniture",
+      image: "",
+      wood_type: "100% Solid Chittagong Teak Wood",
+      warranty: "20 Years Guarantee",
+      badge: "New Arrival",
+      description: ""
+    });
   };
 
   const handleDeleteProduct = (id) => {
-    if (confirm("Are you sure you want to move this product to Trash?")) {
+    if (confirm("Are you sure you want to delete this product entry?")) {
       setProducts(products.filter(p => p.id !== id));
-      showToast("Item moved to Trash.");
+      showToast("Product deleted from catalog successfully!");
     }
   };
 
   const handleUpdateOrderStatus = (orderId, newStatus) => {
     setOrders(orders.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
-    showToast(`Order #${orderId} changed to ${newStatus}`);
+    showToast(`Order ${orderId} status updated to "${newStatus}"`);
   };
 
-  const filteredProducts = products.filter(p => {
-    const matchesSearch = !searchQuery || p.name.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCat = selectedCategoryFilter === "all" || (p.categories && p.categories.includes(selectedCategoryFilter));
-    return matchesSearch && matchesCat;
-  });
+  const filteredProducts = products.filter(p =>
+    (p.name || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (p.category || "").toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-  // -------------------------------------------------------------------
-  // 1. WORDPRESS LOGIN SCREEN
-  // -------------------------------------------------------------------
+  const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
+
+  // ----------------------------------------------------
+  // RENDER 1: LOGIN SCREEN (When Not Authenticated)
+  // ----------------------------------------------------
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#f0f0f1] text-[#3c434a] flex items-center justify-center p-4 font-sans">
-        <div className="w-full max-w-sm space-y-6">
+      <div className="min-h-screen bg-[#0f172a] text-white flex items-center justify-center p-4 selection:bg-amber-500 selection:text-slate-900 font-sans">
+        <div className="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-8 shadow-2xl backdrop-blur-xl relative space-y-6">
           
-          {/* WordPress Logo */}
-          <div className="text-center">
-            <div className="w-20 h-20 bg-[#2271b1] text-white rounded-full mx-auto flex items-center justify-center font-black text-3xl shadow-md border-4 border-white">
-              W
+          {/* Top Logo & Title */}
+          <div className="text-center space-y-2">
+            <img
+              src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+              alt="HAAT FURNITURE Logo"
+              className="h-12 w-auto mx-auto object-contain rounded-xl border border-slate-700 p-1 bg-white"
+            />
+            <div className="pt-2">
+              <h2 className="text-xl font-black tracking-wide text-white">HAAT FURNITURE LIMITED</h2>
+              <p className="text-xs text-amber-500 font-bold uppercase tracking-widest mt-0.5">Admin Security Portal</p>
             </div>
-            <h1 className="text-base font-bold text-slate-800 mt-3">HAAT FURNITURE LIMITED</h1>
-            <p className="text-xs text-slate-500 font-semibold">WordPress / WooCommerce Admin Login</p>
           </div>
 
-          {/* Error Banner */}
+          {/* Login Error Notification */}
           {loginError && (
-            <div className="p-3 bg-white border-l-4 border-red-600 shadow-sm text-xs font-bold text-slate-800">
-              {loginError}
+            <div className="p-3.5 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold text-center animate-pulse">
+              ⚠️ {loginError}
             </div>
           )}
 
-          {/* Form */}
-          <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md border border-slate-200 space-y-4 text-xs">
+          {/* Login Form */}
+          <form onSubmit={handleLogin} className="space-y-4 text-xs">
             <div>
-              <label className="block font-bold text-slate-700 mb-1">Username or Email Address</label>
+              <label className="block text-slate-400 font-black uppercase text-[10px] tracking-wider mb-1.5">Username *</label>
               <input
                 type="text"
                 required
+                placeholder="Enter admin username (e.g. admin)"
                 value={loginUser}
                 onChange={(e) => setLoginUser(e.target.value)}
-                className="w-full p-2.5 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-medium"
+                className="w-full px-4 py-3.5 rounded-2xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-medium transition-all"
               />
             </div>
 
             <div>
-              <label className="block font-bold text-slate-700 mb-1">Password</label>
+              <label className="block text-slate-400 font-black uppercase text-[10px] tracking-wider mb-1.5">Password *</label>
               <div className="relative">
                 <input
                   type={showPass ? "text" : "password"}
                   required
+                  placeholder="Enter admin password"
                   value={loginPass}
                   onChange={(e) => setLoginPass(e.target.value)}
-                  className="w-full p-2.5 pr-8 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-medium"
+                  className="w-full px-4 py-3.5 pr-10 rounded-2xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-medium transition-all"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPass(!showPass)}
-                  className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-700 text-xs"
+                  className="absolute right-3.5 top-3.5 text-slate-400 hover:text-white text-sm"
                 >
-                  👁️
+                  {showPass ? "👁️" : "🔒"}
                 </button>
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-1">
-              <label className="flex items-center gap-1.5 text-slate-600 font-medium">
-                <input type="checkbox" className="accent-[#2271b1]" defaultChecked />
-                <span>Remember Me</span>
-              </label>
-              <button
-                type="submit"
-                className="bg-[#2271b1] hover:bg-[#135e96] text-white px-5 py-2 rounded font-bold text-xs shadow transition"
-              >
-                Log In
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+            >
+              🔐 Secure Admin Login
+            </button>
           </form>
 
-          <div className="text-center text-xs space-y-1 text-slate-500 font-medium">
-            <p><Link href="/" className="hover:text-[#2271b1]">← Go to HAAT Furniture Limited</Link></p>
-            <p><a href="#" className="hover:text-[#2271b1]">Lost your password?</a></p>
+          {/* Back to Website Link */}
+          <div className="text-center pt-2 border-t border-slate-800">
+            <Link href="/" className="text-xs text-slate-400 hover:text-amber-400 font-bold transition-colors">
+              ← Return to Haat Furniture Website
+            </Link>
           </div>
 
         </div>
@@ -268,487 +301,420 @@ export default function WordPressAdminPanel() {
     );
   }
 
-  // -------------------------------------------------------------------
-  // 2. AUTHENTICATED WORDPRESS ADMIN PANEL
-  // -------------------------------------------------------------------
+  // ----------------------------------------------------
+  // RENDER 2: AUTHENTICATED ADMIN DASHBOARD
+  // ----------------------------------------------------
   return (
-    <div className="min-h-screen bg-[#f0f0f1] text-[#3c434a] font-sans flex flex-col antialiased">
+    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans flex flex-col antialiased selection:bg-slate-900 selection:text-white">
       
       {/* Toast Alert */}
       {toast && (
-        <div className="fixed top-12 right-5 z-50 bg-[#1d2327] text-white px-4 py-2.5 rounded shadow-xl font-bold text-xs border border-slate-700 flex items-center gap-2">
+        <div className="fixed top-5 right-5 z-50 bg-slate-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl font-bold text-xs border border-slate-700 animate-bounce flex items-center gap-2">
           <span>✨</span>
           <span>{toast}</span>
         </div>
       )}
 
-      {/* 1. WORDPRESS TOP BLACK ADMIN BAR (#1d2327) */}
-      <header className="bg-[#1d2327] text-white text-xs h-8 flex items-center justify-between px-3 fixed top-0 left-0 right-0 z-50 border-b border-slate-800">
-        
-        {/* Left Links */}
-        <div className="flex items-center gap-4 font-semibold">
-          <Link href="/" className="flex items-center gap-1.5 hover:text-amber-400 transition">
-            <span className="font-black text-amber-500">W</span>
-            <span className="font-bold">HAAT FURNITURE LIMITED</span>
-          </Link>
-
-          <Link href="/" className="hover:text-amber-400 transition hidden sm:inline">
-            🏠 Visit Site
-          </Link>
-
-          <button onClick={() => { resetForm(); setActiveMenu("products-add"); }} className="hover:text-amber-400 transition hidden md:flex items-center gap-1">
-            <span>➕</span> New Product
-          </button>
-        </div>
-
-        {/* Right Admin Profile */}
-        <div className="flex items-center gap-3">
-          <span className="text-slate-300 text-[11px]">Howdy, <strong className="text-white">Walid Ahmed</strong></span>
-          <div className="w-5 h-5 rounded-full bg-[#2271b1] text-white text-[10px] font-black flex items-center justify-center">
-            W
+      {/* TOP ULTRA-CLEAN NAVBAR */}
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+          
+          {/* Logo Branding */}
+          <div className="flex items-center gap-3">
+            <img
+              src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+              alt="HAAT FURNITURE LIMITED Logo"
+              className="h-9 w-auto object-contain"
+              onError={(e) => { e.target.style.display = 'none'; }}
+            />
+            <div className="border-l border-slate-200 pl-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-base font-black text-red-600 tracking-tight">HAAT</span>
+                <span className="text-xs font-black text-slate-900 uppercase tracking-tight">FURNITURE</span>
+              </div>
+              <span className="text-[10px] text-amber-700 font-black uppercase tracking-wider block">Admin Control Center</span>
+            </div>
           </div>
-          <button 
-            onClick={handleLogout}
-            className="text-slate-400 hover:text-red-400 font-bold transition text-[11px] border-l border-slate-700 pl-2"
-          >
-            Log Out
-          </button>
-        </div>
 
+          {/* Navigation Tabs */}
+          <nav className="flex flex-wrap items-center gap-1.5 text-xs font-black uppercase tracking-wider">
+            <button
+              onClick={() => setActiveTab("products")}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "products" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+            >
+              <span>📦</span>
+              <span>All Products ({products.length})</span>
+            </button>
+
+            <button
+              onClick={() => { resetForm(); setActiveTab("add-product"); }}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "add-product" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+            >
+              <span>➕</span>
+              <span>{editingProduct ? 'Edit Product' : 'Add Product'}</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("orders")}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "orders" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+            >
+              <span>🛒</span>
+              <span>Live Orders ({orders.length})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("categories")}
+              className={`px-4 py-2.5 rounded-2xl transition-all flex items-center gap-2 ${activeTab === "categories" ? 'bg-slate-900 text-white shadow-md' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+            >
+              <span>🗂️</span>
+              <span>Categories ({categories.length})</span>
+            </button>
+          </nav>
+
+          {/* Website & Logout Buttons */}
+          <div className="flex items-center gap-2">
+            <Link href="/" className="px-3.5 py-2 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 uppercase">
+              <span>🌐</span> Website
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="px-3.5 py-2 rounded-2xl bg-red-600 hover:bg-red-700 text-white text-xs font-black transition-all shadow-md flex items-center gap-1 uppercase"
+              title="Secure Admin Logout"
+            >
+              <span>🚪</span> Logout
+            </button>
+          </div>
+
+        </div>
       </header>
 
-      {/* MAIN LAYOUT WITH LEFT SIDEBAR & CONTENT AREA */}
-      <div className="flex pt-8 min-h-screen">
+      {/* MAIN CONTENT BODY */}
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
         
-        {/* 2. WORDPRESS DARK LEFT SIDEBAR (#1d2327) */}
-        <aside className="w-48 bg-[#1d2327] text-[#f0f6fc] text-xs font-semibold flex-shrink-0 min-h-screen border-r border-slate-800 space-y-1 pt-2">
-          
-          <button
-            onClick={() => setActiveMenu("dashboard")}
-            className={`w-full text-left px-4 py-2 flex items-center gap-2.5 transition border-l-4 ${activeMenu === "dashboard" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
-          >
-            <span>📌</span> Dashboard
-          </button>
-
-          {/* WooCommerce Submenu Group */}
-          <div className="pt-2">
-            <div className="px-4 text-[10px] font-black uppercase text-slate-400 tracking-wider py-1 flex items-center justify-between">
-              <span>WOOCOMMERCE</span>
-              <span className="bg-amber-600 text-white text-[9px] px-1.5 rounded-full font-bold">{orders.length}</span>
-            </div>
-            
-            <button
-              onClick={() => setActiveMenu("orders")}
-              className={`w-full text-left pl-7 pr-3 py-1.5 flex items-center justify-between transition border-l-4 ${activeMenu === "orders" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
-            >
-              <span>Orders</span>
-              <span className="bg-emerald-600 text-white text-[9px] px-1.5 rounded-full">{orders.length}</span>
-            </button>
-            
-            <button
-              onClick={() => setActiveMenu("categories")}
-              className={`w-full text-left pl-7 pr-3 py-1.5 flex items-center justify-between transition border-l-4 ${activeMenu === "categories" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
-            >
-              <span>Categories</span>
-            </button>
+        {/* Section Title Header */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
+              {activeTab === "products" && "Product Catalog Management"}
+              {activeTab === "add-product" && (editingProduct ? "Edit Product Details" : "Publish New Furniture Entry")}
+              {activeTab === "categories" && "Furniture Collections"}
+              {activeTab === "orders" && "Live Customer Order Tracking"}
+            </h1>
+            <p className="text-xs text-slate-500 mt-1 font-medium">Manage product inventory, pricing, images, and live customer orders in real-time</p>
           </div>
 
-          {/* Products Submenu Group */}
-          <div className="pt-2">
-            <div className="px-4 text-[10px] font-black uppercase text-slate-400 tracking-wider py-1">
-              PRODUCTS
-            </div>
-            
+          {activeTab === "products" && (
             <button
-              onClick={() => setActiveMenu("products-all")}
-              className={`w-full text-left pl-7 pr-3 py-1.5 flex items-center justify-between transition border-l-4 ${activeMenu === "products-all" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
+              onClick={() => { resetForm(); setActiveTab("add-product"); }}
+              className="px-6 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-black uppercase tracking-wider shadow-md"
             >
-              <span>All Products</span>
-              <span className="bg-slate-700 text-white text-[9px] px-1.5 rounded-full">{products.length}</span>
+              + Add New Product
             </button>
-
-            <button
-              onClick={() => { resetForm(); setActiveMenu("products-add"); }}
-              className={`w-full text-left pl-7 pr-3 py-1.5 flex items-center justify-between transition border-l-4 ${activeMenu === "products-add" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
-            >
-              <span>Add New</span>
-            </button>
-          </div>
-
-          {/* Settings Link */}
-          <div className="pt-4 border-t border-slate-800">
-            <button
-              onClick={() => setActiveMenu("settings")}
-              className={`w-full text-left px-4 py-2 flex items-center gap-2.5 transition border-l-4 ${activeMenu === "settings" ? 'bg-[#2271b1] text-white border-white font-bold' : 'border-transparent text-slate-300 hover:bg-[#2c3338] hover:text-white'}`}
-            >
-              <span>⚙️</span> Settings
-            </button>
-          </div>
-
-        </aside>
-
-        {/* 3. MAIN WORDPRESS CONTENT AREA */}
-        <main className="flex-1 p-6 space-y-6 overflow-x-auto">
-          
-          {/* VIEW A: DASHBOARD OVERVIEW */}
-          {activeMenu === "dashboard" && (
-            <div className="space-y-6">
-              
-              {/* Welcome Banner */}
-              <div className="bg-white p-6 rounded shadow-sm border border-slate-200 space-y-2">
-                <h1 className="text-2xl font-bold text-slate-900">Welcome to WordPress / HAAT Furniture Admin!</h1>
-                <p className="text-xs text-slate-600">We&apos;ve assembled some links to get you started managing products and live WooCommerce orders.</p>
-              </div>
-
-              {/* Status Stat Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-semibold">
-                <div className="bg-white p-5 rounded shadow-sm border border-slate-200 space-y-1">
-                  <span className="text-slate-500 uppercase tracking-wider text-[10px] font-bold">Total Products</span>
-                  <p className="text-3xl font-black text-[#2271b1]">{products.length}</p>
-                  <button onClick={() => setActiveMenu("products-all")} className="text-[#2271b1] hover:underline font-bold">View All Products →</button>
-                </div>
-
-                <div className="bg-white p-5 rounded shadow-sm border border-slate-200 space-y-1">
-                  <span className="text-slate-500 uppercase tracking-wider text-[10px] font-bold">Live Orders</span>
-                  <p className="text-3xl font-black text-emerald-600">{orders.length}</p>
-                  <button onClick={() => setActiveMenu("orders")} className="text-emerald-600 hover:underline font-bold">Manage Customer Orders →</button>
-                </div>
-
-                <div className="bg-white p-5 rounded shadow-sm border border-slate-200 space-y-1">
-                  <span className="text-slate-500 uppercase tracking-wider text-[10px] font-bold">Store Domain</span>
-                  <p className="text-sm font-black text-slate-800">haat.barabdonline.com</p>
-                  <span className="text-emerald-600 font-bold text-[11px]">● Server VM 109 Online</span>
-                </div>
-              </div>
-
-            </div>
           )}
+        </div>
 
-          {/* VIEW B: ALL PRODUCTS TABLE (MATCHING WOOCOMMERCE WORDPRESS DATA TABLE) */}
-          {activeMenu === "products-all" && (
-            <div className="space-y-4">
-              
-              {/* Header Title + Add New Button */}
-              <div className="flex items-center gap-3">
-                <h1 className="text-xl font-bold text-slate-900">Products</h1>
-                <button
-                  onClick={() => { resetForm(); setActiveMenu("products-add"); }}
-                  className="bg-[#2271b1] hover:bg-[#135e96] text-white px-3 py-1 rounded font-bold text-xs transition"
-                >
-                  Add New
+        {/* Overview Analytics Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Total Live Products</span>
+            <p className="text-3xl font-black text-slate-900 mt-1">{products.length}</p>
+            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">✓ Active in Storefront</span>
+          </div>
+
+          <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Product Categories</span>
+            <p className="text-3xl font-black text-amber-600 mt-1">{categories.length}</p>
+            <span className="text-[11px] text-amber-700 font-bold mt-1 inline-block">Teak & Solid Wood</span>
+          </div>
+
+          <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Total Order Volume</span>
+            <p className="text-3xl font-black text-emerald-600 mt-1">৳ {totalRevenue.toLocaleString()}</p>
+            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">BDT Revenue Tracked</span>
+          </div>
+
+          <div className="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
+            <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Backend Engine</span>
+            <p className="text-xl font-black text-slate-900 mt-1.5">Fullstack Next.js & PM2</p>
+            <span className="text-[11px] text-emerald-600 font-bold mt-1 inline-block">● Production Online</span>
+          </div>
+        </div>
+
+        {/* TAB 1: ALL PRODUCTS DATA TABLE */}
+        {activeTab === "products" && (
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="relative w-full sm:w-96">
+                <input
+                  type="text"
+                  placeholder="Search products by title or category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 shadow-sm"
+                />
+                <span className="absolute left-3 top-3 text-slate-400 text-xs">🔍</span>
+              </div>
+            </div>
+
+            <div className="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 font-black text-[10px]">
+                    <tr>
+                      <th className="p-4">Image</th>
+                      <th className="p-4">Product Name</th>
+                      <th className="p-4">Category</th>
+                      <th className="p-4">Price (BDT)</th>
+                      <th className="p-4">Wood Material</th>
+                      <th className="p-4 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 text-slate-700 font-medium">
+                    {filteredProducts.map((p) => (
+                      <tr key={p.id} className="hover:bg-slate-50 transition-colors">
+                        <td className="p-4">
+                          <img src={p.image} alt={p.name} className="w-12 h-12 rounded-xl object-contain bg-slate-50 border border-slate-200 p-1" />
+                        </td>
+                        <td className="p-4 font-black text-slate-900 max-w-xs truncate">{p.name}</td>
+                        <td className="p-4">
+                          <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-800 font-black text-[10px] uppercase">
+                            {p.category || (p.category_names ? p.category_names[0] : 'Solid Segun')}
+                          </span>
+                        </td>
+                        <td className="p-4 font-black text-emerald-600 text-sm">৳ {p.price?.toLocaleString()}</td>
+                        <td className="p-4 text-slate-500 font-medium">{p.wood_type || 'Chittagong Teak'}</td>
+                        <td className="p-4 text-right space-x-2">
+                          <button
+                            onClick={() => startEditProduct(p)}
+                            className="px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-black text-[11px]"
+                          >
+                            ✏️ Edit
+                          </button>
+                          <button
+                            onClick={() => handleDeleteProduct(p.id)}
+                            className="px-3 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 font-black text-[11px]"
+                          >
+                            🗑️ Delete
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: ADD / EDIT PRODUCT FORM */}
+        {activeTab === "add-product" && (
+          <div className="max-w-3xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm mx-auto">
+            <h3 className="text-xl font-black text-slate-900 mb-6">
+              {editingProduct ? `Edit Product Entry (#${editingProduct.id})` : "Publish New Furniture Item"}
+            </h3>
+            
+            <form onSubmit={handleAddProduct} className="space-y-5 text-xs">
+              <div>
+                <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Product Title *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Royal Solid Segun Wood Executive Sofa Set"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Regular Price (BDT) *</label>
+                  <input
+                    type="number"
+                    required
+                    placeholder="e.g. 85000"
+                    value={formData.price}
+                    onChange={(e) => setFormData({...formData, price: e.target.value})}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Original Price (Old Price)</label>
+                  <input
+                    type="number"
+                    placeholder="e.g. 98000"
+                    value={formData.old_price}
+                    onChange={(e) => setFormData({...formData, old_price: e.target.value})}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Category</label>
+                  <select
+                    value={formData.category}
+                    onChange={(e) => {
+                      const catName = e.target.value;
+                      const catSlug = catName.toLowerCase().replace(/\s+/g, '-');
+                      setFormData({...formData, category: catName, category_slug: catSlug});
+                    }}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:border-amber-500 focus:outline-none font-bold"
+                  >
+                    <option value="Bed Room">Bed Room</option>
+                    <option value="Dining">Dining</option>
+                    <option value="Living Room">Living Room</option>
+                    <option value="Almirah & Wardrobe">Almirah & Wardrobe</option>
+                    <option value="Office & School">Office & School</option>
+                    <option value="Door Collection">Door Collection</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Badge</label>
+                  <select
+                    value={formData.badge}
+                    onChange={(e) => setFormData({...formData, badge: e.target.value})}
+                    className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:border-amber-500 focus:outline-none font-bold"
+                  >
+                    <option value="20 Yrs Warranty">20 Yrs Warranty</option>
+                    <option value="New Arrival">New Arrival</option>
+                    <option value="Top Seller">Top Seller</option>
+                    <option value="Featured">Featured</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Image URL</label>
+                <input
+                  type="text"
+                  placeholder="https://haatfurniture.com/wp-content/uploads/..."
+                  value={formData.image}
+                  onChange={(e) => setFormData({...formData, image: e.target.value})}
+                  className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Wood Type & Guarantee</label>
+                <input
+                  type="text"
+                  value={formData.wood_type}
+                  onChange={(e) => setFormData({...formData, wood_type: e.target.value})}
+                  className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 focus:border-amber-500 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-black uppercase text-[10px] tracking-wider mb-1.5">Product Description</label>
+                <textarea
+                  rows={3}
+                  placeholder="Describe the furniture craftsmanship, wood finish, and dimensions..."
+                  value={formData.description}
+                  onChange={(e) => setFormData({...formData, description: e.target.value})}
+                  className="w-full px-4 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
+                ></textarea>
+              </div>
+
+              <div className="pt-4 flex gap-3">
+                <button type="submit" className="flex-1 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-black uppercase tracking-wider shadow-lg">
+                  {editingProduct ? 'Save Product Updates' : 'Publish Product to Store'}
+                </button>
+                <button type="button" onClick={() => { resetForm(); setActiveTab("products"); }} className="px-6 py-4 rounded-2xl bg-slate-100 text-slate-700 font-extrabold">
+                  Cancel
                 </button>
               </div>
+            </form>
+          </div>
+        )}
 
-              {/* Status Filter Links */}
-              <div className="text-xs font-medium text-slate-600 flex items-center gap-2 border-b border-slate-200 pb-2">
-                <span className="font-bold text-slate-900">All ({products.length})</span>
-                <span>|</span>
-                <span className="text-[#2271b1]">Published ({products.length})</span>
-                <span>|</span>
-                <span className="text-slate-400">Trash (0)</span>
-              </div>
+        {/* TAB 3: LIVE ORDERS TRACKING TABLE */}
+        {activeTab === "orders" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-black text-slate-900">Recent Customer Orders</h3>
+              <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-black uppercase">
+                WhatsApp Order Dispatch Active
+              </span>
+            </div>
 
-              {/* Toolbar Search & Filter */}
-              <div className="flex flex-wrap items-center justify-between gap-3 text-xs bg-white p-3 rounded shadow-sm border border-slate-200">
-                <div className="flex items-center gap-2">
-                  <select 
-                    value={selectedCategoryFilter} 
-                    onChange={(e) => setSelectedCategoryFilter(e.target.value)}
-                    className="border border-slate-300 rounded p-1.5 bg-white text-slate-700 focus:outline-none"
-                  >
-                    <option value="all">Select a category</option>
-                    <option value="home-furniture">Home Furniture</option>
-                    <option value="bed-room">Bed Room</option>
-                    <option value="bed">Bed</option>
-                    <option value="almirah">Almirah</option>
-                    <option value="dressing-table">Dressing Table</option>
-                    <option value="dinning-set">Dinning Set</option>
-                    <option value="sofa">Sofa</option>
-                    <option value="office-furniture">Office Furniture</option>
-                    <option value="door">Door</option>
-                  </select>
-
-                  <button className="bg-slate-200 hover:bg-slate-300 px-3 py-1.5 rounded font-bold text-slate-700">
-                    Filter
-                  </button>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <input
-                    type="text"
-                    placeholder="Search Products..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="border border-slate-300 rounded p-1.5 text-xs focus:outline-none focus:border-[#2271b1]"
-                  />
-                  <button className="bg-[#2271b1] text-white px-3 py-1.5 rounded font-bold">
-                    Search
-                  </button>
-                </div>
-              </div>
-
-              {/* Data Table */}
-              <div className="bg-white rounded shadow-sm border border-slate-200 overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-[#f6f7f7] text-slate-700 font-bold border-b border-slate-200">
-                      <tr>
-                        <th className="p-3 w-10 text-center"><input type="checkbox" /></th>
-                        <th className="p-3 w-16">Image</th>
-                        <th className="p-3">Name</th>
-                        <th className="p-3">SKU</th>
-                        <th className="p-3">Stock</th>
-                        <th className="p-3">Price</th>
-                        <th className="p-3">Categories</th>
-                        <th className="p-3 text-right">Actions</th>
+            <div className="rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-slate-50 text-slate-600 uppercase tracking-wider border-b border-slate-200 font-black text-[10px]">
+                    <tr>
+                      <th className="p-4">Order ID</th>
+                      <th className="p-4">Customer</th>
+                      <th className="p-4">Ordered Items</th>
+                      <th className="p-4">Total Amount</th>
+                      <th className="p-4">Date</th>
+                      <th className="p-4">Status</th>
+                      <th className="p-4 text-right">Update Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 text-slate-700 font-medium">
+                    {orders.map((o) => (
+                      <tr key={o.id} className="hover:bg-slate-50 transition-colors">
+                        <td className="p-4 font-mono font-black text-slate-900">{o.id}</td>
+                        <td className="p-4">
+                          <div className="font-black text-slate-900">{o.customer}</div>
+                          <div className="text-[10px] text-slate-500 font-bold">{o.phone} • {o.address}</div>
+                        </td>
+                        <td className="p-4 max-w-xs font-bold text-slate-800">{o.items}</td>
+                        <td className="p-4 font-black text-emerald-600 text-sm">৳ {o.total.toLocaleString()}</td>
+                        <td className="p-4 text-slate-400 font-mono text-[11px]">{o.date}</td>
+                        <td className="p-4">
+                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase ${
+                            o.status === 'Delivered' ? 'bg-emerald-100 text-emerald-800' :
+                            o.status === 'Processing' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-800'
+                          }`}>
+                            {o.status}
+                          </span>
+                        </td>
+                        <td className="p-4 text-right space-x-1">
+                          <button
+                            onClick={() => handleUpdateOrderStatus(o.id, "Processing")}
+                            className="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 font-black text-[10px] hover:bg-amber-100"
+                          >
+                            Processing
+                          </button>
+                          <button
+                            onClick={() => handleUpdateOrderStatus(o.id, "Delivered")}
+                            className="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 font-black text-[10px] hover:bg-emerald-100"
+                          >
+                            Delivered
+                          </button>
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 font-medium">
-                      {filteredProducts.map((p) => (
-                        <tr key={p.id} className="hover:bg-slate-50 transition">
-                          <td className="p-3 text-center"><input type="checkbox" /></td>
-                          <td className="p-3">
-                            <img src={p.image} alt={p.name} className="w-10 h-10 object-contain border border-slate-200 p-0.5 rounded bg-white" />
-                          </td>
-                          <td className="p-3">
-                            <div className="font-bold text-[#2271b1] hover:underline cursor-pointer" onClick={() => startEditProduct(p)}>
-                              {p.name}
-                            </div>
-                            <div className="text-[10px] text-slate-400 space-x-2 pt-0.5">
-                              <button onClick={() => startEditProduct(p)} className="text-[#2271b1] hover:underline">Edit</button>
-                              <span>|</span>
-                              <button onClick={() => handleDeleteProduct(p.id)} className="text-red-600 hover:underline">Trash</button>
-                              <span>|</span>
-                              <Link href={`/product/${p.id}`} className="text-[#2271b1] hover:underline" target="_blank">View</Link>
-                            </div>
-                          </td>
-                          <td className="p-3 font-mono text-slate-500">HAAT-{p.id}</td>
-                          <td className="p-3 text-emerald-600 font-bold">In stock</td>
-                          <td className="p-3 font-bold text-slate-900">৳{p.price.toLocaleString()}</td>
-                          <td className="p-3 text-slate-600 font-semibold">{p.categories ? p.categories.join(', ') : 'furniture'}</td>
-                          <td className="p-3 text-right space-x-1">
-                            <button onClick={() => startEditProduct(p)} className="bg-amber-100 hover:bg-amber-200 text-amber-900 px-2.5 py-1 rounded font-bold text-[11px]">
-                              Edit
-                            </button>
-                            <button onClick={() => handleDeleteProduct(p.id)} className="bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded font-bold text-[11px]">
-                              Delete
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-            </div>
-          )}
-
-          {/* VIEW C: ADD / EDIT PRODUCT FORM */}
-          {activeMenu === "products-add" && (
-            <div className="space-y-4 max-w-4xl">
-              <h1 className="text-xl font-bold text-slate-900">
-                {editingProduct ? `Edit Product: ${editingProduct.name}` : "Add New Product"}
-              </h1>
-
-              <form onSubmit={handleAddOrUpdateProduct} className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-xs">
-                
-                {/* Left Main Form Box */}
-                <div className="lg:col-span-8 space-y-4">
-                  <div className="bg-white p-5 rounded shadow-sm border border-slate-200 space-y-4">
-                    <div>
-                      <label className="block font-bold text-slate-700 mb-1">Product Title *</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Enter product title..."
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full p-2.5 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-semibold text-slate-900"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block font-bold text-slate-700 mb-1">Product Description</label>
-                      <textarea
-                        rows={6}
-                        placeholder="Craftsmanship details, dimensions, 20-year warranty details..."
-                        value={formData.description}
-                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                        className="w-full p-2.5 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-medium text-slate-800"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Pricing Box */}
-                  <div className="bg-white p-5 rounded shadow-sm border border-slate-200 space-y-4">
-                    <h3 className="font-bold text-slate-900 border-b border-slate-100 pb-2">Product Data — General</h3>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block font-bold text-slate-700 mb-1">Regular Price (৳ BDT) *</label>
-                        <input
-                          type="number"
-                          required
-                          placeholder="e.g. 45000"
-                          value={formData.price}
-                          onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                          className="w-full p-2 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-bold text-slate-900"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block font-bold text-slate-700 mb-1">Sale Price (৳ BDT)</label>
-                        <input
-                          type="number"
-                          placeholder="e.g. 39000"
-                          value={formData.old_price}
-                          onChange={(e) => setFormData({ ...formData, old_price: e.target.value })}
-                          className="w-full p-2 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none font-medium"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Meta Boxes */}
-                <div className="lg:col-span-4 space-y-4">
-                  
-                  {/* Publish Meta Box */}
-                  <div className="bg-white p-4 rounded shadow-sm border border-slate-200 space-y-3">
-                    <h3 className="font-bold text-slate-900 border-b border-slate-100 pb-2">Publish</h3>
-                    <p className="text-slate-500">Status: <strong className="text-slate-800">Published</strong></p>
-                    <p className="text-slate-500">Visibility: <strong className="text-slate-800">Public</strong></p>
-                    
-                    <button
-                      type="submit"
-                      className="w-full bg-[#2271b1] hover:bg-[#135e96] text-white py-2.5 rounded font-bold text-xs shadow transition"
-                    >
-                      {editingProduct ? 'Update Product' : 'Publish Product'}
-                    </button>
-                  </div>
-
-                  {/* Category Meta Box */}
-                  <div className="bg-white p-4 rounded shadow-sm border border-slate-200 space-y-3">
-                    <h3 className="font-bold text-slate-900 border-b border-slate-100 pb-2">Product Categories</h3>
-                    
-                    <select
-                      value={formData.category}
-                      onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                      className="w-full p-2 border border-slate-300 rounded bg-white text-xs font-bold text-slate-800"
-                    >
-                      <option value="home-furniture">Home Furniture</option>
-                      <option value="bed-room">Bed Room</option>
-                      <option value="bed">Bed</option>
-                      <option value="almirah">Almirah</option>
-                      <option value="dressing-table">Dressing Table</option>
-                      <option value="dinning-set">Dinning Set</option>
-                      <option value="sofa">Sofa</option>
-                      <option value="office-furniture">Office Furniture</option>
-                      <option value="door">Door</option>
-                    </select>
-                  </div>
-
-                  {/* Image Meta Box */}
-                  <div className="bg-white p-4 rounded shadow-sm border border-slate-200 space-y-3">
-                    <h3 className="font-bold text-slate-900 border-b border-slate-100 pb-2">Product Image</h3>
-                    {formData.image && (
-                      <img src={formData.image} alt="Preview" className="w-full h-32 object-contain border border-slate-200 rounded p-1 bg-slate-50" />
-                    )}
-                    <input
-                      type="text"
-                      placeholder="Image URL (https://haatfurniture.com/wp-content/...)"
-                      value={formData.image}
-                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                      className="w-full p-2 border border-slate-300 rounded text-xs focus:border-[#2271b1] focus:outline-none"
-                    />
-                  </div>
-
-                </div>
-
-              </form>
-            </div>
-          )}
-
-          {/* VIEW D: WOOCOMMERCE ORDERS MANAGEMENT */}
-          {activeMenu === "orders" && (
-            <div className="space-y-4">
-              <h1 className="text-xl font-bold text-slate-900">WooCommerce Orders</h1>
-
-              <div className="bg-white rounded shadow-sm border border-slate-200 overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-[#f6f7f7] text-slate-700 font-bold border-b border-slate-200">
-                      <tr>
-                        <th className="p-3">Order</th>
-                        <th className="p-3">Date</th>
-                        <th className="p-3">Status</th>
-                        <th className="p-3">Billing & Address</th>
-                        <th className="p-3">Total</th>
-                        <th className="p-3 text-right">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 font-medium">
-                      {orders.map((o) => (
-                        <tr key={o.id} className="hover:bg-slate-50 transition">
-                          <td className="p-3">
-                            <div className="font-bold text-[#2271b1]">#{o.id} {o.customer}</div>
-                            <div className="text-[10px] text-slate-400">{o.items}</div>
-                          </td>
-                          <td className="p-3 text-slate-500">{o.date}</td>
-                          <td className="p-3">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${o.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}`}>
-                              {o.status}
-                            </span>
-                          </td>
-                          <td className="p-3">
-                            <div className="font-bold text-slate-800">{o.phone}</div>
-                            <div className="text-[10px] text-slate-500">{o.address}</div>
-                          </td>
-                          <td className="p-3 font-bold text-slate-900">৳{o.total.toLocaleString()} <span className="text-[10px] text-slate-400 font-normal">via {o.paymentMethod}</span></td>
-                          <td className="p-3 text-right space-x-1">
-                            <button onClick={() => handleUpdateOrderStatus(o.id, "Processing")} className="bg-amber-100 hover:bg-amber-200 text-amber-900 px-2 py-1 rounded font-bold text-[10px]">
-                              Processing
-                            </button>
-                            <button onClick={() => handleUpdateOrderStatus(o.id, "Completed")} className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-2 py-1 rounded font-bold text-[10px]">
-                              Completed
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* VIEW E: CATEGORIES */}
-          {activeMenu === "categories" && (
-            <div className="space-y-4">
-              <h1 className="text-xl font-bold text-slate-900">Product Categories</h1>
-              <div className="bg-white p-5 rounded shadow-sm border border-slate-200 text-xs space-y-2">
-                <p><strong className="text-slate-800">Home Furniture:</strong> Bed Room, Dinning Room, Living Room, Kitchen</p>
-                <p><strong className="text-slate-800">Office Furniture:</strong> Work Station, Executive Desk, Chairs</p>
-                <p><strong className="text-slate-800">Doors:</strong> Flash Door, Solid Teak Carved Entrance Gate</p>
+        {/* TAB 4: CATEGORIES */}
+        {activeTab === "categories" && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {categories.map((cat) => (
+              <div key={cat.id || cat.slug} className="p-6 rounded-3xl bg-white border border-slate-200 space-y-3 shadow-sm">
+                <div className="text-4xl">{cat.icon || '🪑'}</div>
+                <h4 className="text-lg font-black text-slate-900">{cat.name}</h4>
+                <p className="text-xs text-amber-700 font-black">{cat.count || 'Active Collection'}</p>
+                <span className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-mono border border-slate-200">
+                  slug: {cat.slug}
+                </span>
               </div>
-            </div>
-          )}
+            ))}
+          </div>
+        )}
 
-          {/* VIEW F: SETTINGS */}
-          {activeMenu === "settings" && (
-            <div className="space-y-4 max-w-2xl bg-white p-6 rounded shadow-sm border border-slate-200 text-xs">
-              <h1 className="text-xl font-bold text-slate-900 mb-4">Store Settings</h1>
-              <p><strong className="text-slate-800">Store Name:</strong> HAAT Furniture Limited</p>
-              <p><strong className="text-slate-800">Store Domain:</strong> https://haat.barabdonline.com</p>
-              <p><strong className="text-slate-800">Hotline Phone:</strong> +8809617333990</p>
-              <p><strong className="text-slate-800">Showroom Addresses:</strong> Badda & Mirpur, Dhaka</p>
-            </div>
-          )}
+      </main>
 
-        </main>
-
-      </div>
     </div>
   );
 }
