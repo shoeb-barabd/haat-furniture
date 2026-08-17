@@ -1286,119 +1286,130 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right 6 ANIMATED LUXURY PASTEL CARDS */}
-            <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-5">
+            {/* Right 6 ANIMATED HORIZONTAL RIGHT-TO-LEFT SCROLL CARDS */}
+            <div className="lg:col-span-7 relative overflow-hidden">
               
-              {[
-                {
-                  name: "Purley Teak King Bed",
-                  category: "Bed Room",
-                  price: 23000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#fffcf7]"
-                },
-                {
-                  name: "Wheel Solid Teak Bed",
-                  category: "Master Bedroom",
-                  price: 24500,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#f5f9f6]"
-                },
-                {
-                  name: "Pentagon Teak Bed",
-                  category: "Royal Collection",
-                  price: 26000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#f8f5fb]"
-                },
-                {
-                  name: "Galaxy Teak Bed",
-                  category: "Modern Teak",
-                  price: 22000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#faf5f6]"
-                },
-                {
-                  name: "Segun Master Bedroom Suite",
-                  category: "Full Bedroom Set",
-                  price: 85000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
-                  query: "suite",
-                  cardBg: "bg-[#f3f7f9]"
-                },
-                {
-                  name: "Executive School & Office Bench",
-                  category: "Office & School",
-                  price: 14500,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
-                  query: "bench",
-                  cardBg: "bg-[#f7f8f3]"
-                }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => handleSelectSubCategory(item.name, item.query)}
-                  style={{ animationDelay: isCreationsVisible ? `${idx * 0.25}s` : '0s' }}
-                  className={`group relative h-64 sm:h-68 rounded-3xl border border-slate-200/90 ${item.cardBg} p-4 flex flex-col justify-between cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-300 ease-out ${isCreationsVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
-                >
-                  {/* Floating Top Badge */}
-                  <div className="flex items-center justify-between z-10">
-                    <span className="px-2.5 py-1 rounded-full bg-[#0b0c10]/10 text-slate-800 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
-                      {item.category}
-                    </span>
-                    <span className="text-[10px] font-bold text-amber-700 bg-amber-100/60 px-2 py-0.5 rounded-md">
-                      20 Yrs
-                    </span>
-                  </div>
+              {/* Continuous Right-to-Left Motion Container */}
+              <div 
+                ref={scrollRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeaveSlider}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMoveSlider}
+                className="flex items-center gap-5 overflow-x-auto no-scrollbar py-4 cursor-grab active:cursor-grabbing scroll-smooth"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {[
+                  {
+                    name: "Purley Teak King Bed",
+                    category: "Bed Room",
+                    price: "৳ 23,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Wheel Solid Teak Bed",
+                    category: "Master Bedroom",
+                    price: "৳ 24,500",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Pentagon Teak Bed",
+                    category: "Royal Collection",
+                    price: "৳ 26,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Galaxy Teak Bed",
+                    category: "Modern Teak",
+                    price: "৳ 22,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Segun Master Bedroom",
+                    category: "Full Bedroom Set",
+                    price: "৳ 85,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/HFSB-230403.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Executive School Bench",
+                    category: "Office & School",
+                    price: "৳ 14,500",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
+                    badge: "20 Yrs"
+                  },
+                  // Duplicate for continuous infinite scroll feel
+                  {
+                    name: "Beijing Dining Set",
+                    category: "Royal Dining",
+                    price: "৳ 40,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Abalone Teak Sofa",
+                    category: "Living Room",
+                    price: "৳ 50,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+                    badge: "20 Yrs"
+                  }
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-3xl p-5 border border-slate-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group space-y-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-black uppercase tracking-wider">
+                        {item.category}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-black">
+                        {item.badge}
+                      </span>
+                    </div>
 
-                  {/* Image Container with Hover Quick Action Buttons */}
-                  <div className="w-full h-36 flex items-center justify-center overflow-hidden my-auto p-1 relative rounded-2xl bg-white/70 shadow-inner">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-110 transition-transform duration-500 ease-out"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop&q=80";
-                      }}
-                    />
+                    <div className="w-full h-44 rounded-2xl bg-slate-50 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-500">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="max-h-full max-w-full object-contain filter drop-shadow-md"
+                      />
+                    </div>
 
-                    {/* Quick Action Overlay on Hover */}
-                    <div className="absolute inset-0 bg-[#0b0c10]/30 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-1.5 p-2">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); addToCart(item); }}
-                        className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-extrabold text-[10px] shadow-md transition-all hover:scale-105"
-                      >
-                        ⚡ Order
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setQuickViewProduct(item); }}
-                        className="p-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-900 font-bold text-[10px] shadow-md transition-all hover:scale-105"
-                        title="Quick View"
-                      >
-                        🔍 View
-                      </button>
+                    <div className="pt-1 flex items-center justify-between border-t border-slate-100">
+                      <h4 className="text-xs font-black text-slate-900 group-hover:text-amber-600 transition truncate max-w-[140px]">
+                        {item.name}
+                      </h4>
+                      <span className="text-xs font-black text-emerald-600">
+                        {item.price}
+                      </span>
                     </div>
                   </div>
+                ))}
+              </div>
 
-                  {/* Bottom Info Bar */}
-                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between z-10">
-                    <span className="text-xs font-black text-slate-900 truncate group-hover:text-amber-700 transition-colors">
-                      {item.name}
-                    </span>
-                    <span className="text-xs font-black text-emerald-700 flex-shrink-0 ml-1">
-                      ৳ {item.price?.toLocaleString()}
-                    </span>
-                  </div>
+              {/* Left/Right Scroll Controls */}
+              <div className="flex items-center justify-end gap-2 pt-3">
+                <button
+                  type="button"
+                  onClick={() => scrollByAmount(-300)}
+                  className="w-9 h-9 rounded-full bg-slate-900 text-white font-black text-sm flex items-center justify-center hover:bg-amber-600 shadow transition"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollByAmount(300)}
+                  className="w-9 h-9 rounded-full bg-slate-900 text-white font-black text-sm flex items-center justify-center hover:bg-amber-600 shadow transition"
+                >
+                  →
+                </button>
+              </div>
 
-                </div>
-              ))}
             </div>
-
           </div>
         </div>
       </section>
