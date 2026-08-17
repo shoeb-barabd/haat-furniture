@@ -327,62 +327,56 @@ export default function Home() {
   // Navigation Menu matching HATIL layout
   const navMenus = [
     {
-      name: "Living Room",
-      slug: "living-room",
+      name: "HOME FURNITURE",
+      slug: "home-furniture",
+      href: "/product-category/home-furniture",
       subCategories: [
-        { name: "Sofa Set", query: "sofa" },
-        { name: "Center Table", query: "table" },
-        { name: "TV Cabinet", query: "cabinet" }
+        { name: "Bed Room (Bed, Almirah, Dressing Table, Wardrobe)", href: "/product-category/home-furniture/bed-room" },
+        { name: "Dinning Room (Dinning Set, Showcase)", href: "/product-category/home-furniture/dinning-room" },
+        { name: "Kitchen (Mini Cabinet, Oven Stand)", href: "/product-category/home-furniture/kitchen" },
+        { name: "Living room (Sofa, Center Table, Shoe Rack)", href: "/product-category/home-furniture/living-room" }
       ]
     },
     {
-      name: "Bedroom",
-      slug: "bed-room",
-      subCategories: [
-        { name: "Solid Wood Bed", query: "bed" },
-        { name: "Dressing Table", query: "dresser" },
-        { name: "Wardrobe", query: "wardrobe" }
-      ]
-    },
-    {
-      name: "Dining",
-      slug: "dinning-room",
-      subCategories: [
-        { name: "6 Chair Dining Table", query: "dining" },
-        { name: "4 Chair Dining Table", query: "dining" },
-        { name: "Dinner Wagon", query: "wagon" }
-      ]
-    },
-    {
-      name: "Kitchen",
-      slug: "kitchen",
-      subCategories: [
-        { name: "Kitchen Cabinet", query: "kitchen" }
-      ]
-    },
-    {
-      name: "Door",
-      slug: "door-collection",
-      subCategories: [
-        { name: "Wooden Door", query: "door" },
-        { name: "Segun Door", query: "segun" }
-      ]
-    },
-    {
-      name: "Office",
+      name: "OFFICE FURNITURE",
       slug: "office-furniture",
+      href: "/product-category/office-furniture",
       subCategories: [
-        { name: "Executive Desk", query: "desk" },
-        { name: "Revolving Chair", query: "chair" }
+        { name: "Work Station", href: "/product-category/office-furniture/work-station" },
+        { name: "Chair", href: "/product-category/office-furniture/chair" },
+        { name: "Office Sofa", href: "/product-category/office-furniture/office-sofa" },
+        { name: "Table", href: "/product-category/office-furniture/table" }
       ]
     },
     {
-      name: "More",
-      slug: "miscellaneous",
+      name: "MATTRESS",
+      slug: "mattress",
+      href: "/product-category/mattress",
+      subCategories: []
+    },
+    {
+      name: "DOOR",
+      slug: "door",
+      href: "/product-category/door",
       subCategories: [
-        { name: "Orthopedic Mattress", query: "mattress" },
-        { name: "Interior Accessories", query: "accessories" }
+        { name: "Flash Door", href: "/product-category/door/flash-door" },
+        { name: "Frame", href: "/product-category/door/frame" },
+        { name: "Wooden Door", href: "/product-category/door/wooden-door" }
       ]
+    },
+    {
+      name: "MISCELLANEOUS",
+      slug: "miscellaneous",
+      href: "/product-category/miscellaneous",
+      subCategories: [
+        { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
+        { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
+      ]
+    },
+    {
+      name: "ABOUT US",
+      href: "/about-us",
+      subCategories: []
     }
   ];
 
