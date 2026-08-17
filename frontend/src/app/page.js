@@ -414,6 +414,17 @@ export default function Home() {
       ]
     },
     {
+      name: "MISCELLANEOUS",
+      slug: "miscellaneous",
+      href: "/product-category/miscellaneous",
+      megaMenu: false,
+      items: [
+        { name: "Shoe Rack", href: "/product-category/miscellaneous/shoe-rack" },
+        { name: "Corner Shelf", href: "/product-category/miscellaneous/corner-shelf" },
+        { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
+      ]
+    },
+    {
       name: "ABOUT US",
       href: "/about-us"
     }
