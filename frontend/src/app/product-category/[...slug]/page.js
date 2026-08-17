@@ -210,7 +210,7 @@ export default function CategoryPage() {
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-7 text-xs font-black tracking-wider uppercase">
+          <nav className="hidden xl:flex items-center gap-4 text-xs font-black tracking-wider uppercase">
             {CATEGORIES_TREE.map((rootCat) => (
               <div key={rootCat.slug} className="group relative py-6 cursor-pointer">
                 <Link 
@@ -245,35 +245,35 @@ export default function CategoryPage() {
             </Link>
           </nav>
 
-          {/* Action Tools */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <div className="relative hidden md:block w-48 lg:w-56">
+          {/* Action Tools (No Right Overflow) */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="relative hidden lg:block w-36 xl:w-44">
               <input
                 type="text"
-                placeholder="Search Chittagong teak..."
+                placeholder="Search teak..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-7 py-2.5 rounded-full bg-slate-100/90 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-600 focus:bg-white transition-all font-medium"
+                className="w-full pl-7 pr-6 py-2 rounded-full bg-slate-100/90 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-600 focus:bg-white transition-all font-medium"
               />
-              <span className="absolute left-3 top-3 text-slate-400 text-xs">🔍</span>
+              <span className="absolute left-2.5 top-2.5 text-slate-400 text-xs">🔍</span>
             </div>
 
             <Link
               href="/checkout"
-              className="px-4 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-black transition-all shadow-md flex items-center gap-2"
+              className="px-3.5 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-black transition-all shadow-md flex items-center gap-1.5 whitespace-nowrap"
             >
               <span>🛒</span>
-              <span>Cart / Checkout</span>
+              <span className="hidden sm:inline">Cart / Checkout</span>
             </Link>
 
             <a
               href="https://wa.me/8801957909186?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20HAAT%20Furniture%20products."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black shadow-md transition-all flex items-center gap-1.5 uppercase tracking-wider"
+              className="px-3 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black shadow-md transition-all flex items-center gap-1 uppercase tracking-wider whitespace-nowrap"
             >
               <span>💬</span>
-              <span className="hidden sm:inline">WhatsApp</span>
+              <span>WhatsApp</span>
             </a>
           </div>
 
