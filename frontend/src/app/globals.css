@@ -93,3 +93,23 @@ body {
 .animate-float-smooth {
   animation: floatSmooth 4s ease-in-out infinite;
 }
+
+/* Pure CSS 60fps Continuous Right-to-Left Marquee Slider */
+@keyframes marqueeRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marqueeRightToLeft 30s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
