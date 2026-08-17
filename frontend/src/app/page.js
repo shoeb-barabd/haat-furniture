@@ -759,11 +759,11 @@ export default function Home() {
   const currentCenterObj = filteredLatestItems[centerActiveIndex % filteredLatestItems.length] || filteredLatestItems[0] || latestCollectionItems[0];
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans antialiased selection:bg-slate-900 selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-800 font-sans antialiased selection:bg-[#0b0c10] selection:text-white relative overflow-x-hidden">
       
       {/* Toast Alert */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-bounce font-semibold text-sm">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0b0c10] text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-bounce font-semibold text-sm">
           <span className="text-lg">✨</span>
           <span>{toastMessage}</span>
         </div>
@@ -987,8 +987,8 @@ export default function Home() {
         
         {/* Decorative Hanging Pendant Light */}
         <div className="absolute top-0 left-1/3 z-20 pointer-events-none hidden sm:block">
-          <div className="w-0.5 h-16 bg-slate-900 mx-auto"></div>
-          <div className="w-16 h-10 bg-slate-900 rounded-t-full shadow-2xl border-b-2 border-amber-400"></div>
+          <div className="w-0.5 h-16 bg-[#0b0c10] mx-auto"></div>
+          <div className="w-16 h-10 bg-[#0b0c10] rounded-t-full shadow-2xl border-b-2 border-amber-400"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -996,7 +996,7 @@ export default function Home() {
             
             {/* Left Headline */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-wider shadow-md">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-wider shadow-md">
                 ✨ {categoryShowcaseItems[activeCategoryIndex].colorTag}
               </span>
 
@@ -1022,7 +1022,7 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-8">
               
               {/* Main Display Box */}
-              <div className="w-full h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-white/40 relative group bg-slate-900/10">
+              <div className="w-full h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-white/40 relative group bg-[#0b0c10]/10">
                 <img
                   key={activeCategoryIndex}
                   src={categoryShowcaseItems[activeCategoryIndex].image}
@@ -1080,7 +1080,7 @@ export default function Home() {
           {/* Header & Category Selection Tabs */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="space-y-3">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-md">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-widest shadow-md">
                 ✨ Featured: {currentCenterObj.name}
               </span>
 
@@ -1105,7 +1105,7 @@ export default function Home() {
                     onClick={() => setActiveLatestTab(tab.slug)}
                     className={`px-4 py-2 rounded-full text-xs font-black transition-all hover:scale-105 shadow-sm ${
                       activeLatestTab === tab.slug
-                        ? 'bg-slate-900 text-white shadow-md ring-2 ring-slate-900'
+                        ? 'bg-[#0b0c10] text-white shadow-md ring-2 ring-slate-900'
                         : 'bg-white/80 text-slate-700 hover:bg-white border border-slate-200'
                     }`}
                   >
@@ -1119,14 +1119,14 @@ export default function Home() {
             <div className="flex items-center gap-3 flex-shrink-0">
               <button
                 onClick={() => scrollByAmount(-340)}
-                className="w-12 h-12 rounded-2xl bg-white hover:bg-slate-900 hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
+                className="w-12 h-12 rounded-2xl bg-white hover:bg-[#0b0c10] hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
                 title="Scroll Left"
               >
                 ‹
               </button>
               <button
                 onClick={() => scrollByAmount(340)}
-                className="w-12 h-12 rounded-2xl bg-white hover:bg-slate-900 hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
+                className="w-12 h-12 rounded-2xl bg-white hover:bg-[#0b0c10] hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
                 title="Scroll Right"
               >
                 ›
@@ -1184,7 +1184,7 @@ export default function Home() {
                   >
                     {/* Category & Badge */}
                     <div className="flex items-center justify-between text-xs w-full pointer-events-none">
-                      <span className={`px-3 py-1 rounded-full font-black uppercase text-[10px] tracking-wider transition-colors duration-300 ${isCenterFocused ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                      <span className={`px-3 py-1 rounded-full font-black uppercase text-[10px] tracking-wider transition-colors duration-300 ${isCenterFocused ? 'bg-[#0b0c10] text-white' : 'bg-slate-100 text-slate-700'}`}>
                         {item.category}
                       </span>
                       {isCenterFocused && (
@@ -1260,7 +1260,7 @@ export default function Home() {
             
             {/* Left Headline & Action Box */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-wider shadow-md">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-wider shadow-md">
                 ✨ Handcrafted 100% Solid Segun
               </span>
 
@@ -1278,7 +1278,7 @@ export default function Home() {
               <div className="pt-2 flex items-center gap-4">
                 <a
                   href="#products"
-                  className="px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-amber-600 text-white font-black text-xs transition-all shadow-xl shadow-slate-900/10 hover:scale-105 flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-2xl bg-[#0b0c10] hover:bg-amber-600 text-white font-black text-xs transition-all shadow-xl shadow-slate-900/10 hover:scale-105 flex items-center gap-2"
                 >
                   <span>Explore All Creations</span>
                   <span>→</span>
@@ -1347,7 +1347,7 @@ export default function Home() {
                 >
                   {/* Floating Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-2.5 py-1 rounded-full bg-slate-900/10 text-slate-800 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-2.5 py-1 rounded-full bg-[#0b0c10]/10 text-slate-800 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       {item.category}
                     </span>
                     <span className="text-[10px] font-bold text-amber-700 bg-amber-100/60 px-2 py-0.5 rounded-md">
@@ -1368,7 +1368,7 @@ export default function Home() {
                     />
 
                     {/* Quick Action Overlay on Hover */}
-                    <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-1.5 p-2">
+                    <div className="absolute inset-0 bg-[#0b0c10]/30 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-1.5 p-2">
                       <button
                         onClick={(e) => { e.stopPropagation(); addToCart(item); }}
                         className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-extrabold text-[10px] shadow-md transition-all hover:scale-105"
@@ -1412,7 +1412,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Handcrafted Dining Sets
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1432,14 +1432,14 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(diningRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(diningRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1489,7 +1489,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
@@ -1510,7 +1510,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1557,7 +1557,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1567,7 +1567,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Living Luxury
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1587,14 +1587,14 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(livingRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(livingRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1644,7 +1644,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
@@ -1665,7 +1665,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1712,7 +1712,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1722,7 +1722,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Master Bedroom
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1742,14 +1742,14 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(bedroomRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(bedroomRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1813,7 +1813,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
@@ -1834,7 +1834,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1881,7 +1881,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1891,7 +1891,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Commercial Grade
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1911,14 +1911,14 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(officeRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(officeRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1968,7 +1968,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
@@ -1989,7 +1989,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -2036,7 +2036,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
           </div>
@@ -2069,7 +2069,7 @@ export default function Home() {
 
             {/* Subtle Top Badge to indicate Product Name cleanly */}
             <div className="absolute top-6 left-6 z-10">
-              <span className="px-4 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-black tracking-wide shadow-md">
+              <span className="px-4 py-1.5 rounded-full bg-[#0b0c10]/80 backdrop-blur-md text-white text-xs font-black tracking-wide shadow-md">
                 ✨ {flagshipItems[flagshipSlide].name}
               </span>
             </div>
@@ -2080,7 +2080,7 @@ export default function Home() {
                 e.stopPropagation();
                 setFlagshipSlide((prev) => (prev - 1 + flagshipItems.length) % flagshipItems.length);
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#0b0c10]/80 hover:bg-[#0b0c10] text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
               title="Previous Image"
             >
               ‹
@@ -2091,7 +2091,7 @@ export default function Home() {
                 e.stopPropagation();
                 setFlagshipSlide((prev) => (prev + 1) % flagshipItems.length);
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#0b0c10]/80 hover:bg-[#0b0c10] text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
               title="Next Image"
             >
               ›
@@ -2103,7 +2103,7 @@ export default function Home() {
           <div className="flex items-center justify-center pt-2">
             <Link
               href="/products"
-              className="px-8 py-4 rounded-full bg-slate-900 hover:bg-amber-600 text-white font-black text-xs uppercase tracking-widest shadow-2xl shadow-slate-900/30 border border-slate-700/60 transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
+              className="px-8 py-4 rounded-full bg-[#0b0c10] hover:bg-amber-600 text-white font-black text-xs uppercase tracking-widest shadow-2xl shadow-slate-900/30 border border-slate-700/60 transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
             >
               <span>View All Products (সব প্রোডাক্ট দেখুন)</span>
               <span className="text-sm group-hover:translate-x-1 transition-transform">→</span>
@@ -2120,7 +2120,7 @@ export default function Home() {
 
       {/* QUICK VIEW MODAL WITH MAGNIFIER GLASS ZOOM */}
       {quickViewProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md animate-entrance">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b0c10]/70 backdrop-blur-md animate-entrance">
           <div className="relative w-full max-w-4xl rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl overflow-hidden text-slate-800">
             <button
               onClick={() => setQuickViewProduct(null)}
@@ -2226,7 +2226,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/product/${quickViewProduct.id || 1}`}
-                      className="px-4 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
+                      className="px-4 py-3 rounded-2xl bg-[#0b0c10] hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
                     >
                       🔗 Full Page Details
                     </Link>
@@ -2267,7 +2267,7 @@ export default function Home() {
 
       {/* Shopping Cart Drawer */}
       {isCartOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/50 backdrop-blur-sm animate-entrance">
+        <div className="fixed inset-0 z-50 flex justify-end bg-[#0b0c10]/50 backdrop-blur-sm animate-entrance">
           <div className="w-full max-w-md bg-white border-l border-slate-200 h-full flex flex-col justify-between p-6 shadow-2xl">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
@@ -2386,7 +2386,7 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Comprehensive Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-16">
+      <footer className="bg-[#0b0c10] text-slate-400 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
             <div className="space-y-4">

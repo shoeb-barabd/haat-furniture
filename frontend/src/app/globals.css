@@ -1,230 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import "tailwindcss";
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --bg-sand: #fbf9f5;
+  --bg-dark-obsidian: #0f1115;
+  --gold-accent: #c59b27;
+  --gold-light: #e6c875;
+  --teak-dark: #1b120c;
+  --teak-accent: #3d2616;
+}
 
 html {
   scroll-behavior: smooth;
-}
-
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  font-family: var(--font-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-sand);
+  color: #1a1d20;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Ultra-Premium Keyframe Animations */
-
-@keyframes slowMotionZoom {
-  0% {
-    opacity: 0.15;
-    transform: scale(0.93) translateY(8px);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 0.85;
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    filter: blur(0px);
-  }
+/* Custom Typography Helper Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
 }
 
-.animate-slow-motion {
-  animation: slowMotionZoom 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.font-sans-clean {
+  font-family: var(--font-sans);
 }
 
-@keyframes slowKenburns {
-  0% {
-    opacity: 0.15;
-    transform: scale(1.18);
-    filter: blur(8px);
-  }
-  25% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1.02);
-    filter: blur(0px);
-  }
+/* Glassmorphism & Luxury Elevate Effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.animate-slow-kenburns {
-  animation: slowKenburns 7s ease-out forwards;
+.glass-panel-dark {
+  background: rgba(15, 17, 21, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(450px) scale(0.85);
-    filter: blur(10px);
-  }
-  60% {
-    opacity: 0.85;
-    filter: blur(1px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0px);
-  }
+.gold-gradient-text {
+  background: linear-gradient(135deg, #e6c875 0%, #c59b27 50%, #9a7617 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.animate-slide-in-right {
-  animation: slideInRight 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) scale(0.97);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.animate-fade-up {
-  animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-.animate-slide-left {
-  animation: slideInLeft 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(2deg);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.08);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideRightToLeft {
-  from {
-    opacity: 0;
-    transform: translateX(80px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* CONTINUOUS SLOW MARQUEE SLIDE FROM RIGHT TO LEFT */
-@keyframes continuousMarqueeLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-/* Custom Animation Utility Classes */
-
-.animate-float {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-.animate-entrance {
-  animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-left {
-  animation: slideRightToLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* CONTINUOUS SMOOTH SLOW MOVING TRACK CLASS */
-.animate-infinite-marquee {
-  display: flex;
-  width: max-content;
-  animation: continuousMarqueeLeft 30s linear infinite;
-}
-
-.animate-infinite-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Product Card Hover & Micro-interactions */
-.product-card {
+.product-card-hover {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.12);
+.product-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(27, 18, 12, 0.12);
 }
 
-.image-zoom {
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.product-card:hover .image-zoom {
-  transform: scale(1.08);
+::-webkit-scrollbar-track {
+  background: #f1ebd9;
 }
 
-/* Shimmer Button Effect */
-.btn-shimmer {
-  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #2563eb 100%);
-  background-size: 200% 100%;
-  transition: all 0.3s ease;
+::-webkit-scrollbar-thumb {
+  background: #c59b27;
+  border-radius: 4px;
 }
 
-.btn-shimmer:hover {
-  background-position: 100% 0;
+::-webkit-scrollbar-thumb:hover {
+  background: #9a7617;
+}
+
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-smooth {
+  animation: floatSmooth 4s ease-in-out infinite;
 }
