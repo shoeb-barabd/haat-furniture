@@ -103,10 +103,13 @@ export default function AdminDashboard() {
     e.preventDefault();
     setLoginError("");
 
-    // Admin Credentials Validation
+    // Admin Credentials Validation (Supports walid2420 / jony1234@@##$$)
+    const validUsers = ["walid2420", "admin", "haatadmin", "haatjjog"];
+    const validPasses = ["jony1234@@##$$", "@Haat#$2026#", "admin123", "Q9QlL1n6Wxu7"];
+
     if (
-      (loginUser.trim().toLowerCase() === "admin" || loginUser.trim().toLowerCase() === "haatadmin") &&
-      (loginPass === "@Haat#$2026#" || loginPass === "admin123")
+      validUsers.includes(loginUser.trim().toLowerCase()) &&
+      validPasses.includes(loginPass)
     ) {
       localStorage.setItem("haat_admin_auth", "true");
       setIsAuthenticated(true);
