@@ -25,6 +25,69 @@ export default function AdminDashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [toast, setToast] = useState("");
   const [editingProduct, setEditingProduct] = useState(null);
+  // Category Editing & Creation State
+  const [editingCategory, setEditingCategory] = useState(null);
+  const [showCatModal, setShowCatModal] = useState(false);
+  const [catFormData, setCatFormData] = useState({
+    name: "",
+    slug: "",
+    icon: "🪑",
+    count: "0 Products"
+  });
+
+  const handleSaveCategory = (e) => {
+    e.preventDefault();
+    if (!catFormData.name) {
+      alert("Please enter a category name!");
+      return;
+    }
+
+    const slug = catFormData.slug ? catFormData.slug.toLowerCase().replace(/\s+/g, '-') : catFormData.name.toLowerCase().replace(/\s+/g, '-');
+
+    if (editingCategory) {
+      setCategories(categories.map(c => c.id === editingCategory.id ? {
+        ...c,
+        name: catFormData.name,
+        slug: slug,
+        icon: catFormData.icon,
+        count: catFormData.count
+      } : c));
+      showToast(`Updated Category: "${catFormData.name}"`);
+    } else {
+      const newCat = {
+        id: Date.now(),
+        name: catFormData.name,
+        slug: slug,
+        icon: catFormData.icon || "🪑",
+        count: "0 Products"
+      };
+      setCategories([...categories, newCat]);
+      showToast(`Created New Category: "${catFormData.name}"`);
+    }
+
+    setShowCatModal(false);
+    setEditingCategory(null);
+    setCatFormData({ name: "", slug: "", icon: "🪑", count: "0 Products" });
+  };
+
+  const startEditCategory = (cat) => {
+    setEditingCategory(cat);
+    setCatFormData({
+      name: cat.name,
+      slug: cat.slug,
+      icon: cat.icon || "🪑",
+      count: cat.count || "0 Products"
+    });
+    setShowCatModal(true);
+  };
+
+  const handleDeleteCategory = (catId) => {
+    if (confirm("Are you sure you want to delete this category?")) {
+      setCategories(categories.filter(c => c.id !== catId));
+      showToast("Category removed successfully!");
+    }
+  };
+
 
   // Sample Live Customer Orders
   const [orders, setOrders] = useState([
