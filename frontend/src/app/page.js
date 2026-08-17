@@ -268,6 +268,7 @@ export default function Home() {
   // ACTIVE CATEGORY TAB STATE FOR "OUR LATEST COLLECTION"
   const [activeLatestTab, setActiveLatestTab] = useState("all");
 
+
   // CATEGORY SLIDER REFS FOR EXACT HAATFURNITURE.COM CAROUSELS
   const diningRef = useRef(null);
   const livingRef = useRef(null);
@@ -509,9 +510,47 @@ export default function Home() {
   ];
 
   // Filter items by selected category tab
+  
+
+
   const filteredLatestItems = activeLatestTab === "all"
     ? latestCollectionItems
     : latestCollectionItems.filter((item) => item.tabGroup === activeLatestTab);
+
+  // AUTO SLOW-MOTION CONTINUOUS RIGHT-TO-LEFT SCROLL TICKER
+  useEffect(() => {
+    const slider = scrollRef.current;
+    if (!slider) return;
+
+    let animationFrameId;
+    let isHovered = false;
+
+    const autoScroll = () => {
+      if (!isHovered && slider) {
+        slider.scrollLeft += 0.9;
+        if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 5)) {
+          slider.scrollLeft = 0;
+        }
+      }
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+
+    const handleMouseEnter = () => { isHovered = true; };
+    const handleMouseLeave = () => { isHovered = false; };
+
+    slider.addEventListener('mouseenter', handleMouseEnter);
+    slider.addEventListener('mouseleave', handleMouseLeave);
+
+    animationFrameId = requestAnimationFrame(autoScroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (slider) {
+        slider.removeEventListener('mouseenter', handleMouseEnter);
+        slider.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, [filteredLatestItems]);
 
   // Helper to scroll category slider ref
   const scrollCategorySlider = (ref, amount) => {
