@@ -31,7 +31,7 @@ export default function ProductDetailPage({ params }) {
     if (found) setProduct(found);
   }, [productId]);
 
-  // Dynamic gallery list
+    // Generate dynamic gallery view list with chair, table, full set separate views
   const getProductGallery = (prod) => {
     if (!prod) return [];
     
@@ -39,25 +39,45 @@ export default function ProductDetailPage({ params }) {
     const nameLower = (prod.name || "").toLowerCase();
     const catList = (prod.categories || []).join(' ');
 
+    // 1. Dining Sets (Full Set, Table Alone, Chair Alone)
     if (nameLower.includes("dining") || nameLower.includes("dinning") || catList.includes("dinning")) {
       return [
         { url: mainImg, label: "Full Set View / সম্পূর্ণ ডাইনিং সেট" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Single Chair View / সলিড সেগুন চেয়ার" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Dining Table View / টেবিল ভিউ" }
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Table Alone View / টেবিল আলাদা" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Single Chair View / চেয়ার আলাদা" }
       ];
     }
 
-    if (nameLower.includes("dressing") || nameLower.includes("almirah") || nameLower.includes("wardrobe") || nameLower.includes("bed")) {
+    // 2. Sofas (Full Set, Single Armchair, Center Table)
+    if (nameLower.includes("sofa") || catList.includes("sofa")) {
       return [
-        { url: mainImg, label: "Main View / মেইন ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg", label: "Front Carving View / ফ্রন্ট ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg", label: "Side Perspective / সাইড ভিউ" }
+        { url: mainImg, label: "Full Set View / সম্পূর্ণ সোফা সেট" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg", label: "Single Chair / সিঙ্গেল চেয়ার ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg", label: "Center Table / টি-টেবিল ভিউ" }
+      ];
+    }
+
+    // 3. Beds (Main View, Headboard Detail, Side Structure)
+    if (nameLower.includes("bed") || catList.includes("bed")) {
+      return [
+        { url: mainImg, label: "Main Bed View / মেইন খাট ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg", label: "Headboard Carving / হেডবোর্ড ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg", label: "Side Frame / সাইড ভিউ" }
+      ];
+    }
+
+    // 4. Almirah / Dressing Table / Wardrobe
+    if (nameLower.includes("almirah") || nameLower.includes("dressing") || nameLower.includes("wardrobe")) {
+      return [
+        { url: mainImg, label: "Front View / ফ্রন্ট ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg", label: "Internal Shelves / ড্রয়ার ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg", label: "Side Detail / সাইড ভিউ" }
       ];
     }
 
     return [
       { url: mainImg, label: "Main View / মেইন ভিউ" },
-      { url: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg", label: "Detail Angle / সাইড ভিউ" }
+      { url: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg", label: "Angle View / সাইড ভিউ" }
     ];
   };
 
