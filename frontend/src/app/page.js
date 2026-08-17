@@ -285,35 +285,35 @@ export default function Home() {
   const [startX, setStartX] = useState(0);
   const [scrollLeftState, setScrollLeftState] = useState(0);
 
-  // TOP HERO BANNER: 5 ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
+  // TOP HERO BANNER: ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
   const slides = [
+    {
+      title: "Luxury Modern Living Interior",
+      subtitle: "Aesthetically handcrafted 100% solid Chittagong Segun wood furniture tailored for your home.",
+      cta: "EXPLORE LIVING COLLECTION",
+      badge: "Nordic Minimalist Segun 2026",
+      bgImage: "/images/hero_slide_1.jpg"
+    },
+    {
+      title: "Elegant Segun Sectional Lounge",
+      subtitle: "Crafted for timeless comfort — borer-proof teak wood living sofa sets with premium finish.",
+      cta: "EXPLORE SOFA COLLECTION",
+      badge: "Contemporary Living Luxury",
+      bgImage: "/images/hero_slide_2.jpg"
+    },
     {
       title: "Crafting Teak Masterpieces",
       subtitle: "Sets your home as a trend — aesthetically handcrafted 100% solid Chittagong Teak wood dining sets.",
-      cta: "EXPLORE DINING — ৳ 188,000 BDT",
+      cta: "EXPLORE DINING COLLECTION",
       badge: "Royal Dining Collection 2026",
       bgImage: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Luxury Segun Master Bedroom",
       subtitle: "Crafted for peaceful living — solid borer-proof teak bed with premium lacquer finish.",
-      cta: "VIEW BEDROOM SETS — ৳ 85,000 BDT",
+      cta: "EXPLORE BEDROOM SETS",
       badge: "20 Years Guarantee",
       bgImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Sets You As A Trend",
-      subtitle: "Ergonomic & luxury workspace furniture crafted for modern offices and executive suites.",
-      cta: "EXPLORE EXECUTIVE SUITE",
-      badge: "Commercial Luxury Grade",
-      bgImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Aesthetically Stylish Living Room",
-      subtitle: "Handcrafted 100% solid teak sofa sets and living room furniture built for generations.",
-      cta: "EXPLORE SOFA COLLECTION",
-      badge: "Handcrafted Living Luxury",
-      bgImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Architectural Teak Entrance Doors",
@@ -327,62 +327,95 @@ export default function Home() {
   // Navigation Menu matching HATIL layout
   const navMenus = [
     {
-      name: "Living Room",
-      slug: "living-room",
-      subCategories: [
-        { name: "Sofa Set", query: "sofa" },
-        { name: "Center Table", query: "table" },
-        { name: "TV Cabinet", query: "cabinet" }
+      name: "HOME FURNITURE",
+      slug: "home-furniture",
+      href: "/product-category/home-furniture",
+      megaMenu: true,
+      groups: [
+        {
+          title: "Bed Room",
+          href: "/product-category/home-furniture/bed-room",
+          items: [
+            { name: "Bed", href: "/product-category/home-furniture/bed-room/bed" },
+            { name: "Almirah", href: "/product-category/home-furniture/bed-room/almirah" },
+            { name: "Dressing Table", href: "/product-category/home-furniture/bed-room/dressing-table" },
+            { name: "Wardrobe", href: "/product-category/home-furniture/bed-room/wardrobe" },
+            { name: "Bed Side Table", href: "/product-category/home-furniture/bed-room/bed-side-table" },
+            { name: "Chest of Drawer", href: "/product-category/home-furniture/bed-room/chest-of-drawer" }
+          ]
+        },
+        {
+          title: "Dinning Room",
+          href: "/product-category/home-furniture/dinning-room",
+          items: [
+            { name: "Dinning Set", href: "/product-category/home-furniture/dinning-room/dinning-set" },
+            { name: "Showcase", href: "/product-category/home-furniture/dinning-room/showcase" },
+            { name: "Corner Showcase", href: "/product-category/home-furniture/dinning-room/corner-showcase" },
+            { name: "Side Table", href: "/product-category/home-furniture/dinning-room/side-table" }
+          ]
+        },
+        {
+          title: "Living Room",
+          href: "/product-category/home-furniture/living-room",
+          items: [
+            { name: "Sofa", href: "/product-category/home-furniture/living-room/sofa" },
+            { name: "Center Table", href: "/product-category/home-furniture/living-room/center-table" },
+            { name: "Coffee Table", href: "/product-category/home-furniture/living-room/coffee-table" },
+            { name: "Shoe Rack", href: "/product-category/home-furniture/living-room/shoe-rack" },
+            { name: "Book Shelf", href: "/product-category/home-furniture/living-room/book-shelf" }
+          ]
+        },
+        {
+          title: "Kitchen",
+          href: "/product-category/home-furniture/kitchen",
+          items: [
+            { name: "Mini Cabinet", href: "/product-category/home-furniture/kitchen/mini-cabinet" },
+            { name: "Oven Stand", href: "/product-category/home-furniture/kitchen/oven-stand" }
+          ]
+        }
       ]
     },
     {
-      name: "Bedroom",
-      slug: "bed-room",
-      subCategories: [
-        { name: "Solid Wood Bed", query: "bed" },
-        { name: "Dressing Table", query: "dresser" },
-        { name: "Wardrobe", query: "wardrobe" }
-      ]
-    },
-    {
-      name: "Dining",
-      slug: "dinning-room",
-      subCategories: [
-        { name: "6 Chair Dining Table", query: "dining" },
-        { name: "4 Chair Dining Table", query: "dining" },
-        { name: "Dinner Wagon", query: "wagon" }
-      ]
-    },
-    {
-      name: "Kitchen",
-      slug: "kitchen",
-      subCategories: [
-        { name: "Kitchen Cabinet", query: "kitchen" }
-      ]
-    },
-    {
-      name: "Door",
-      slug: "door-collection",
-      subCategories: [
-        { name: "Wooden Door", query: "door" },
-        { name: "Segun Door", query: "segun" }
-      ]
-    },
-    {
-      name: "Office",
+      name: "OFFICE FURNITURE",
       slug: "office-furniture",
-      subCategories: [
-        { name: "Executive Desk", query: "desk" },
-        { name: "Revolving Chair", query: "chair" }
+      href: "/product-category/office-furniture",
+      megaMenu: false,
+      items: [
+        { name: "Work Station", href: "/product-category/office-furniture/work-station" },
+        { name: "Chair", href: "/product-category/office-furniture/chair" },
+        { name: "Office Sofa", href: "/product-category/office-furniture/office-sofa" },
+        { name: "Table", href: "/product-category/office-furniture/table" }
       ]
     },
     {
-      name: "More",
-      slug: "miscellaneous",
-      subCategories: [
-        { name: "Orthopedic Mattress", query: "mattress" },
-        { name: "Interior Accessories", query: "accessories" }
+      name: "MATTRESS",
+      slug: "mattress",
+      href: "/product-category/mattress"
+    },
+    {
+      name: "DOOR",
+      slug: "door",
+      href: "/product-category/door",
+      megaMenu: false,
+      items: [
+        { name: "Flash Door", href: "/product-category/door/flash-door" },
+        { name: "Frame", href: "/product-category/door/frame" },
+        { name: "Wooden Door", href: "/product-category/door/wooden-door" }
       ]
+    },
+    {
+      name: "MISCELLANEOUS",
+      slug: "miscellaneous",
+      href: "/product-category/miscellaneous",
+      megaMenu: false,
+      items: [
+        { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
+        { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
+      ]
+    },
+    {
+      name: "ABOUT US",
+      href: "/about-us"
     }
   ];
 
@@ -609,11 +642,11 @@ export default function Home() {
     { title: "Solid Wood Suite", image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg", query: "suite" }
   ];
 
-  // Auto-play Hero Slider every 4 seconds
+  // Auto-play Hero Slider every 7 seconds (Cinematic Slow Motion)
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -726,11 +759,11 @@ export default function Home() {
   const currentCenterObj = filteredLatestItems[centerActiveIndex % filteredLatestItems.length] || filteredLatestItems[0] || latestCollectionItems[0];
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans antialiased selection:bg-slate-900 selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-800 font-sans antialiased selection:bg-[#0b0c10] selection:text-white relative overflow-x-hidden">
       
       {/* Toast Alert */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-bounce font-semibold text-sm">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0b0c10] text-white px-6 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700 animate-bounce font-semibold text-sm">
           <span className="text-lg">✨</span>
           <span>{toastMessage}</span>
         </div>
@@ -788,43 +821,61 @@ export default function Home() {
                 onMouseEnter={() => setActiveDropdown(menu.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  onClick={() => {
-                    setSelectedCategory(menu.slug);
-                    setSelectedSubCategory("");
-                    setSearchQuery("");
-                    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`flex items-center gap-1 transition-all py-1 border-b-2 ${
+                <Link
+                  href={menu.href || '#'}
+                  className={`flex items-center gap-1 transition-all py-1 border-b-2 text-xs font-extrabold tracking-wider ${
                     selectedCategory === menu.slug
-                      ? 'text-amber-600 border-amber-600 font-black'
+                      ? 'text-amber-600 border-amber-600'
                       : 'text-slate-800 border-transparent hover:text-amber-600 hover:border-amber-600'
                   }`}
                 >
                   <span>{menu.name}</span>
-                  {menu.subCategories.length > 0 && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
-                </button>
+                  {(menu.groups || menu.items) && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
+                </Link>
 
-                {/* Sub-Category Multi-Column Dropdown */}
-                {menu.subCategories.length > 0 && activeDropdown === menu.name && (
-                  <div className="absolute top-full left-0 w-64 bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
+                {/* 1. Multi-Column Mega Dropdown for HOME FURNITURE */}
+                {menu.megaMenu && menu.groups && activeDropdown === menu.name && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 min-w-[750px] bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-6 z-50 animate-entrance grid grid-cols-4 gap-6">
+                    {menu.groups.map((group, gIdx) => (
+                      <div key={gIdx} className="space-y-3">
+                        <Link 
+                          href={group.href} 
+                          className="block text-xs font-black text-slate-900 hover:text-amber-600 uppercase tracking-wider pb-2 border-b border-slate-100"
+                        >
+                          {group.title} →
+                        </Link>
+                        <div className="space-y-1.5">
+                          {group.items.map((item, iIdx) => (
+                            <Link
+                              key={iIdx}
+                              href={item.href}
+                              className="block text-[11px] font-semibold text-slate-600 hover:text-amber-600 hover:translate-x-1 transition-all"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* 2. Single Column Dropdown for OFFICE / DOOR / MISCELLANEOUS */}
+                {!menu.megaMenu && menu.items && activeDropdown === menu.name && (
+                  <div className="absolute top-full left-0 w-56 bg-white text-slate-900 shadow-2xl rounded-xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
                     <div className="px-3 py-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 mb-1">
                       {menu.name} Collections
                     </div>
 
-                    {menu.subCategories.map((sub, sIdx) => (
-                      <button
+                    {menu.items.map((sub, sIdx) => (
+                      <Link
                         key={sIdx}
-                        onClick={() => handleSelectSubCategory(sub.name, sub.query)}
-                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-between ${
-                          selectedSubCategory === sub.name
-                            ? 'bg-slate-900 text-white shadow-md'
-                            : 'hover:bg-slate-100 hover:text-blue-600'
-                        }`}
+                        href={sub.href}
+                        className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg transition-all"
                       >
                         <span>{sub.name}</span>
-                        <span className="text-[10px] opacity-60">→</span>
-                      </button>
+                        <span className="text-[10px] opacity-40">→</span>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -893,7 +944,7 @@ export default function Home() {
             key={heroSlide}
             src={slides[heroSlide].bgImage}
             alt={slides[heroSlide].title}
-            className="w-full h-full object-cover transition-all duration-1000 animate-entrance filter brightness-90"
+            className="w-full h-full object-cover transition-all duration-[2000ms] ease-in-out filter brightness-90 animate-slow-kenburns"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/40"></div>
         </div>
@@ -926,32 +977,6 @@ export default function Home() {
                 20 YEARS GUARANTEE
               </a>
             </div>
-
-            <div className="flex items-center gap-4 pt-8">
-              <button
-                onClick={prevSlide}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
-              >
-                ‹
-              </button>
-              
-              <div className="flex items-center gap-2">
-                {slides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setHeroSlide(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-500 ${heroSlide === idx ? 'w-10 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/70'}`}
-                  ></button>
-                ))}
-              </div>
-
-              <button
-                onClick={nextSlide}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
-              >
-                ›
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -962,8 +987,8 @@ export default function Home() {
         
         {/* Decorative Hanging Pendant Light */}
         <div className="absolute top-0 left-1/3 z-20 pointer-events-none hidden sm:block">
-          <div className="w-0.5 h-16 bg-slate-900 mx-auto"></div>
-          <div className="w-16 h-10 bg-slate-900 rounded-t-full shadow-2xl border-b-2 border-amber-400"></div>
+          <div className="w-0.5 h-16 bg-[#0b0c10] mx-auto"></div>
+          <div className="w-16 h-10 bg-[#0b0c10] rounded-t-full shadow-2xl border-b-2 border-amber-400"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -971,7 +996,7 @@ export default function Home() {
             
             {/* Left Headline */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-wider shadow-md">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-wider shadow-md">
                 ✨ {categoryShowcaseItems[activeCategoryIndex].colorTag}
               </span>
 
@@ -997,7 +1022,7 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-8">
               
               {/* Main Display Box */}
-              <div className="w-full h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-white/40 relative group bg-slate-900/10">
+              <div className="w-full h-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border border-white/40 relative group bg-[#0b0c10]/10">
                 <img
                   key={activeCategoryIndex}
                   src={categoryShowcaseItems[activeCategoryIndex].image}
@@ -1055,7 +1080,7 @@ export default function Home() {
           {/* Header & Category Selection Tabs */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="space-y-3">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-md">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-widest shadow-md">
                 ✨ Featured: {currentCenterObj.name}
               </span>
 
@@ -1080,7 +1105,7 @@ export default function Home() {
                     onClick={() => setActiveLatestTab(tab.slug)}
                     className={`px-4 py-2 rounded-full text-xs font-black transition-all hover:scale-105 shadow-sm ${
                       activeLatestTab === tab.slug
-                        ? 'bg-slate-900 text-white shadow-md ring-2 ring-slate-900'
+                        ? 'bg-[#0b0c10] text-white shadow-md ring-2 ring-slate-900'
                         : 'bg-white/80 text-slate-700 hover:bg-white border border-slate-200'
                     }`}
                   >
@@ -1094,14 +1119,14 @@ export default function Home() {
             <div className="flex items-center gap-3 flex-shrink-0">
               <button
                 onClick={() => scrollByAmount(-340)}
-                className="w-12 h-12 rounded-2xl bg-white hover:bg-slate-900 hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
+                className="w-12 h-12 rounded-2xl bg-white hover:bg-[#0b0c10] hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
                 title="Scroll Left"
               >
                 ‹
               </button>
               <button
                 onClick={() => scrollByAmount(340)}
-                className="w-12 h-12 rounded-2xl bg-white hover:bg-slate-900 hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
+                className="w-12 h-12 rounded-2xl bg-white hover:bg-[#0b0c10] hover:text-white text-slate-900 flex items-center justify-center text-2xl font-bold border border-slate-200 shadow-lg transition-all hover:scale-110 active:scale-95"
                 title="Scroll Right"
               >
                 ›
@@ -1159,7 +1184,7 @@ export default function Home() {
                   >
                     {/* Category & Badge */}
                     <div className="flex items-center justify-between text-xs w-full pointer-events-none">
-                      <span className={`px-3 py-1 rounded-full font-black uppercase text-[10px] tracking-wider transition-colors duration-300 ${isCenterFocused ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700'}`}>
+                      <span className={`px-3 py-1 rounded-full font-black uppercase text-[10px] tracking-wider transition-colors duration-300 ${isCenterFocused ? 'bg-[#0b0c10] text-white' : 'bg-slate-100 text-slate-700'}`}>
                         {item.category}
                       </span>
                       {isCenterFocused && (
@@ -1235,7 +1260,7 @@ export default function Home() {
             
             {/* Left Headline & Action Box */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white text-xs font-black uppercase tracking-wider shadow-md">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b0c10] text-white text-xs font-black uppercase tracking-wider shadow-md">
                 ✨ Handcrafted 100% Solid Segun
               </span>
 
@@ -1253,7 +1278,7 @@ export default function Home() {
               <div className="pt-2 flex items-center gap-4">
                 <a
                   href="#products"
-                  className="px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-amber-600 text-white font-black text-xs transition-all shadow-xl shadow-slate-900/10 hover:scale-105 flex items-center gap-2"
+                  className="px-8 py-3.5 rounded-2xl bg-[#0b0c10] hover:bg-amber-600 text-white font-black text-xs transition-all shadow-xl shadow-slate-900/10 hover:scale-105 flex items-center gap-2"
                 >
                   <span>Explore All Creations</span>
                   <span>→</span>
@@ -1261,119 +1286,130 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right 6 ANIMATED LUXURY PASTEL CARDS */}
-            <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-5">
+            {/* Right 6 ANIMATED HORIZONTAL RIGHT-TO-LEFT SCROLL CARDS */}
+            <div className="lg:col-span-7 relative overflow-hidden">
               
-              {[
-                {
-                  name: "Purley Teak King Bed",
-                  category: "Bed Room",
-                  price: 23000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#fffcf7]"
-                },
-                {
-                  name: "Wheel Solid Teak Bed",
-                  category: "Master Bedroom",
-                  price: 24500,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#f5f9f6]"
-                },
-                {
-                  name: "Pentagon Teak Bed",
-                  category: "Royal Collection",
-                  price: 26000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#f8f5fb]"
-                },
-                {
-                  name: "Galaxy Teak Bed",
-                  category: "Modern Teak",
-                  price: 22000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
-                  query: "bed",
-                  cardBg: "bg-[#faf5f6]"
-                },
-                {
-                  name: "Segun Master Bedroom Suite",
-                  category: "Full Bedroom Set",
-                  price: 85000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
-                  query: "suite",
-                  cardBg: "bg-[#f3f7f9]"
-                },
-                {
-                  name: "Executive School & Office Bench",
-                  category: "Office & School",
-                  price: 14500,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
-                  query: "bench",
-                  cardBg: "bg-[#f7f8f3]"
-                }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => handleSelectSubCategory(item.name, item.query)}
-                  style={{ animationDelay: isCreationsVisible ? `${idx * 0.25}s` : '0s' }}
-                  className={`group relative h-64 sm:h-68 rounded-3xl border border-slate-200/90 ${item.cardBg} p-4 flex flex-col justify-between cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-300 ease-out ${isCreationsVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
-                >
-                  {/* Floating Top Badge */}
-                  <div className="flex items-center justify-between z-10">
-                    <span className="px-2.5 py-1 rounded-full bg-slate-900/10 text-slate-800 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
-                      {item.category}
-                    </span>
-                    <span className="text-[10px] font-bold text-amber-700 bg-amber-100/60 px-2 py-0.5 rounded-md">
-                      20 Yrs
-                    </span>
-                  </div>
+              {/* Continuous Right-to-Left Motion Container */}
+              <div 
+                ref={scrollRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeaveSlider}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMoveSlider}
+                className="flex items-center gap-5 overflow-x-auto no-scrollbar py-4 cursor-grab active:cursor-grabbing scroll-smooth"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {[
+                  {
+                    name: "Purley Teak King Bed",
+                    category: "Bed Room",
+                    price: "৳ 23,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Wheel Solid Teak Bed",
+                    category: "Master Bedroom",
+                    price: "৳ 24,500",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Pentagon Teak Bed",
+                    category: "Royal Collection",
+                    price: "৳ 26,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Galaxy Teak Bed",
+                    category: "Modern Teak",
+                    price: "৳ 22,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Segun Master Bedroom",
+                    category: "Full Bedroom Set",
+                    price: "৳ 85,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/03/HFSB-230403.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Executive School Bench",
+                    category: "Office & School",
+                    price: "৳ 14,500",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
+                    badge: "20 Yrs"
+                  },
+                  // Duplicate for continuous infinite scroll feel
+                  {
+                    name: "Beijing Dining Set",
+                    category: "Royal Dining",
+                    price: "৳ 40,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+                    badge: "20 Yrs"
+                  },
+                  {
+                    name: "Abalone Teak Sofa",
+                    category: "Living Room",
+                    price: "৳ 50,000",
+                    image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+                    badge: "20 Yrs"
+                  }
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-3xl p-5 border border-slate-200 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group space-y-3"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-black uppercase tracking-wider">
+                        {item.category}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-black">
+                        {item.badge}
+                      </span>
+                    </div>
 
-                  {/* Image Container with Hover Quick Action Buttons */}
-                  <div className="w-full h-36 flex items-center justify-center overflow-hidden my-auto p-1 relative rounded-2xl bg-white/70 shadow-inner">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-110 transition-transform duration-500 ease-out"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop&q=80";
-                      }}
-                    />
+                    <div className="w-full h-44 rounded-2xl bg-slate-50 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-500">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="max-h-full max-w-full object-contain filter drop-shadow-md"
+                      />
+                    </div>
 
-                    {/* Quick Action Overlay on Hover */}
-                    <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-1.5 p-2">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); addToCart(item); }}
-                        className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-extrabold text-[10px] shadow-md transition-all hover:scale-105"
-                      >
-                        ⚡ Order
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setQuickViewProduct(item); }}
-                        className="p-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-900 font-bold text-[10px] shadow-md transition-all hover:scale-105"
-                        title="Quick View"
-                      >
-                        🔍 View
-                      </button>
+                    <div className="pt-1 flex items-center justify-between border-t border-slate-100">
+                      <h4 className="text-xs font-black text-slate-900 group-hover:text-amber-600 transition truncate max-w-[140px]">
+                        {item.name}
+                      </h4>
+                      <span className="text-xs font-black text-emerald-600">
+                        {item.price}
+                      </span>
                     </div>
                   </div>
+                ))}
+              </div>
 
-                  {/* Bottom Info Bar */}
-                  <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between z-10">
-                    <span className="text-xs font-black text-slate-900 truncate group-hover:text-amber-700 transition-colors">
-                      {item.name}
-                    </span>
-                    <span className="text-xs font-black text-emerald-700 flex-shrink-0 ml-1">
-                      ৳ {item.price?.toLocaleString()}
-                    </span>
-                  </div>
+              {/* Left/Right Scroll Controls */}
+              <div className="flex items-center justify-end gap-2 pt-3">
+                <button
+                  type="button"
+                  onClick={() => scrollByAmount(-300)}
+                  className="w-9 h-9 rounded-full bg-slate-900 text-white font-black text-sm flex items-center justify-center hover:bg-amber-600 shadow transition"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollByAmount(300)}
+                  className="w-9 h-9 rounded-full bg-slate-900 text-white font-black text-sm flex items-center justify-center hover:bg-amber-600 shadow transition"
+                >
+                  →
+                </button>
+              </div>
 
-                </div>
-              ))}
             </div>
-
           </div>
         </div>
       </section>
@@ -1387,7 +1423,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Handcrafted Dining Sets
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1401,20 +1437,20 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Dining", "dining")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Dining (সবগুলো দেখুন) →
+                  View All Dining →
                 </button>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(diningRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(diningRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1464,7 +1500,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
@@ -1485,7 +1521,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1532,7 +1568,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1542,7 +1578,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Living Luxury
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1556,20 +1592,20 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Living Room", "sofa")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Living (সবগুলো দেখুন) →
+                  View All Living →
                 </button>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(livingRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(livingRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1619,7 +1655,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
@@ -1640,7 +1676,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1687,7 +1723,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1697,7 +1733,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Master Bedroom
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1711,20 +1747,20 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Bed Room", "bed")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Bedroom (সবগুলো দেখুন) →
+                  View All Bedroom →
                 </button>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(bedroomRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(bedroomRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1788,7 +1824,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
@@ -1809,7 +1845,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -1856,7 +1892,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
@@ -1866,7 +1902,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="inline-block px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#0b0c10] text-white text-[10px] font-black uppercase tracking-widest">
                   ✨ Commercial Grade
                 </span>
                 <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -1880,20 +1916,20 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Office", "desk")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Office & Doors (সবগুলো দেখুন) →
+                  View All Office & Doors →
                 </button>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => scrollCategorySlider(officeRef, -340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Previous"
                   >
                     ‹
                   </button>
                   <button
                     onClick={() => scrollCategorySlider(officeRef, 340)}
-                    className="w-10 h-10 rounded-full bg-white hover:bg-slate-900 hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
+                    className="w-10 h-10 rounded-full bg-white hover:bg-[#0b0c10] hover:text-white text-slate-800 flex items-center justify-center text-lg font-bold border border-slate-200 shadow-md transition-all hover:scale-110 active:scale-95"
                     title="Next"
                   >
                     ›
@@ -1943,7 +1979,7 @@ export default function Home() {
                 >
                   {/* Top Badge */}
                   <div className="flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[9px] uppercase tracking-wider group-hover:bg-[#0b0c10] group-hover:text-white transition-colors duration-300">
                       100% Solid Segun
                     </span>
                     <span className="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
@@ -1964,7 +2000,7 @@ export default function Home() {
                     />
 
                     {/* Hover Quick Action Buttons */}
-                    <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+                    <div className="absolute inset-0 bg-[#0b0c10]/40 opacity-0 group-hover:opacity-100 backdrop-blur-[2px] transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
                       <button
                         onClick={() => { addToCart(item); }}
                         className="px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-xs shadow-lg shadow-red-600/30 transition-all hover:scale-105"
@@ -2011,7 +2047,7 @@ export default function Home() {
 
             {/* Pagination dots like haatfurniture.com */}
             <div className="flex justify-center items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-slate-900"></span>
+              <span className="w-3 h-3 rounded-full bg-[#0b0c10]"></span>
               <span className="w-2 h-2 rounded-full bg-slate-300"></span>
             </div>
           </div>
@@ -2044,7 +2080,7 @@ export default function Home() {
 
             {/* Subtle Top Badge to indicate Product Name cleanly */}
             <div className="absolute top-6 left-6 z-10">
-              <span className="px-4 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-black tracking-wide shadow-md">
+              <span className="px-4 py-1.5 rounded-full bg-[#0b0c10]/80 backdrop-blur-md text-white text-xs font-black tracking-wide shadow-md">
                 ✨ {flagshipItems[flagshipSlide].name}
               </span>
             </div>
@@ -2055,7 +2091,7 @@ export default function Home() {
                 e.stopPropagation();
                 setFlagshipSlide((prev) => (prev - 1 + flagshipItems.length) % flagshipItems.length);
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#0b0c10]/80 hover:bg-[#0b0c10] text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
               title="Previous Image"
             >
               ‹
@@ -2066,7 +2102,7 @@ export default function Home() {
                 e.stopPropagation();
                 setFlagshipSlide((prev) => (prev + 1) % flagshipItems.length);
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#0b0c10]/80 hover:bg-[#0b0c10] text-white opacity-0 group-hover:opacity-100 backdrop-blur-md flex items-center justify-center text-2xl font-bold shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 z-10"
               title="Next Image"
             >
               ›
@@ -2078,7 +2114,7 @@ export default function Home() {
           <div className="flex items-center justify-center pt-2">
             <Link
               href="/products"
-              className="px-8 py-4 rounded-full bg-slate-900 hover:bg-amber-600 text-white font-black text-xs uppercase tracking-widest shadow-2xl shadow-slate-900/30 border border-slate-700/60 transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
+              className="px-8 py-4 rounded-full bg-[#0b0c10] hover:bg-amber-600 text-white font-black text-xs uppercase tracking-widest shadow-2xl shadow-slate-900/30 border border-slate-700/60 transition-all duration-300 hover:scale-105 flex items-center gap-2 group"
             >
               <span>View All Products (সব প্রোডাক্ট দেখুন)</span>
               <span className="text-sm group-hover:translate-x-1 transition-transform">→</span>
@@ -2095,7 +2131,7 @@ export default function Home() {
 
       {/* QUICK VIEW MODAL WITH MAGNIFIER GLASS ZOOM */}
       {quickViewProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-md animate-entrance">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b0c10]/70 backdrop-blur-md animate-entrance">
           <div className="relative w-full max-w-4xl rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl overflow-hidden text-slate-800">
             <button
               onClick={() => setQuickViewProduct(null)}
@@ -2201,7 +2237,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <Link
                       href={`/product/${quickViewProduct.id || 1}`}
-                      className="px-4 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
+                      className="px-4 py-3 rounded-2xl bg-[#0b0c10] hover:bg-slate-800 text-white text-xs font-bold transition-all shadow-md"
                     >
                       🔗 Full Page Details
                     </Link>
@@ -2242,7 +2278,7 @@ export default function Home() {
 
       {/* Shopping Cart Drawer */}
       {isCartOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-slate-900/50 backdrop-blur-sm animate-entrance">
+        <div className="fixed inset-0 z-50 flex justify-end bg-[#0b0c10]/50 backdrop-blur-sm animate-entrance">
           <div className="w-full max-w-md bg-white border-l border-slate-200 h-full flex flex-col justify-between p-6 shadow-2xl">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
@@ -2361,15 +2397,18 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Comprehensive Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-16">
+      <footer className="bg-[#0b0c10] text-slate-400 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-black text-xl text-white">
-                  H
+                <div className="px-3 py-1.5 bg-white rounded-xl shadow-sm border border-slate-200">
+                  <img
+                    src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+                    alt="HAAT FURNITURE LIMITED Logo"
+                    className="h-8 w-auto object-contain"
+                  />
                 </div>
-                <h4 className="text-lg font-bold text-white">HAAT FURNITURE</h4>
               </div>
               <p className="text-xs leading-relaxed text-slate-400">
                 Premium solid Chittagong Teak wood furniture handcrafted for luxury living dining, office, and bedroom spaces in Bangladesh.
@@ -2403,14 +2442,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 text-center text-xs space-y-2 text-slate-400 border-t border-slate-800/80">
-            <p className="font-medium">
+          <div className="pt-8 text-center text-[10px] text-slate-500 border-t border-slate-800/60">
+            <p className="font-normal">
               © {new Date().getFullYear()} Haat Furniture Limited | All rights reserved | Design & Development By —{' '}
               <a
                 href="https://shoeb-devops.github.io"
                 target="_blank"
                 rel="noreferrer"
-                className="text-amber-400 font-extrabold hover:text-amber-300 hover:underline transition-colors"
+                className="text-slate-500 hover:text-slate-300 transition-colors"
               >
                 shoeb-devops.github.io
               </a>
