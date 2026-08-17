@@ -5,18 +5,22 @@
     "category": "Office Furniture",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "High, Low combined Bench with Book shelf.\r\n\r\nHigh Bench Size : L – 1.450m x W – 0.425m x H – 0.730m\r\n\r\nLow Bench Size : L – 1.395m x W – 0.305m x H – 0.380m",
     "categories": [
-      "office-furniture",
-      "work-station"
+      "work-station",
+      "bed-room",
+      "home-furniture",
+      "office-furniture"
     ],
     "category_names": [
       "Office Furniture",
-      "Work Station"
+      "Bed Room",
+      "Work Station",
+      "Home Furniture"
     ]
   },
   {
@@ -25,2819 +29,2897 @@
     "category": "Office Furniture",
     "price": 8000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "High, Low combined Bench with Book shelf.\r\n\r\nHigh Bench Size : L - 1.450m x W - 0.425m x H - 0.730m\r\n\r\nLow Bench Size : L - 1.395m x W - 0.305m x H - 0.380m\r\n\r\n&nbsp;",
     "categories": [
-      "office-furniture",
-      "work-station"
+      "work-station",
+      "bed-room",
+      "home-furniture",
+      "office-furniture"
     ],
     "category_names": [
       "Office Furniture",
-      "Work Station"
+      "Bed Room",
+      "Work Station",
+      "Home Furniture"
     ]
   },
   {
     "id": "11964",
     "name": "Wheel Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 23000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 66″ x W: 85″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11934",
     "name": "Purley Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 23000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11929",
     "name": "Pentagon Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 23000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 66″ x W: 85″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11924",
     "name": "Galaxy Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11919",
     "name": "Fulkoli Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 30000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Fulkoli-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 66″ x W: 85″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11914",
     "name": "Diamond",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 21000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Diamond-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11896",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 21000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Cross-Bit-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11891",
     "name": "Butterfly",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 25000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Butterfly-Leather-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11886",
     "name": "Bullet",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 21000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Bullet-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11881",
     "name": "Boxer",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 21000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/03/Boxer-Bed-Angle.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11691",
     "name": "Purley – Mini Cabinet",
-    "category": "Home Furniture",
+    "category": "Miscellaneous",
     "price": 18000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/33.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: 18mm Imported oak veneer wood.\r\n\r\nEnvironment friendly UV lacquer polish. Color Option: Antic, Mid light, Wooden.\r\n\r\nSize: L: 48″ x W: 22″ x H: 30″",
     "categories": [
+      "tv-cabinet",
+      "bed-room",
       "home-furniture",
-      "miscellaneous",
-      "tv-cabinet"
+      "miscellaneous"
     ],
     "category_names": [
-      "Home Furniture",
       "Miscellaneous",
-      "TV Cabinet"
+      "Bed Room",
+      "TV Cabinet",
+      "Home Furniture"
     ]
   },
   {
     "id": "11690",
     "name": "Orthopaedic",
-    "category": "Home Furniture",
+    "category": "Mattress",
     "price": 6416,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/Mattress-Red-003-scaled-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Size: 45″ x 80″ x 4″",
     "categories": [
-      "home-furniture",
-      "mattress"
+      "mattress",
+      "bed-room",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
-      "Mattress"
+      "Mattress",
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11686",
     "name": "Ring Twiner",
-    "category": "Home Furniture",
+    "category": "Shoe Rack",
     "price": 16000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/238.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 16″ x H: 42″</strong>",
     "categories": [
+      "bed-room",
       "home-furniture",
       "living-room",
       "shoe-rack"
     ],
     "category_names": [
-      "Home Furniture",
+      "Shoe Rack",
       "Living room",
-      "Shoe Rack"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11682",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Shoe Rack",
     "price": 16000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/228.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 16″ x H: 42″</strong>",
     "categories": [
+      "bed-room",
       "home-furniture",
       "living-room",
       "shoe-rack"
     ],
     "category_names": [
-      "Home Furniture",
+      "Shoe Rack",
       "Living room",
-      "Shoe Rack"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11678",
     "name": "Diamond",
-    "category": "Home Furniture",
+    "category": "Shoe Rack",
     "price": 16000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/10-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 16″ x H: 42″</strong>",
     "categories": [
+      "bed-room",
       "home-furniture",
       "living-room",
       "shoe-rack"
     ],
     "category_names": [
-      "Home Furniture",
+      "Shoe Rack",
       "Living room",
-      "Shoe Rack"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11674",
     "name": "Butterfly",
-    "category": "Home Furniture",
+    "category": "Shoe Rack",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/9-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 30″ x W: 16″ x H: 36″</strong>",
     "categories": [
+      "bed-room",
       "home-furniture",
       "living-room",
       "shoe-rack"
     ],
     "category_names": [
-      "Home Furniture",
+      "Shoe Rack",
       "Living room",
-      "Shoe Rack"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11670",
     "name": "HFB-3023",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 23000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/5-3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 16″ x H: 76″</strong>",
     "categories": [
+      "bed-room",
       "home-furniture",
-      "living-room",
-      "book-shelf"
+      "book-shelf",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Book Shelf"
+      "Book Shelf",
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11667",
     "name": "Purley – Mini Cabinet",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 18000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/33.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: 18mm Imported oak veneer wood.\r\n\r\nEnvironment friendly UV lacquer polish. Color Option: Antic, Mid light, Wooden.\r\n\r\nSize: L: 48″ x W: 22″ x H: 30″",
     "categories": [
+      "tv-trolley",
+      "bed-room",
       "home-furniture",
-      "living-room",
-      "tv-trolley"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "TV Trolley"
+      "TV Trolley",
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11664",
     "name": "HFCT- Seendeed",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/17-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Solid Moha Neem Wood.",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11661",
     "name": "HFCT- Round",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/44-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 30″ x W: 30″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11658",
     "name": "HFCT- Plaistow",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/Plaistow-Center-Table-Regular-scaled-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 30″ x W: 20″ x H: 18″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11655",
     "name": "HFCT- Pillar-S",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/6-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 30″ x W: 20″ x H: 18″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11652",
     "name": "HFCT- Pillar",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/54-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11649",
     "name": "HFCT- M 101",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/42-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11646",
     "name": "HFCT- Drawer",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 14000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/5-1-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11643",
     "name": "HFCT- Brick",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/40.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11640",
     "name": "HFCT- Bit",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/39-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11637",
     "name": "HFCT- AC-101",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/38.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 30″ x W: 20″ x H: 18″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11634",
     "name": "HFCT- 437L",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 15000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/14-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 40″ x W: 22″ x H: 16″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11631",
     "name": "HFCT- 1999",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/14-3-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Material: Imported Oak Veneer Wood,\r\n\r\nGlass Thickness: 10mm\r\n\r\nColor Option: Deep Dark, Antique, Wood.\r\n\r\nSize: L: 36″ x W: 20″ x H: 18″",
     "categories": [
+      "bed-room",
+      "center-table",
       "home-furniture",
-      "living-room",
-      "center-table"
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Center Table"
+      "Bed Room",
+      "Center Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11626",
     "name": "HFG – Rainbow",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 12000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/11-3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "2 x Double Seats\r\n\r\n1 x Single Seat",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11621",
     "name": "HFG – M 101",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/46-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "2 x Double Seats\r\n\r\n1 x Single Seat",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11615",
     "name": "HFG – Conch",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 14000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/2-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "2 x Double Seats\r\n\r\n1 x Single Seat",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11610",
     "name": "HFG – 7021",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/45-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "2 x Double Seats\r\n\r\n1 x Single Seat",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11605",
     "name": "HFG – 207",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 15000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/26.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Structure: Jaam Wood</strong></div>\r\n<div dir=\"auto\"><strong>Color Option: Antique, Mid Light, Wooden.</strong></div>\r\n</div>\r\n<strong>Fabrics:</strong> <strong>Depends on customer </strong><b>request</b>",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11601",
     "name": "HFCS-437L",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 85000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/9-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: Imported oak veneer wood.</strong></div>\r\n<div dir=\"auto\"><strong>Structure: Jaam Wood</strong></div>\r\n<div dir=\"auto\"><strong>Center table included in set</strong></div>\r\n<div dir=\"auto\"><strong>Color Option: Antique, Mid Light, Wooden.</strong></div>\r\n</div>\r\n<strong>Fabrics Choice:</strong> <strong>Depends on customer </strong><b>request</b>",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11597",
     "name": "HFCS-3056",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/12-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: Imported oak veneer wood.</strong></div>\r\n<div dir=\"auto\"><strong>Structure: Jaam Wood</strong></div>\r\n<div dir=\"auto\"><strong>Color Option: Antique, Mid Light, Wooden.</strong></div>\r\n</div>\r\n<strong>Fabrics Choice:</strong> <strong>Depends on customer </strong><b>request</b>",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11594",
     "name": "HFCS-3009",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/11-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: Imported oak veneer wood.</strong></div>\r\n<div dir=\"auto\"><strong>Structure: Jaam Wood</strong></div>\r\n<div dir=\"auto\"><strong>Color Option: Antique, Mid Light, Wooden.</strong></div>\r\n</div>\r\n<strong>Fabrics Choice:</strong> <strong>Depends on customer </strong><b>request</b>",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11591",
     "name": "HFCS-3001",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 58000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/10-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: Imported oak veneer wood.</strong></div>\r\n<div dir=\"auto\"><strong>Structure: Jaam Wood</strong></div>\r\n<div dir=\"auto\"><strong>Color Option: Antique, Mid Light, Wooden.</strong></div>\r\n</div>\r\n<strong>Fabrics Choice:</strong> <strong>Depends on customer </strong><b>request</b>",
     "categories": [
+      "couch",
       "home-furniture",
       "living-room",
-      "sofa",
-      "couch"
+      "sofa"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
-      "Sofa",
-      "Couch"
+      "Couch",
+      "Home Furniture",
+      "Sofa"
     ]
   },
   {
     "id": "11585",
     "name": "Seendeed",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 13000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/12.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Solid Moha Neem Wood, environment friendly lacquer,  Color Option: Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats &amp; 1 Sgl Seat. ( Not Included Center Table)",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11579",
     "name": "HFWS – SR101",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/7.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak wood, 18mm Oak veneer wood, environment friendly lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11573",
     "name": "HFWS – Plaistow",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/10.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak wood, 18mm Oak veneer wood, environment friendly lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11567",
     "name": "HFWS – Minar",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/9.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak veneer wood, 18mm Oak veneer wood, environment friendly UV lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11561",
     "name": "HFWS – AC101",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/49-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak wood, 18mm Oak veneer wood, environment friendly lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11555",
     "name": "HFWS – 1999",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/48.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak wood, 18mm Oak veneer wood, environment friendly lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11549",
     "name": "HFWS – 1978",
-    "category": "Home Furniture",
+    "category": "Living room",
     "price": 10500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/47.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "Imported oak wood, 18mm Oak veneer wood, environment friendly lacquer, Deep Dark, Antic &amp; Wooden, Full Set: 2 x Dbl Seats, 1 Sgl Seat &amp; 1 Ctr Tbl",
     "categories": [
-      "home-furniture",
-      "living-room",
       "sofa",
-      "wooden-sofa"
+      "bed-room",
+      "home-furniture",
+      "wooden-sofa",
+      "living-room"
     ],
     "category_names": [
-      "Home Furniture",
       "Living room",
+      "Home Furniture",
       "Sofa",
+      "Bed Room",
       "Wooden Sofa"
     ]
   },
   {
     "id": "11545",
     "name": "Ring Twiner",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 32000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/29.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11541",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 32000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/28-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11537",
     "name": "Galaxy",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 32000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/Galaxy-Wardrobe-Front-scaled-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11532",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 32000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/4-1-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11528",
     "name": "Bullet",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 32000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/19-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11524",
     "name": "Abalone",
-    "category": "Home Furniture",
+    "category": "Wardrobe",
     "price": 30000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 22″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "wardrobe"
     ],
     "category_names": [
-      "Home Furniture",
+      "Wardrobe",
       "Bed Room",
-      "Wardrobe"
+      "Home Furniture"
     ]
   },
   {
     "id": "11520",
     "name": "Wheel",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/285.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 24″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11516",
     "name": "Vanity Fulkoli",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 35000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/244.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 42″ x W: 18″ x H: 74″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11512",
     "name": "Ring Twiner – 002",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/230.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11508",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/216.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11504",
     "name": "Projapoti",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/210.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 30″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11500",
     "name": "Pentagon",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/206.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 30″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11497",
     "name": "Ring Twiner 007",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/198.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 30″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11493",
     "name": "Konoha",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/161.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 30″ x W: 22″ x H: 72″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11489",
     "name": "Galaxy",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/91-600x450-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 76″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11485",
     "name": "Fulkoli",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/83.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11481",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/57.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11476",
     "name": "Zuzaj",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 58000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S10.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 72″ x W: 18″ x H: 74″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11472",
     "name": "Vine",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 38000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S9-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 44″ x W: 18″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11468",
     "name": "Sunmoon",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 43000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S8.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<b>Wooden Selves Thickness: 15MM</b>\r\n\r\n<strong>Size: L: 62″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11464",
     "name": "Ring Twiner-003",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 37000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S7.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 44″ x W: 18″ x H: 74″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11460",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 49500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S6.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 62″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11456",
     "name": "Maze",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 59500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S5.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 74″ x W: 17″ x H: 72″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11452",
     "name": "Love",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 35000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S4.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 44″ x W: 18″ x H: 81″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11447",
     "name": "Fulkoli",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 49500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 62″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11443",
     "name": "Dalia",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 59500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 72″ x W: 19″ x H: 78″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11439",
     "name": "Abalone",
-    "category": "Home Furniture",
+    "category": "Showcase",
     "price": 50000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass Selves Thickness: </strong>10MM.\r\n\r\n<strong>Size: L: 62″ x W: 17″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
+      "bed-room",
       "dinning-room",
-      "showcase"
+      "showcase",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
+      "Showcase",
       "Dinning Room",
-      "Showcase"
+      "Bed Room",
+      "Home Furniture"
     ]
   },
   {
     "id": "11435",
     "name": "Butterfly",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/41.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 76″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11431",
     "name": "Bullet",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/34.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 36″ x W: 18″ x H: 76″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "dressing-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Dressing Table"
+      "Dressing Table",
+      "Home Furniture"
     ]
   },
   {
     "id": "11427",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/214.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 21″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "chest-of-drawer"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Chest of Drawer"
     ]
   },
   {
     "id": "11423",
     "name": "Galaxy",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/89.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 21″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "chest-of-drawer"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Chest of Drawer"
     ]
   },
   {
     "id": "11419",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/50.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 21″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "chest-of-drawer"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Chest of Drawer"
     ]
   },
   {
     "id": "11415",
     "name": "Canoe",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 20000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/44.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 21″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "chest-of-drawer"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Chest of Drawer"
     ]
   },
   {
     "id": "11406",
     "name": "Ring Twiner",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/236.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11405",
     "name": "Butterfly",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/39.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 38″ x W: 21″ x H: 48″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "chest-of-drawer"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Chest of Drawer"
     ]
   },
   {
     "id": "11401",
     "name": "Leaf",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/163.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11396",
     "name": "Galaxy",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/87.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11392",
     "name": "Fulkoli",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/81.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11388",
     "name": "Diamond",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/70.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11384",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/55.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11380",
     "name": "Butterfly",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 7000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/37.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 18″ x W: 15″ x H: 21″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
+      "home-furniture",
       "bed-side-table"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed Side Table"
     ]
   },
   {
     "id": "11376",
     "name": "Wheel",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/283.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11372",
     "name": "Warrington",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/278.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11368",
     "name": "Vitis",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/269.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11364",
     "name": "Sunflower",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/260.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11361",
     "name": "Sun",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/258.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11357",
     "name": "Ring Twiner",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/234.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11352",
     "name": "Ring Twiner",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/232.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11348",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/226.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 74″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11344",
     "name": "Purley",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/224.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11340",
     "name": "Projapoti",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/208.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11336",
     "name": "Pentagon",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/204.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11331",
     "name": "Nodi",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/202.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11325",
     "name": "Wave Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 61000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T11.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11319",
     "name": "Moussa",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 55000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/193.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11316",
     "name": "Volume Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 55000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T10.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11307",
     "name": "Rose Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 62000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T9.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<strong>Materials: </strong>Imported oak veneer wood.\r\n\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM.\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11306",
     "name": "Maze",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/190.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11297",
     "name": "New Kelly Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 60000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T8.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11292",
     "name": "Maximus",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/186.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11291",
     "name": "Lily Dining 4 Chairs Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 36000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T7.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11287",
     "name": "Lotus",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 64000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/180.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 74″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11278",
     "name": "Lota",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/171.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11277",
     "name": "Guiter Dining 4 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 36000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T6.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM.\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11269",
     "name": "Diamond Dining 4 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 41000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T5.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM.\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11268",
     "name": "Lily",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/166.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11257",
     "name": "Cube Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 62000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T4.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM.\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 66″ x W: 40″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11256",
     "name": "Galaxy",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/85.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11246",
     "name": "Coinrose Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 75000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<strong>4 Chairs Set Table Top Size: L: 54″ x W: 36″ x H: 30″</strong>\r\n\r\n<strong>6 Chairs Set Table Top Size: L: 72″ x W: 42″ x H:30″</strong>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11241",
     "name": "Bridge Dining 6 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 55000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM Thickness\r\n\r\n<b>4 Chairs Set Tabletop Size: L: 54″ x W: 36″ x H: 30″</b>\r\n\r\n<b>6 Chairs Set Tabletop Size: L: 66″ x W: 40″ x H:30″</b>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11240",
     "name": "Fulkoli",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/79.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11232",
     "name": "Cross Bit",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/53.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11230",
     "name": "Beijing Dining 4 Chair Set",
-    "category": "Home Furniture",
+    "category": "Dinning Room",
     "price": 40000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Glass at top of Table: </strong>10MM.\r\n\r\n<b>4 Chairs Set Tabletop Size: L: 54″ x W: 36″ x H: 30″</b>\r\n\r\n<b>6 Chairs Set Tabletop Size: L: 66″ x W: 40″ x H:30″</b>",
     "categories": [
-      "home-furniture",
       "dinning-room",
+      "home-furniture",
       "dinning-set"
     ],
     "category_names": [
-      "Home Furniture",
       "Dinning Room",
-      "Dinning Set"
+      "Dinning Set",
+      "Home Furniture"
     ]
   },
   {
     "id": "11222",
     "name": "Canoe",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 54000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/43.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 62″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11218",
     "name": "Sunflower Floor Bed",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 25000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/5.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 66″ x W: 85″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11206",
     "name": "Bullet",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 22500,
     "oldPrice": 34000,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/27.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<ol>\r\n \t<li dir=\"auto\"><strong>                                                                                                                                                                   Materials: </strong>Imported oak veneer wood.</li>\r\n</ol>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 44″ x W: 21″ x H: 75″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "almirah"
+      "almirah",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
-      "Almirah"
+      "Almirah",
+      "Home Furniture"
     ]
   },
   {
     "id": "11194",
     "name": "Vitis",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 30000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/4.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11190",
     "name": "Maximus",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 25000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/3.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11186",
     "name": "Lotus",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 25000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/2-1.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n&nbsp;",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   },
   {
     "id": "11178",
     "name": "Lota",
-    "category": "Home Furniture",
+    "category": "Bed Room",
     "price": 23000,
     "oldPrice": null,
-    "rating": 4.8,
-    "reviews": 12,
+    "rating": 4.9,
+    "reviews": 15,
     "image": "https://haatfurniture.com/wp-content/uploads/2023/02/13-2.jpg",
-    "badge": "Chittagong Teak",
+    "badge": "100% Solid Segun",
     "description": "<div dir=\"auto\">\r\n<div dir=\"auto\"><strong>Materials: </strong>Imported oak veneer wood.</div>\r\n</div>\r\n<strong>Color Option: </strong>Antique, Mid Light, Wooden.\r\n\r\n<strong>Size: L: 60″ x W: 85″</strong>",
     "categories": [
-      "home-furniture",
       "bed-room",
-      "bed"
+      "bed",
+      "home-furniture"
     ],
     "category_names": [
-      "Home Furniture",
       "Bed Room",
+      "Home Furniture",
       "Bed"
     ]
   }
