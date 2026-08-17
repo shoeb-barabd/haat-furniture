@@ -164,7 +164,8 @@ export default function CategoryPage() {
   const displayedProducts = sortedProducts.slice(0, itemsPerPage);
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 font-sans">
+    <div className="min-h-screen bg-[#fbf9f5] text-slate-800 font-sans antialiased">
+      
       {/* 1. Official Header Bar */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -181,10 +182,10 @@ export default function CategoryPage() {
             <div className="relative">
               <input 
                 type="text" 
-                placeholder="Search products..." 
+                placeholder="Search Chittagong Teak Furniture..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-full text-sm focus:outline-none focus:border-amber-700"
+                className="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-full text-xs focus:outline-none focus:border-amber-700"
               />
               <span className="absolute right-3 top-2.5 text-slate-400">🔍</span>
             </div>
@@ -201,7 +202,7 @@ export default function CategoryPage() {
 
             <Link href="/checkout" className="flex items-center gap-2 bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-full font-bold text-xs shadow transition">
               <span>🛍️</span>
-              <span>৳188,000</span>
+              <span>Cart / Checkout</span>
             </Link>
           </div>
         </div>
@@ -259,26 +260,26 @@ export default function CategoryPage() {
       </header>
 
       {/* 2. Black Woodmart Hero Header Banner */}
-      <div className="bg-[#0b0c10] text-white py-12 px-4 shadow-inner text-center border-b border-slate-800">
+      <div className="bg-[#0b0c10] text-white py-12 px-4 shadow-inner text-center border-b border-amber-500/20">
         <div className="max-w-7xl mx-auto">
           {/* Title with Back Arrow */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-2xl font-light text-slate-400">←</span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white capitalize">
-              {categoryInfo.title}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-2xl font-light text-amber-500">←</span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-white capitalize font-serif-luxury">
+              {categoryInfo.title} Collection
             </h1>
           </div>
 
           {/* Root Category Counters Strip */}
-          <div className="flex flex-wrap items-center justify-center gap-8 text-[11px] font-bold tracking-wider uppercase text-slate-300">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-[11px] font-bold tracking-wider uppercase text-slate-300 pt-2">
             {ROOT_CAT_COUNTS.map((cat) => (
               <Link 
                 key={cat.slug} 
                 href={`/product-category/${cat.slug}`}
-                className="hover:text-amber-400 transition text-center"
+                className="hover:text-amber-400 transition text-center bg-slate-900/80 px-4 py-2 rounded-full border border-slate-800"
               >
-                <div className="text-white font-extrabold">{cat.name}</div>
-                <div className="text-[10px] text-slate-400 font-normal lowercase">{cat.count}</div>
+                <span className="text-amber-400 font-black">{cat.name}</span>
+                <span className="text-[10px] text-slate-400 font-normal lowercase ml-1.5">({cat.count})</span>
               </Link>
             ))}
           </div>
@@ -292,30 +293,27 @@ export default function CategoryPage() {
         <aside className="lg:col-span-1 space-y-8">
           
           {/* Filter By Price Widget */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-100">
               FILTER BY PRICE
             </h3>
             
             <div className="space-y-4">
-              {/* Range Green Bar */}
-              <div className="relative pt-2">
-                <input 
-                  type="range" 
-                  min="5000" 
-                  max="100000" 
-                  step="1000"
-                  value={maxPrice}
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
-                  className="w-full accent-lime-600 cursor-pointer"
-                />
-              </div>
+              <input 
+                type="range" 
+                min="5000" 
+                max="100000" 
+                step="1000"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                className="w-full accent-lime-600 cursor-pointer"
+              />
 
               <div className="flex items-center justify-between text-xs font-bold text-slate-700">
                 <span>Price: ৳{minPrice.toLocaleString()} — ৳{maxPrice.toLocaleString()}</span>
                 <button 
                   onClick={() => {}}
-                  className="bg-slate-100 text-slate-800 px-3 py-1.5 rounded text-[11px] font-bold tracking-wider hover:bg-slate-900 hover:text-white transition"
+                  className="bg-slate-900 text-white px-3.5 py-1.5 rounded-lg text-[11px] font-bold tracking-wider hover:bg-amber-600 transition shadow"
                 >
                   FILTER
                 </button>
@@ -324,8 +322,8 @@ export default function CategoryPage() {
           </div>
 
           {/* Top Rated Products Widget */}
-          <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 pb-2 border-b border-slate-100">
+          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 pb-2 border-b border-slate-100">
               TOP RATED PRODUCTS
             </h3>
             <div className="space-y-4">
@@ -334,19 +332,29 @@ export default function CategoryPage() {
                   <img 
                     src={topP.image} 
                     alt={topP.name} 
-                    className="w-14 h-14 object-cover rounded border border-slate-100"
+                    className="w-14 h-14 object-contain rounded-xl border border-slate-100 p-1 bg-slate-50"
                   />
                   <div>
-                    <Link href={`/product/${topP.id}`} className="text-xs font-bold text-slate-800 hover:text-amber-700 transition line-clamp-1">
+                    <Link href={`/product/${topP.id}`} className="text-xs font-bold text-slate-900 hover:text-amber-600 transition line-clamp-1">
                       {topP.name}
                     </Link>
-                    <p className="text-xs font-extrabold text-amber-800 mt-1">
-                      ৳{topP.price.toLocaleString()}
+                    <p className="text-xs font-black text-lime-600 mt-0.5">
+                      ৳ {topP.price.toLocaleString()} BDT
                     </p>
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Why Choose Haat Furniture */}
+          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3 text-xs text-slate-600">
+            <h3 className="font-black text-slate-900 uppercase tracking-wider text-xs border-b pb-2">
+              WHY CHOOSE HAAT FURNITURE
+            </h3>
+            <p>✔ 100% Solid Chittagong Segun Teak Wood</p>
+            <p>✔ 20-Year Anti-Borer & Termite Proof Warranty</p>
+            <p>✔ Free Home Delivery & Assembly in Dhaka</p>
           </div>
 
         </aside>
@@ -358,7 +366,7 @@ export default function CategoryPage() {
           <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-200 text-xs text-slate-600">
             
             {/* Breadcrumb Trail */}
-            <div className="flex items-center gap-1 font-medium">
+            <div className="flex items-center gap-1 font-semibold">
               {categoryInfo.breadcrumbs.map((crumb, idx) => (
                 <React.Fragment key={crumb.url + idx}>
                   {idx > 0 && <span className="text-slate-300">/</span>}
@@ -372,14 +380,13 @@ export default function CategoryPage() {
             {/* Pagination / Grid Toggles / Sort Dropdown */}
             <div className="flex items-center gap-6">
               
-              {/* Show selector */}
               <div className="flex items-center gap-1.5 font-medium">
                 <span>Show :</span>
                 {[9, 12, 18, 24].map((num) => (
                   <button
                     key={num}
                     onClick={() => setItemsPerPage(num)}
-                    className={`px-1.5 py-0.5 rounded text-xs transition ${itemsPerPage === num ? 'font-bold text-slate-900' : 'text-slate-400 hover:text-slate-800'}`}
+                    className={`px-1.5 py-0.5 rounded text-xs transition ${itemsPerPage === num ? 'font-bold text-slate-900 bg-slate-200' : 'text-slate-500 hover:text-slate-800'}`}
                   >
                     {num}
                   </button>
@@ -388,27 +395,15 @@ export default function CategoryPage() {
 
               {/* Grid Column Toggles */}
               <div className="hidden sm:flex items-center gap-1">
-                <button 
-                  onClick={() => setGridCols(2)}
-                  className={`p-1 rounded ${gridCols === 2 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
-                  title="2 Columns"
-                >
-                  <span className="font-bold text-xs">⊞</span>
-                </button>
-                <button 
-                  onClick={() => setGridCols(3)}
-                  className={`p-1 rounded ${gridCols === 3 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
-                  title="3 Columns"
-                >
-                  <span className="font-bold text-xs">▦</span>
-                </button>
-                <button 
-                  onClick={() => setGridCols(4)}
-                  className={`p-1 rounded ${gridCols === 4 ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-800'}`}
-                  title="4 Columns"
-                >
-                  <span className="font-bold text-xs">▩</span>
-                </button>
+                {[2, 3, 4].map((cols) => (
+                  <button 
+                    key={cols}
+                    onClick={() => setGridCols(cols)}
+                    className={`px-2 py-1 rounded text-xs transition ${gridCols === cols ? 'bg-slate-900 text-white font-black' : 'text-slate-500 hover:text-slate-900'}`}
+                  >
+                    {cols} Col
+                  </button>
+                ))}
               </div>
 
               {/* Sorting Dropdown */}
@@ -420,60 +415,59 @@ export default function CategoryPage() {
                 <option value="default">Default sorting</option>
                 <option value="price-low">Sort by price: low to high</option>
                 <option value="price-high">Sort by price: high to low</option>
-                <option value="rating">Sort by popularity & rating</option>
+                <option value="rating">Sort by popularity</option>
               </select>
 
             </div>
 
           </div>
 
-          {/* Product Grid displaying ONLY products belonging to Almirah / selected category */}
+          {/* Product Grid */}
           {displayedProducts.length > 0 ? (
             <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${gridCols} gap-6`}>
               {displayedProducts.map((product) => (
                 <div 
                   key={product.id}
-                  className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div>
-                    {/* Aspect-square Woodmart style image */}
-                    <div className="relative aspect-square overflow-hidden bg-slate-100">
+                    <div className="relative aspect-square overflow-hidden bg-slate-50/50 p-4 flex items-center justify-center">
                       <img 
                         src={product.image} 
                         alt={product.name} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        className="max-h-full max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500"
                       />
-                      {product.badge && (
-                        <span className="absolute top-3 left-3 bg-amber-800 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
-                          {product.badge}
-                        </span>
-                      )}
+                      <span className="absolute top-3 left-3 bg-[#0b0c10]/90 backdrop-blur-md text-amber-400 text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full shadow-md border border-amber-500/20">
+                        {product.badge || '100% Solid Segun'}
+                      </span>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-4 text-center">
-                      <Link href={`/product/${product.id}`} className="font-bold text-sm text-slate-800 hover:text-amber-800 transition line-clamp-1 mb-1">
+                    <div className="p-5 text-center space-y-2">
+                      <p className="text-[10px] font-black uppercase text-amber-700 tracking-wider">
+                        {product.category_names ? product.category_names[0] : 'Solid Chittagong Segun'}
+                      </p>
+
+                      <Link href={`/product/${product.id}`} className="font-extrabold text-sm text-slate-900 hover:text-amber-600 transition line-clamp-1">
                         {product.name}
                       </Link>
 
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-amber-800 font-extrabold text-sm">
-                          ৳{product.price.toLocaleString()}
+                      <div className="flex items-center justify-center gap-2 pt-1">
+                        <span className="text-lime-600 font-black text-base">
+                          ৳ {product.price.toLocaleString()} BDT
                         </span>
                         {product.oldPrice && (
                           <span className="text-slate-400 text-xs line-through font-normal">
-                            ৳{product.oldPrice.toLocaleString()}
+                            ৳ {product.oldPrice.toLocaleString()}
                           </span>
                         )}
                       </div>
                     </div>
                   </div>
 
-                  {/* Quick View & Select Options Button */}
-                  <div className="p-4 pt-0">
+                  <div className="p-5 pt-0">
                     <Link 
                       href={`/product/${product.id}`}
-                      className="w-full block text-center bg-slate-900 hover:bg-amber-800 text-white py-2 rounded font-bold text-xs transition"
+                      className="w-full block text-center bg-slate-900 hover:bg-amber-600 text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-md transition-all duration-300 hover:scale-102 active:scale-95"
                     >
                       Select Options →
                     </Link>
@@ -483,11 +477,11 @@ export default function CategoryPage() {
               ))}
             </div>
           ) : (
-            <div className="bg-white p-12 rounded-xl border border-slate-200 text-center space-y-4">
-              <span className="text-4xl">🚪</span>
+            <div className="bg-white p-12 rounded-2xl border border-slate-200 text-center space-y-4">
+              <span className="text-4xl">🛏️</span>
               <h3 className="text-lg font-bold text-slate-800">No {categoryInfo.title} products found</h3>
               <p className="text-xs text-slate-500">Try adjusting your price filter range.</p>
-              <Link href="/product-category/home-furniture" className="inline-block bg-amber-800 text-white px-6 py-2 rounded font-bold text-xs hover:bg-amber-900 transition">
+              <Link href="/product-category/home-furniture" className="inline-block bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold text-xs hover:bg-amber-600 transition">
                 Browse All Home Furniture
               </Link>
             </div>
