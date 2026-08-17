@@ -1,15 +1,19 @@
 'use client';
-import { useState, useEffect, use } from "react";
+import React, { useState, useEffect, use } from "react";
 import Link from "next/link";
 import productsData from "../../products_128_data.json";
 
 export default function ProductDetailPage({ params }) {
   const resolvedParams = use(params);
-  const productId = resolvedParams.id;
+  const productId = resolvedParams?.id;
 
-  const [product, setProduct] = useState(null);
-  const [relatedProducts, setRelatedProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // Resolve product initial state directly for instant SSR rendering
+  const initialProduct = React.useMemo(() => {
+    const targetId = String(productId);
+    return productsData.find(p => String(p.id) === targetId) || productsData[0];
+  }, [productId]);
+
+  const [product, setProduct] = useState(initialProduct);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("");
@@ -22,29 +26,12 @@ export default function ProductDetailPage({ params }) {
   };
 
   useEffect(() => {
-    setLoading(true);
-    
-    // Find matching product in products_128_data.json
-    const targetId = Number(productId);
-    const foundProduct = productsData.find(p => Number(p.id) === targetId || String(p.id) === String(productId));
-
-    if (foundProduct) {
-      setProduct(foundProduct);
-      
-      // Filter related products in same category
-      const mainCat = foundProduct.categories ? foundProduct.categories[0] : 'home-furniture';
-      const related = productsData.filter(p => p.id !== foundProduct.id && p.categories?.includes(mainCat));
-      setRelatedProducts(related.length > 0 ? related.slice(0, 4) : productsData.slice(0, 4));
-    } else {
-      // Fallback
-      setProduct(productsData[0]);
-      setRelatedProducts(productsData.slice(1, 5));
-    }
-    
-    setLoading(false);
+    const targetId = String(productId);
+    const found = productsData.find(p => String(p.id) === targetId);
+    if (found) setProduct(found);
   }, [productId]);
 
-  // Generate dynamic gallery view list
+  // Dynamic gallery list
   const getProductGallery = (prod) => {
     if (!prod) return [];
     
@@ -75,6 +62,13 @@ export default function ProductDetailPage({ params }) {
   };
 
   const galleryList = getProductGallery(product);
+
+  const relatedProducts = React.useMemo(() => {
+    if (!product) return productsData.slice(0, 4);
+    const mainCat = product.categories ? product.categories[0] : 'home-furniture';
+    const rel = productsData.filter(p => p.id !== product.id && p.categories?.includes(mainCat));
+    return rel.length > 0 ? rel.slice(0, 4) : productsData.slice(0, 4);
+  }, [product]);
 
   const addToCart = () => {
     if (!product) return;
@@ -108,22 +102,10 @@ export default function ProductDetailPage({ params }) {
     }
   };
 
-  if (loading || !product) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-8 font-sans">
-        <div className="text-center space-y-4 animate-pulse">
-          <span className="text-5xl inline-block animate-bounce">🪑</span>
-          <h2 className="text-xl font-bold text-slate-700">Loading Product Details...</h2>
-        </div>
-      </div>
-    );
-  }
-
-  // Dynamic breadcrumb paths
+  // Dynamic breadcrumb paths & SKU
   const catNames = product.category_names || ['Bed Room', 'Furniture'];
   const catSlugs = product.categories || ['home-furniture'];
   
-  // Format SKU based on category
   let skuPrefix = "HAAT-FN";
   if (catSlugs.includes('sofa')) skuPrefix = "HAAT-SF";
   else if (catSlugs.includes('bed')) skuPrefix = "HAAT-BD";
