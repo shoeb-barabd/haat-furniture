@@ -330,18 +330,57 @@ export default function Home() {
       name: "HOME FURNITURE",
       slug: "home-furniture",
       href: "/product-category/home-furniture",
-      subCategories: [
-        { name: "Bed Room (Bed, Almirah, Dressing Table, Wardrobe)", href: "/product-category/home-furniture/bed-room" },
-        { name: "Dinning Room (Dinning Set, Showcase)", href: "/product-category/home-furniture/dinning-room" },
-        { name: "Kitchen (Mini Cabinet, Oven Stand)", href: "/product-category/home-furniture/kitchen" },
-        { name: "Living room (Sofa, Center Table, Shoe Rack)", href: "/product-category/home-furniture/living-room" }
+      megaMenu: true,
+      groups: [
+        {
+          title: "Bed Room",
+          href: "/product-category/home-furniture/bed-room",
+          items: [
+            { name: "Bed", href: "/product-category/home-furniture/bed-room/bed" },
+            { name: "Almirah", href: "/product-category/home-furniture/bed-room/almirah" },
+            { name: "Dressing Table", href: "/product-category/home-furniture/bed-room/dressing-table" },
+            { name: "Wardrobe", href: "/product-category/home-furniture/bed-room/wardrobe" },
+            { name: "Bed Side Table", href: "/product-category/home-furniture/bed-room/bed-side-table" },
+            { name: "Chest of Drawer", href: "/product-category/home-furniture/bed-room/chest-of-drawer" }
+          ]
+        },
+        {
+          title: "Dinning Room",
+          href: "/product-category/home-furniture/dinning-room",
+          items: [
+            { name: "Dinning Set", href: "/product-category/home-furniture/dinning-room/dinning-set" },
+            { name: "Showcase", href: "/product-category/home-furniture/dinning-room/showcase" },
+            { name: "Corner Showcase", href: "/product-category/home-furniture/dinning-room/corner-showcase" },
+            { name: "Side Table", href: "/product-category/home-furniture/dinning-room/side-table" }
+          ]
+        },
+        {
+          title: "Living Room",
+          href: "/product-category/home-furniture/living-room",
+          items: [
+            { name: "Sofa", href: "/product-category/home-furniture/living-room/sofa" },
+            { name: "Center Table", href: "/product-category/home-furniture/living-room/center-table" },
+            { name: "Coffee Table", href: "/product-category/home-furniture/living-room/coffee-table" },
+            { name: "Shoe Rack", href: "/product-category/home-furniture/living-room/shoe-rack" },
+            { name: "Book Shelf", href: "/product-category/home-furniture/living-room/book-shelf" }
+          ]
+        },
+        {
+          title: "Kitchen",
+          href: "/product-category/home-furniture/kitchen",
+          items: [
+            { name: "Mini Cabinet", href: "/product-category/home-furniture/kitchen/mini-cabinet" },
+            { name: "Oven Stand", href: "/product-category/home-furniture/kitchen/oven-stand" }
+          ]
+        }
       ]
     },
     {
       name: "OFFICE FURNITURE",
       slug: "office-furniture",
       href: "/product-category/office-furniture",
-      subCategories: [
+      megaMenu: false,
+      items: [
         { name: "Work Station", href: "/product-category/office-furniture/work-station" },
         { name: "Chair", href: "/product-category/office-furniture/chair" },
         { name: "Office Sofa", href: "/product-category/office-furniture/office-sofa" },
@@ -351,14 +390,14 @@ export default function Home() {
     {
       name: "MATTRESS",
       slug: "mattress",
-      href: "/product-category/mattress",
-      subCategories: []
+      href: "/product-category/mattress"
     },
     {
       name: "DOOR",
       slug: "door",
       href: "/product-category/door",
-      subCategories: [
+      megaMenu: false,
+      items: [
         { name: "Flash Door", href: "/product-category/door/flash-door" },
         { name: "Frame", href: "/product-category/door/frame" },
         { name: "Wooden Door", href: "/product-category/door/wooden-door" }
@@ -368,15 +407,15 @@ export default function Home() {
       name: "MISCELLANEOUS",
       slug: "miscellaneous",
       href: "/product-category/miscellaneous",
-      subCategories: [
+      megaMenu: false,
+      items: [
         { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
         { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
       ]
     },
     {
       name: "ABOUT US",
-      href: "/about-us",
-      subCategories: []
+      href: "/about-us"
     }
   ];
 
@@ -782,43 +821,61 @@ export default function Home() {
                 onMouseEnter={() => setActiveDropdown(menu.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  onClick={() => {
-                    setSelectedCategory(menu.slug);
-                    setSelectedSubCategory("");
-                    setSearchQuery("");
-                    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`flex items-center gap-1 transition-all py-1 border-b-2 ${
+                <Link
+                  href={menu.href || '#'}
+                  className={`flex items-center gap-1 transition-all py-1 border-b-2 text-xs font-extrabold tracking-wider ${
                     selectedCategory === menu.slug
-                      ? 'text-amber-600 border-amber-600 font-black'
+                      ? 'text-amber-600 border-amber-600'
                       : 'text-slate-800 border-transparent hover:text-amber-600 hover:border-amber-600'
                   }`}
                 >
                   <span>{menu.name}</span>
-                  {menu.subCategories.length > 0 && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
-                </button>
+                  {(menu.groups || menu.items) && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
+                </Link>
 
-                {/* Sub-Category Multi-Column Dropdown */}
-                {menu.subCategories.length > 0 && activeDropdown === menu.name && (
-                  <div className="absolute top-full left-0 w-64 bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
+                {/* 1. Multi-Column Mega Dropdown for HOME FURNITURE */}
+                {menu.megaMenu && menu.groups && activeDropdown === menu.name && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 min-w-[750px] bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-6 z-50 animate-entrance grid grid-cols-4 gap-6">
+                    {menu.groups.map((group, gIdx) => (
+                      <div key={gIdx} className="space-y-3">
+                        <Link 
+                          href={group.href} 
+                          className="block text-xs font-black text-slate-900 hover:text-amber-600 uppercase tracking-wider pb-2 border-b border-slate-100"
+                        >
+                          {group.title} →
+                        </Link>
+                        <div className="space-y-1.5">
+                          {group.items.map((item, iIdx) => (
+                            <Link
+                              key={iIdx}
+                              href={item.href}
+                              className="block text-[11px] font-semibold text-slate-600 hover:text-amber-600 hover:translate-x-1 transition-all"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* 2. Single Column Dropdown for OFFICE / DOOR / MISCELLANEOUS */}
+                {!menu.megaMenu && menu.items && activeDropdown === menu.name && (
+                  <div className="absolute top-full left-0 w-56 bg-white text-slate-900 shadow-2xl rounded-xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
                     <div className="px-3 py-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 mb-1">
                       {menu.name} Collections
                     </div>
 
-                    {menu.subCategories.map((sub, sIdx) => (
-                      <button
+                    {menu.items.map((sub, sIdx) => (
+                      <Link
                         key={sIdx}
-                        onClick={() => handleSelectSubCategory(sub.name, sub.query)}
-                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-between ${
-                          selectedSubCategory === sub.name
-                            ? 'bg-slate-900 text-white shadow-md'
-                            : 'hover:bg-slate-100 hover:text-blue-600'
-                        }`}
+                        href={sub.href}
+                        className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg transition-all"
                       >
                         <span>{sub.name}</span>
-                        <span className="text-[10px] opacity-60">→</span>
-                      </button>
+                        <span className="text-[10px] opacity-40">→</span>
+                      </Link>
                     ))}
                   </div>
                 )}
