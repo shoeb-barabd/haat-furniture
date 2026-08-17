@@ -24,6 +24,89 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("products"); // products | add-product | categories | orders | analytics | bulk-discount | inquiries
   const [searchQuery, setSearchQuery] = useState("");
   const [toast, setToast] = useState("");
+  const [uploading, setUploading] = useState(false);
+
+  // FEATURE: DIRECT PC IMAGE FILE UPLOAD HANDLER FOR MAIN IMAGE
+  const handleMainFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+    const body = new FormData();
+    body.append('file', file);
+
+    try {
+      const res = await fetch('/api/v1/upload', {
+        method: 'POST',
+        body: body
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFormData({ ...formData, image: data.url });
+        showToast("Main product image uploaded from PC successfully!");
+      } else {
+        // Local File Reader Fallback
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setFormData({ ...formData, image: event.target.result });
+          showToast("Main image selected from PC!");
+        };
+        reader.readAsDataURL(file);
+      }
+    } catch (err) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFormData({ ...formData, image: event.target.result });
+        showToast("Main image selected from PC!");
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  // FEATURE: DIRECT PC MULTI-FILE UPLOAD HANDLER FOR GALLERY ANGLES
+  const handleGalleryFilesUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (!files || files.length === 0) return;
+
+    setUploading(true);
+    const newGalleryUrls = [...formData.gallery_images];
+
+    for (const file of files) {
+      const body = new FormData();
+      body.append('file', file);
+
+      try {
+        const res = await fetch('/api/v1/upload', {
+          method: 'POST',
+          body: body
+        });
+        const data = await res.json();
+        if (data.success) {
+          newGalleryUrls.push(data.url);
+        } else {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            newGalleryUrls.push(event.target.result);
+            setFormData(prev => ({ ...prev, gallery_images: [...prev.gallery_images, event.target.result] }));
+          };
+          reader.readAsDataURL(file);
+        }
+      } catch (err) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setFormData(prev => ({ ...prev, gallery_images: [...prev.gallery_images, event.target.result] }));
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    setFormData(prev => ({ ...prev, gallery_images: newGalleryUrls }));
+    setUploading(false);
+    showToast(`Uploaded ${files.length} angle image(s) from PC!`);
+  };
+
   const [editingProduct, setEditingProduct] = useState(null);
 
   // Modal States
@@ -521,21 +604,64 @@ export default function AdminDashboard() {
                 </div>
               </div>
 
-              {/* FEATURE 5: MULTI-ANGLE GALLERY UPLOADER */}
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-black text-slate-900">🖼️ Multi-Angle Gallery Images ({formData.gallery_images.length})</span>
-                  <button type="button" onClick={handleAddGalleryImageUrl} className="px-3 py-1 bg-amber-600 text-white rounded font-bold text-[11px]">
-                    + Add Angle Image URL
-                  </button>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {formData.gallery_images.map((gUrl, gIdx) => (
-                    <div key={gIdx} className="w-14 h-14 rounded-lg border bg-white p-1 relative group">
-                      <img src={gUrl} alt={`Angle ${gIdx}`} className="w-full h-full object-contain" />
+              {/* FEATURE: DIRECT PC IMAGE FILE UPLOAD FOR MAIN IMAGE & GALLERY ANGLES */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                
+                {/* Main Image File Input */}
+                <div className="space-y-2">
+                  <label className="block font-black text-slate-800 text-xs">📸 Main Image (from PC or URL)</label>
+                  <div className="flex items-center gap-2">
+                    <label className="flex-1 cursor-pointer bg-slate-900 hover:bg-slate-800 text-white text-xs font-black py-2.5 px-3 rounded-xl text-center shadow transition flex items-center justify-center gap-2">
+                      <span>📤 Choose PC File</span>
+                      <input type="file" accept="image/*" onChange={handleMainFileUpload} className="hidden" />
+                    </label>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Or paste image URL (https://haatfurniture.com/...)"
+                    value={formData.image}
+                    onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                    className="w-full px-3 py-2 border rounded-xl bg-white text-xs font-medium"
+                  />
+                  {formData.image && (
+                    <div className="w-16 h-16 rounded-xl border bg-white p-1">
+                      <img src={formData.image} alt="Main Preview" className="w-full h-full object-contain" />
                     </div>
-                  ))}
+                  )}
                 </div>
+
+                {/* Multi-Angle Gallery Files Input */}
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <label className="font-black text-slate-800 text-xs">🖼️ Multi-Angle Gallery ({formData.gallery_images.length})</label>
+                    <button type="button" onClick={handleAddGalleryImageUrl} className="text-[10px] font-bold text-amber-700 hover:underline">
+                      + Add URL
+                    </button>
+                  </div>
+                  
+                  <label className="w-full cursor-pointer bg-amber-600 hover:bg-amber-700 text-white text-xs font-black py-2.5 px-3 rounded-xl text-center shadow transition flex items-center justify-center gap-2">
+                    <span>📤 Upload Angle Files from PC (Select Multiple)</span>
+                    <input type="file" accept="image/*" multiple onChange={handleGalleryFilesUpload} className="hidden" />
+                  </label>
+
+                  {/* Gallery Thumbnails */}
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {formData.gallery_images.map((gUrl, gIdx) => (
+                      <div key={gIdx} className="w-12 h-12 rounded-lg border bg-white p-0.5 relative group">
+                        <img src={gUrl} alt={`Angle ${gIdx}`} className="w-full h-full object-contain" />
+                        <button
+                          type="button"
+                          onClick={() => setFormData({ ...formData, gallery_images: formData.gallery_images.filter((_, i) => i !== gIdx) })}
+                          className="absolute -top-1.5 -right-1.5 bg-red-600 text-white w-4 h-4 rounded-full text-[9px] font-black flex items-center justify-center shadow"
+                          title="Remove Image"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
               </div>
 
               <button type="submit" className="w-full py-3.5 rounded-2xl bg-slate-900 text-white font-black uppercase">
