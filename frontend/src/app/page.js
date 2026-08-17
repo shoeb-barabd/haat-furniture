@@ -404,23 +404,12 @@ export default function Home() {
       ]
     },
     {
-      name: "",
-      slug: "miscellaneous",
-      href: "/product-category/miscellaneous",
-      megaMenu: false,
-      items: [
-        { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
-        { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
-      ]
-    },
-    {
       name: "MISCELLANEOUS",
       slug: "miscellaneous",
       href: "/product-category/miscellaneous",
       megaMenu: false,
       items: [
-        { name: "Shoe Rack", href: "/product-category/miscellaneous/shoe-rack" },
-        { name: "Corner Shelf", href: "/product-category/miscellaneous/corner-shelf" },
+        { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
         { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
       ]
     },
@@ -871,7 +860,7 @@ export default function Home() {
                   </div>
                 )}
 
-                {/* 2. Single Column Dropdown for OFFICE / DOOR /  */}
+                {/* 2. Single Column Dropdown for OFFICE / DOOR / MISCELLANEOUS */}
                 {!menu.megaMenu && menu.items && activeDropdown === menu.name && (
                   <div className="absolute top-full left-0 w-56 bg-white text-slate-900 shadow-2xl rounded-xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
                     <div className="px-3 py-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 mb-1">
