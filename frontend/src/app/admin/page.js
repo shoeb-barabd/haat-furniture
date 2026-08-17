@@ -291,67 +291,85 @@ export default function AdminDashboard() {
   };
 
   // PRODUCT CRUD
-  const handleAddProduct = (e) => {
+  // LIVE BACKEND API HANDLERS: CONNECTS ADMIN DIRECTLY TO STOREFRONT
+  const handleAddProduct = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.price) return;
 
     if (editingProduct) {
-      setProducts(products.map(p => p.id === editingProduct.id ? {
-        ...p,
+      const payload = {
+        id: editingProduct.id,
         name: formData.name,
         price: parseFloat(formData.price),
         oldPrice: formData.old_price ? parseFloat(formData.old_price) : null,
-        image: formData.image || p.image,
-        gallery: formData.gallery_images.length > 0 ? formData.gallery_images : p.gallery,
+        image: formData.image,
+        gallery: formData.gallery_images,
         description: formData.description
-      } : p));
-      showToast(`Updated: "${formData.name}"`);
+      };
+
+      try {
+        const res = await fetch('/api/v1/products', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const resData = await res.json();
+        if (resData.success) {
+          setProducts(products.map(p => p.id === editingProduct.id ? { ...p, ...payload } : p));
+          showToast(`✅ Storefront Updated Live: "${formData.name}"`);
+        }
+      } catch (err) {
+        showToast(`Updated locally: "${formData.name}"`);
+      }
     } else {
-      const newP = {
+      const payload = {
         id: Date.now(),
         name: formData.name,
         price: parseFloat(formData.price),
         oldPrice: formData.old_price ? parseFloat(formData.old_price) : null,
+        category: formData.category,
+        category_slug: formData.category_slug || 'home-furniture',
         categories: [formData.category_slug || 'home-furniture'],
         category_names: [formData.category],
         image: formData.image || "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
-        gallery: formData.gallery_images,
-        description: formData.description || "Solid Chittagong Segun Wood."
+        gallery: formData.gallery_images.length > 0 ? formData.gallery_images : [formData.image],
+        description: formData.description || "Solid Chittagong Segun Teak Wood."
       };
-      setProducts([newP, ...products]);
-      showToast(`Published: "${newP.name}"`);
+
+      try {
+        const res = await fetch('/api/v1/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const resData = await res.json();
+        if (resData.success) {
+          setProducts([payload, ...products]);
+          showToast(`🚀 Published Live to Storefront: "${payload.name}"`);
+        }
+      } catch (err) {
+        setProducts([payload, ...products]);
+        showToast(`Published: "${payload.name}"`);
+      }
     }
+
     setActiveTab("products");
     resetForm();
   };
 
-  const startEditProduct = (p) => {
-    setEditingProduct(p);
-    setFormData({
-      name: p.name,
-      price: p.price,
-      old_price: p.oldPrice || "",
-      category: p.category || "Home Furniture",
-      category_slug: p.categories ? p.categories[0] : "home-furniture",
-      image: p.image || "",
-      gallery_images: p.gallery || [p.image],
-      wood_type: p.wood_type || "100% Solid Chittagong Teak Wood",
-      warranty: p.warranty || "20 Years Guarantee",
-      badge: p.badge || "New Arrival",
-      description: p.description || ""
-    });
-    setActiveTab("add-product");
-  };
-
-  const resetForm = () => {
-    setEditingProduct(null);
-    setFormData({ name: "", price: "", old_price: "", category: "Home Furniture", category_slug: "home-furniture", image: "", gallery_images: [], wood_type: "100% Solid Chittagong Teak Wood", warranty: "20 Years Guarantee", badge: "New Arrival", description: "" });
-  };
-
-  const handleDeleteProduct = (id) => {
-    if (confirm("Delete this product?")) {
-      setProducts(products.filter(p => p.id !== id));
-      showToast("Product deleted!");
+  const handleDeleteProduct = async (id) => {
+    if (confirm("Are you sure you want to delete this product from the live storefront?")) {
+      try {
+        const res = await fetch(`/api/v1/products?id=${id}`, { method: 'DELETE' });
+        const resData = await res.json();
+        if (resData.success) {
+          setProducts(products.filter(p => p.id !== id));
+          showToast("🗑️ Product deleted from live storefront!");
+        }
+      } catch (err) {
+        setProducts(products.filter(p => p.id !== id));
+        showToast("Product deleted!");
+      }
     }
   };
 
