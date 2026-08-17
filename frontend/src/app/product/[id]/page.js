@@ -1,6 +1,7 @@
-"use client";
+'use client';
 import { useState, useEffect, use } from "react";
 import Link from "next/link";
+import productsData from "../../products_128_data.json";
 
 export default function ProductDetailPage({ params }) {
   const resolvedParams = use(params);
@@ -15,94 +16,61 @@ export default function ProductDetailPage({ params }) {
   const [activeTab, setActiveTab] = useState("description");
   const [toastMessage, setToastMessage] = useState("");
 
-  // Toast Notification Helper
   const showToast = (msg) => {
     setToastMessage(msg);
     setTimeout(() => setToastMessage(""), 3000);
   };
 
   useEffect(() => {
-    async function fetchProduct() {
-      setLoading(true);
-      try {
-        const res = await fetch(`/api/v1/products/${productId}`);
-        const allRes = await fetch(`/api/v1/products`);
-        
-        if (res.ok) {
-          const data = await res.json();
-          const p = data.data || data;
-          setProduct(p);
-        } else {
-          // Fallback mockup if API returns 404 or fails
-          setProduct({
-            id: productId,
-            name: "Cube Dining 6 Chair Set",
-            price: 62000,
-            old_price: 78000,
-            sku: "HAAT-DIN-620",
-            category: "Dinning Room",
-            sub_category: "Dinning Set",
-            tag: "dinning",
-            image: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg",
-            materials: "Imported Chittagong 100% Solid Segun Wood.",
-            color_options: "Antique, Mid Light, Wooden Lacquer Finish.",
-            dimensions: 'Table: L: 66" x W: 40" x H: 30" (6 Chairs Included)',
-            description: "Solid Chittagong Segun Wood 6 Chair Dining Set with 10mm tempered glass top. Handcrafted borer-proof teak chairs with ergonomically curved backrests and 20 years guarantee."
-          });
-        }
+    setLoading(true);
+    
+    // Find matching product in products_128_data.json
+    const targetId = Number(productId);
+    const foundProduct = productsData.find(p => Number(p.id) === targetId || String(p.id) === String(productId));
 
-        if (allRes.ok) {
-          const allData = await allRes.json();
-          setRelatedProducts((allData.data || []).slice(0, 4));
-        }
-      } catch (err) {
-        console.error("Error fetching product", err);
-      } finally {
-        setLoading(false);
-      }
+    if (foundProduct) {
+      setProduct(foundProduct);
+      
+      // Filter related products in same category
+      const mainCat = foundProduct.categories ? foundProduct.categories[0] : 'home-furniture';
+      const related = productsData.filter(p => p.id !== foundProduct.id && p.categories?.includes(mainCat));
+      setRelatedProducts(related.length > 0 ? related.slice(0, 4) : productsData.slice(0, 4));
+    } else {
+      // Fallback
+      setProduct(productsData[0]);
+      setRelatedProducts(productsData.slice(1, 5));
     }
-
-    if (productId) fetchProduct();
+    
+    setLoading(false);
   }, [productId]);
 
-  // DYNAMIC GALLERY THUMBNAIL GENERATOR ("CHAIR ALADA KORE DEKHA JACCHE")
+  // Generate dynamic gallery view list
   const getProductGallery = (prod) => {
     if (!prod) return [];
     
-    // If backend returns valid multi-image gallery array
-    if (prod.gallery && Array.isArray(prod.gallery) && prod.gallery.length > 1) {
-      return prod.gallery.map((img) => (typeof img === 'string' ? { url: img, label: 'Angle View' } : img));
-    }
+    const mainImg = prod.image || "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg";
+    const nameLower = (prod.name || "").toLowerCase();
+    const catList = (prod.categories || []).join(' ');
 
-    const mainImg = prod.image || "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg";
-    const cat = (prod.category || prod.name || "").toLowerCase();
-
-    // Dining Set / Chair Specific Gallery Views
-    if (cat.includes("dining") || cat.includes("dinning") || cat.includes("table") || cat.includes("chair")) {
+    if (nameLower.includes("dining") || nameLower.includes("dinning") || catList.includes("dinning")) {
       return [
         { url: mainImg, label: "Full Set View / সম্পূর্ণ ডাইনিং সেট" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Single Chair View / সলিড সেগুন চেয়ার ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Dining Table View / টেবিল ও গ্লাস ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg", label: "Side Perspective / সাইড ভিউ" }
-      ];
-    }
-    
-    // Bed Room / Almirah / Wardrobe
-    if (cat.includes("bed") || cat.includes("almirah") || cat.includes("wardrobe") || cat.includes("dresser")) {
-      return [
-        { url: mainImg, label: "Main View / মেইন ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg", label: "Headboard & Carving / খোদাই ফিনিশিং ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg", label: "Side Perspective / সাইড ভিউ" },
-        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg", label: "Structure Detail / সলিড কাটের ভিউ" }
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg", label: "Single Chair View / সলিড সেগুন চেয়ার" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", label: "Dining Table View / টেবিল ভিউ" }
       ];
     }
 
-    // Default Living Room / Sofa
+    if (nameLower.includes("dressing") || nameLower.includes("almirah") || nameLower.includes("wardrobe") || nameLower.includes("bed")) {
+      return [
+        { url: mainImg, label: "Main View / মেইন ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg", label: "Front Carving View / ফ্রন্ট ভিউ" },
+        { url: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg", label: "Side Perspective / সাইড ভিউ" }
+      ];
+    }
+
     return [
-      { url: mainImg, label: "Main Set View / মেইন ভিউ" },
-      { url: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg", label: "Armchair Close-up / সিঙ্গেল চেয়ার ভিউ" },
-      { url: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg", label: "Center Table Detail / টি-টেবিল ভিউ" },
-      { url: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg", label: "Texture & Cushion / কুশন ভিউ" }
+      { url: mainImg, label: "Main View / মেইন ভিউ" },
+      { url: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg", label: "Detail Angle / সাইড ভিউ" }
     ];
   };
 
@@ -110,7 +78,6 @@ export default function ProductDetailPage({ params }) {
 
   const addToCart = () => {
     if (!product) return;
-
     try {
       const existingCartRaw = localStorage.getItem("haat_cart");
       let currentCart = existingCartRaw ? JSON.parse(existingCartRaw) : [];
@@ -141,7 +108,7 @@ export default function ProductDetailPage({ params }) {
     }
   };
 
-  if (loading) {
+  if (loading || !product) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-8 font-sans">
         <div className="text-center space-y-4 animate-pulse">
@@ -151,6 +118,22 @@ export default function ProductDetailPage({ params }) {
       </div>
     );
   }
+
+  // Dynamic breadcrumb paths
+  const catNames = product.category_names || ['Bed Room', 'Furniture'];
+  const catSlugs = product.categories || ['home-furniture'];
+  
+  // Format SKU based on category
+  let skuPrefix = "HAAT-FN";
+  if (catSlugs.includes('sofa')) skuPrefix = "HAAT-SF";
+  else if (catSlugs.includes('bed')) skuPrefix = "HAAT-BD";
+  else if (catSlugs.includes('almirah')) skuPrefix = "HAAT-AL";
+  else if (catSlugs.includes('dressing-table')) skuPrefix = "HAAT-DT";
+  else if (catSlugs.includes('dinning-set')) skuPrefix = "HAAT-DIN";
+  else if (catSlugs.includes('door')) skuPrefix = "HAAT-[#DR]";
+
+  const dynamicSku = `${skuPrefix}-${String(product.id).padStart(3, '0')}`;
+  const primaryTag = catSlugs[catSlugs.length - 1] || 'furniture';
 
   return (
     <div className="min-h-screen bg-[#f2f3f5] text-slate-800 font-sans antialiased">
@@ -173,15 +156,15 @@ export default function ProductDetailPage({ params }) {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         
-        {/* MAIN PRODUCT CARD CONTAINER MATCHING USER SCREENSHOT */}
+        {/* MAIN PRODUCT CARD CONTAINER */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             
-            {/* LEFT COLUMN: VERTICAL THUMBNAIL GALLERY & MAIN IMAGE */}
+            {/* LEFT COLUMN: GALLERY & MAIN IMAGE */}
             <div className="md:col-span-6 flex flex-col sm:flex-row gap-4 items-start">
               
-              {/* Vertical Thumbnail List with Up/Down Controls */}
+              {/* Thumbnails */}
               <div className="flex sm:flex-col items-center gap-2 flex-shrink-0 w-full sm:w-auto overflow-x-auto sm:overflow-visible py-1">
                 <button
                   type="button"
@@ -192,36 +175,26 @@ export default function ProductDetailPage({ params }) {
                 </button>
 
                 <div className="flex sm:flex-col gap-2.5">
-                  {galleryList.map((item, idx) => {
-                    const imgUrl = typeof item === 'string' ? item : item.url;
-                    const labelText = typeof item === 'string' ? `View ${idx + 1}` : item.label;
-
-                    return (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setActiveImageIndex(idx)}
-                        onMouseEnter={() => setActiveImageIndex(idx)}
-                        title={labelText}
-                        className={`w-16 h-16 sm:w-18 sm:h-18 rounded-xl border-2 overflow-hidden p-1.5 bg-white transition-all relative group ${activeImageIndex === idx ? 'border-amber-600 ring-2 ring-amber-500/20 shadow-md scale-102' : 'border-slate-200 opacity-70 hover:opacity-100 hover:border-slate-400'}`}
-                      >
-                        <img
-                          src={imgUrl}
-                          alt={`Thumbnail ${idx + 1}`}
-                          className="w-full h-full object-contain filter drop-shadow-sm"
-                          onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300&auto=format&fit=crop&q=80";
-                          }}
-                        />
-                        {activeImageIndex === idx && (
-                          <div className="absolute inset-x-0 bottom-0 bg-amber-600 text-white text-[8px] font-black text-center py-0.5 uppercase tracking-tighter">
-                            Active
-                          </div>
-                        )}
-                      </button>
-                    );
-                  })}
+                  {galleryList.map((item, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveImageIndex(idx)}
+                      onMouseEnter={() => setActiveImageIndex(idx)}
+                      className={`w-16 h-16 sm:w-18 sm:h-18 rounded-xl border-2 overflow-hidden p-1.5 bg-white transition-all relative group ${activeImageIndex === idx ? 'border-amber-600 ring-2 ring-amber-500/20 shadow-md scale-102' : 'border-slate-200 opacity-70 hover:opacity-100'}`}
+                    >
+                      <img
+                        src={item.url}
+                        alt={`Thumbnail ${idx + 1}`}
+                        className="w-full h-full object-contain filter drop-shadow-sm"
+                      />
+                      {activeImageIndex === idx && (
+                        <div className="absolute inset-x-0 bottom-0 bg-amber-600 text-white text-[8px] font-black text-center py-0.5 uppercase tracking-tighter">
+                          Active
+                        </div>
+                      )}
+                    </button>
+                  ))}
                 </div>
 
                 <button
@@ -233,71 +206,41 @@ export default function ProductDetailPage({ params }) {
                 </button>
               </div>
 
-              {/* Main Display Product Image & Sub-Product Component Controls */}
+              {/* Main Product Image & Component Switcher */}
               <div className="w-full flex-1 space-y-3">
                 <div className="w-full h-80 sm:h-96 rounded-2xl border border-slate-200 bg-slate-50/50 p-4 flex flex-col items-center justify-center relative group overflow-hidden">
                   <img
                     key={activeImageIndex}
-                    src={galleryList[activeImageIndex]?.url || product?.image}
-                    alt={product?.name}
+                    src={galleryList[activeImageIndex]?.url || product.image}
+                    alt={product.name}
                     className="max-h-full max-w-full object-contain filter drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=80";
-                    }}
                   />
 
-                  {/* View Angle Label Badge */}
                   {galleryList[activeImageIndex]?.label && (
                     <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black px-3 py-1 rounded-full shadow-md">
                       📷 {galleryList[activeImageIndex].label}
                     </div>
                   )}
-
-                  {/* Zoom Icon Button */}
-                  <button
-                    type="button"
-                    className="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-slate-100 text-slate-700 flex items-center justify-center text-sm shadow-md border border-slate-200"
-                    title="Expand Fullview"
-                  >
-                    ⛶
-                  </button>
                 </div>
 
-                {/* Sub-Product / Package Component Multi-View Switcher Bar */}
+                {/* Sub-Product View Switcher */}
                 <div className="w-full p-3 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
                   <div className="text-[10px] font-black text-slate-700 uppercase tracking-wider flex items-center justify-between">
-                    <span>🔍 Component View / আলাদা আলাদা পার্ট দেখুন:</span>
-                    <span className="text-amber-600 font-extrabold text-[9px]">3 Sub-Views</span>
+                    <span>🔍 COMPONENT VIEW / আলাদা আলাদা পার্ট দেখুন:</span>
+                    <span className="text-amber-600 font-extrabold text-[9px]">{galleryList.length} SUB-VIEWS</span>
                   </div>
                   
                   <div className="grid grid-cols-3 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setActiveImageIndex(0)}
-                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 0 ? 'bg-slate-900 text-white border-slate-900 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
-                    >
-                      <span className="text-xs">🍽️</span>
-                      <span className="text-[10px]">Full Set / এক সাথে</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setActiveImageIndex(1)}
-                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 1 ? 'bg-amber-600 text-white border-amber-600 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
-                    >
-                      <span className="text-xs">🪑</span>
-                      <span className="text-[10px]">Chair / চেয়ার আলাদা</span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setActiveImageIndex(2)}
-                      className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === 2 ? 'bg-blue-600 text-white border-blue-600 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
-                    >
-                      <span className="text-xs">🪵</span>
-                      <span className="text-[10px]">Table / টেবিল আলাদা</span>
-                    </button>
+                    {galleryList.map((gItem, gIdx) => (
+                      <button
+                        key={gIdx}
+                        type="button"
+                        onClick={() => setActiveImageIndex(gIdx)}
+                        className={`py-2 px-2 rounded-xl border text-center transition-all flex items-center justify-center gap-1 cursor-pointer ${activeImageIndex === gIdx ? 'bg-slate-900 text-white border-slate-900 font-black shadow-md' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 font-bold'}`}
+                      >
+                        <span className="text-[10px] truncate">{gItem.label.split('/')[0]}</span>
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -305,45 +248,47 @@ export default function ProductDetailPage({ params }) {
 
             </div>
 
-            {/* RIGHT COLUMN: PRODUCT DETAILS & PURCHASING */}
+            {/* RIGHT COLUMN: PRODUCT DETAILS */}
             <div className="md:col-span-6 space-y-4">
               
-              {/* Breadcrumb Navigation matching screenshot */}
-              <nav className="text-xs text-slate-500 flex items-center flex-wrap gap-1">
-                <Link href="/" className="hover:text-slate-800">Home</Link>
+              {/* Dynamic Breadcrumbs */}
+              <nav className="text-xs text-slate-500 flex items-center flex-wrap gap-1 font-medium">
+                <Link href="/" className="hover:text-amber-700">Home</Link>
                 <span>/</span>
-                <span className="hover:text-slate-800">Home Furniture</span>
+                <Link href="/product-category/home-furniture" className="hover:text-amber-700">Home Furniture</Link>
+                {catNames.map((cName, cIdx) => (
+                  <React.Fragment key={cIdx}>
+                    <span>/</span>
+                    <Link href={`/product-category/${catSlugs[cIdx] || 'home-furniture'}`} className="hover:text-amber-700">
+                      {cName}
+                    </Link>
+                  </React.Fragment>
+                ))}
                 <span>/</span>
-                <span className="hover:text-slate-800">{product?.category || 'Dinning Room'}</span>
-                <span>/</span>
-                <span className="hover:text-slate-800">{product?.sub_category || 'Dinning Set'}</span>
-                <span>/</span>
-                <span className="font-bold text-slate-800">{product?.name}</span>
+                <span className="font-bold text-slate-900">{product.name}</span>
               </nav>
 
               {/* Product Title */}
               <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
-                {product?.name}
+                {product.name}
               </h1>
 
-              {/* Price Tag in Green Font matching screenshot */}
+              {/* Price Tag in Green Font */}
               <div className="text-2xl font-bold text-lime-600 flex items-center gap-2">
-                <span>৳ {product?.price?.toLocaleString()} BDT</span>
-                {product?.old_price && (
-                  <span className="text-slate-400 text-base line-through font-normal"> ৳ {product?.old_price?.toLocaleString()}</span>
+                <span>৳ {product.price.toLocaleString()} BDT</span>
+                {product.oldPrice && (
+                  <span className="text-slate-400 text-base line-through font-normal"> ৳ {product.oldPrice.toLocaleString()}</span>
                 )}
               </div>
 
               {/* Metadata list */}
               <div className="text-xs text-slate-500 space-y-1.5 pt-1 border-t border-slate-100">
-                <p><strong className="text-slate-700">SKU:</strong> {product?.sku || 'HAAT-DIN-620'}</p>
-                <p>
-                  <strong className="text-slate-700">Categories:</strong> {product?.category || 'Dinning Room, Dinning Set, Home Furniture'}
-                </p>
-                <p><strong className="text-slate-700">Tag:</strong> {product?.tag || 'dinning'}</p>
+                <p><strong className="text-slate-700">SKU:</strong> {dynamicSku}</p>
+                <p><strong className="text-slate-700">Categories:</strong> {catNames.join(', ')}</p>
+                <p><strong className="text-slate-700">Tag:</strong> {primaryTag}</p>
               </div>
 
-              {/* Variation Selection Dropdown matching screenshot */}
+              {/* Variation Selection Dropdown */}
               <div className="pt-2 space-y-2">
                 <div className="flex items-center gap-4 text-xs font-semibold text-slate-700">
                   <label htmlFor="sizeSelect">Size / সেট অপশন:</label>
@@ -351,16 +296,16 @@ export default function ProductDetailPage({ params }) {
                     id="sizeSelect"
                     value={selectedSize}
                     onChange={(e) => setSelectedSize(e.target.value)}
-                    className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs text-slate-700 focus:outline-none focus:border-amber-500 w-52 font-bold cursor-pointer"
+                    className="px-3 py-2 rounded-xl border border-slate-300 bg-white text-xs text-slate-700 focus:outline-none focus:border-amber-500 w-56 font-bold cursor-pointer"
                   >
                     <option value="">Choose an option / পছন্দ করুন</option>
-                    <option value="6-chair">6 Chair Set (66" x 40" x 30")</option>
-                    <option value="4-chair">4 Chair Set (54" x 36" x 30")</option>
+                    <option value="standard">Standard Solid Teak Size</option>
+                    <option value="custom">Custom Dimensions (Order on Demand)</option>
                   </select>
                 </div>
               </div>
 
-              {/* Quantity Counter & Red Add to Cart Button matching screenshot */}
+              {/* Quantity Counter & Red Add to Cart Button */}
               <div className="flex items-center gap-3 pt-3">
                 <div className="flex items-center border border-slate-300 rounded-xl bg-white overflow-hidden text-xs">
                   <button
@@ -396,10 +341,8 @@ export default function ProductDetailPage({ params }) {
           </div>
         </div>
 
-        {/* TABBED INFORMATION CONTAINER MATCHING USER SCREENSHOT */}
+        {/* TABBED INFORMATION CONTAINER */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 overflow-hidden">
-          
-          {/* Tab Navigation Header */}
           <div className="flex items-center justify-center border-b border-slate-200 text-xs font-bold text-slate-600">
             <button
               type="button"
@@ -424,28 +367,15 @@ export default function ProductDetailPage({ params }) {
             </button>
           </div>
 
-          {/* Tab Content */}
           <div className="p-6 sm:p-8 space-y-4 text-xs leading-relaxed text-slate-600">
             {activeTab === "description" && (
               <div className="space-y-3">
                 <h4 className="font-bold text-lime-600 text-sm">Description</h4>
-                <p>
-                  <strong className="text-slate-800">Materials:</strong> {product?.materials || "Imported oak veneer wood / 100% Solid Segun Wood."}
-                </p>
-                <p>
-                  <strong className="text-slate-800">Color Option:</strong> {product?.color_options || "Antique, Mid Light, Wooden Lacquer Finish."}
-                </p>
-                <p>
-                  <strong className="text-slate-800">Glass at top of Table:</strong> 10MM Tempered Glass.
-                </p>
-                <p>
-                  <strong className="text-slate-800">4 Chairs Set Table Top Size:</strong> L: 54" x W: 36" x H: 30"
-                </p>
-                <p>
-                  <strong className="text-slate-800">6 Chairs Set Table Top Size:</strong> L: 66" x W: 40" x H: 30"
-                </p>
+                <p><strong className="text-slate-800">Materials:</strong> 100% Genuine Chittagong Solid Segun Teak Wood.</p>
+                <p><strong className="text-slate-800">Color Option:</strong> Antique, Mid Light, Wooden Italian Lacquer Finish.</p>
+                <p><strong className="text-slate-800">Guarantee:</strong> 20 Years Anti-Borer & Termite Proof Guarantee.</p>
                 <p className="pt-2 text-slate-500 border-t border-slate-100">
-                  {product?.description || "Authentic handcrafted solid teak wood furniture with 20 years anti-borer and anti-termite guarantee."}
+                  {product.description || "Handcrafted solid Chittagong Segun teak wood furniture. Made for elegant homes with maximum durability and premium lacquer finish."}
                 </p>
               </div>
             )}
@@ -461,14 +391,13 @@ export default function ProductDetailPage({ params }) {
             {activeTab === "shipping" && (
               <div className="space-y-2">
                 <p><strong className="text-slate-800">Dhaka City:</strong> Free Home Delivery within 3-5 Business Days.</p>
-                <p><strong className="text-slate-800">Outside Dhaka:</strong> Courier / Truck transport with protective foam packaging.</p>
+                <p><strong className="text-slate-800">Outside Dhaka:</strong> Safe transport with protective foam & wooden crating.</p>
               </div>
             )}
           </div>
-
         </div>
 
-        {/* RELATED PRODUCTS SECTION MATCHING USER SCREENSHOT */}
+        {/* RELATED PRODUCTS */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-6 sm:p-8 space-y-6">
           <div className="border-b border-slate-200 pb-2">
             <h3 className="text-sm font-extrabold uppercase text-slate-900 tracking-wider inline-block border-b-2 border-lime-500 pb-2">
@@ -488,10 +417,6 @@ export default function ProductDetailPage({ params }) {
                     src={item.image}
                     alt={item.name}
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format&fit=crop&q=80";
-                    }}
                   />
                 </div>
 
@@ -499,7 +424,7 @@ export default function ProductDetailPage({ params }) {
                   <h4 className="text-xs font-bold text-slate-800 truncate group-hover:text-red-600 transition-colors">
                     {item.name}
                   </h4>
-                  <p className="text-xs font-black text-lime-600">৳ {item.price?.toLocaleString()} BDT</p>
+                  <p className="text-xs font-black text-lime-600">৳ {item.price.toLocaleString()} BDT</p>
                 </div>
               </Link>
             ))}
