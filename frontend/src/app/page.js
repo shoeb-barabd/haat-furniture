@@ -285,35 +285,35 @@ export default function Home() {
   const [startX, setStartX] = useState(0);
   const [scrollLeftState, setScrollLeftState] = useState(0);
 
-  // TOP HERO BANNER: ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
+  // TOP HERO BANNER: 5 ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
   const slides = [
-    {
-      title: "Luxury Modern Living Interior",
-      subtitle: "Aesthetically handcrafted 100% solid Chittagong Segun wood furniture tailored for your home.",
-      cta: "EXPLORE LIVING COLLECTION",
-      badge: "Nordic Minimalist Segun 2026",
-      bgImage: "/images/hero_slide_1.jpg"
-    },
-    {
-      title: "Elegant Segun Sectional Lounge",
-      subtitle: "Crafted for timeless comfort — borer-proof teak wood living sofa sets with premium finish.",
-      cta: "EXPLORE SOFA COLLECTION",
-      badge: "Contemporary Living Luxury",
-      bgImage: "/images/hero_slide_2.jpg"
-    },
     {
       title: "Crafting Teak Masterpieces",
       subtitle: "Sets your home as a trend — aesthetically handcrafted 100% solid Chittagong Teak wood dining sets.",
-      cta: "EXPLORE DINING COLLECTION",
+      cta: "EXPLORE DINING — ৳ 188,000 BDT",
       badge: "Royal Dining Collection 2026",
       bgImage: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Luxury Segun Master Bedroom",
       subtitle: "Crafted for peaceful living — solid borer-proof teak bed with premium lacquer finish.",
-      cta: "EXPLORE BEDROOM SETS",
+      cta: "VIEW BEDROOM SETS — ৳ 85,000 BDT",
       badge: "20 Years Guarantee",
       bgImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&auto=format&fit=crop&q=80"
+    },
+    {
+      title: "Sets You As A Trend",
+      subtitle: "Ergonomic & luxury workspace furniture crafted for modern offices and executive suites.",
+      cta: "EXPLORE EXECUTIVE SUITE",
+      badge: "Commercial Luxury Grade",
+      bgImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&auto=format&fit=crop&q=80"
+    },
+    {
+      title: "Aesthetically Stylish Living Room",
+      subtitle: "Handcrafted 100% solid teak sofa sets and living room furniture built for generations.",
+      cta: "EXPLORE SOFA COLLECTION",
+      badge: "Handcrafted Living Luxury",
+      bgImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop&q=80"
     },
     {
       title: "Architectural Teak Entrance Doors",
@@ -327,95 +327,62 @@ export default function Home() {
   // Navigation Menu matching HATIL layout
   const navMenus = [
     {
-      name: "HOME FURNITURE",
-      slug: "home-furniture",
-      href: "/product-category/home-furniture",
-      megaMenu: true,
-      groups: [
-        {
-          title: "Bed Room",
-          href: "/product-category/home-furniture/bed-room",
-          items: [
-            { name: "Bed", href: "/product-category/home-furniture/bed-room/bed" },
-            { name: "Almirah", href: "/product-category/home-furniture/bed-room/almirah" },
-            { name: "Dressing Table", href: "/product-category/home-furniture/bed-room/dressing-table" },
-            { name: "Wardrobe", href: "/product-category/home-furniture/bed-room/wardrobe" },
-            { name: "Bed Side Table", href: "/product-category/home-furniture/bed-room/bed-side-table" },
-            { name: "Chest of Drawer", href: "/product-category/home-furniture/bed-room/chest-of-drawer" }
-          ]
-        },
-        {
-          title: "Dinning Room",
-          href: "/product-category/home-furniture/dinning-room",
-          items: [
-            { name: "Dinning Set", href: "/product-category/home-furniture/dinning-room/dinning-set" },
-            { name: "Showcase", href: "/product-category/home-furniture/dinning-room/showcase" },
-            { name: "Corner Showcase", href: "/product-category/home-furniture/dinning-room/corner-showcase" },
-            { name: "Side Table", href: "/product-category/home-furniture/dinning-room/side-table" }
-          ]
-        },
-        {
-          title: "Living Room",
-          href: "/product-category/home-furniture/living-room",
-          items: [
-            { name: "Sofa", href: "/product-category/home-furniture/living-room/sofa" },
-            { name: "Center Table", href: "/product-category/home-furniture/living-room/center-table" },
-            { name: "Coffee Table", href: "/product-category/home-furniture/living-room/coffee-table" },
-            { name: "Shoe Rack", href: "/product-category/home-furniture/living-room/shoe-rack" },
-            { name: "Book Shelf", href: "/product-category/home-furniture/living-room/book-shelf" }
-          ]
-        },
-        {
-          title: "Kitchen",
-          href: "/product-category/home-furniture/kitchen",
-          items: [
-            { name: "Mini Cabinet", href: "/product-category/home-furniture/kitchen/mini-cabinet" },
-            { name: "Oven Stand", href: "/product-category/home-furniture/kitchen/oven-stand" }
-          ]
-        }
+      name: "Living Room",
+      slug: "living-room",
+      subCategories: [
+        { name: "Sofa Set", query: "sofa" },
+        { name: "Center Table", query: "table" },
+        { name: "TV Cabinet", query: "cabinet" }
       ]
     },
     {
-      name: "OFFICE FURNITURE",
+      name: "Bedroom",
+      slug: "bed-room",
+      subCategories: [
+        { name: "Solid Wood Bed", query: "bed" },
+        { name: "Dressing Table", query: "dresser" },
+        { name: "Wardrobe", query: "wardrobe" }
+      ]
+    },
+    {
+      name: "Dining",
+      slug: "dinning-room",
+      subCategories: [
+        { name: "6 Chair Dining Table", query: "dining" },
+        { name: "4 Chair Dining Table", query: "dining" },
+        { name: "Dinner Wagon", query: "wagon" }
+      ]
+    },
+    {
+      name: "Kitchen",
+      slug: "kitchen",
+      subCategories: [
+        { name: "Kitchen Cabinet", query: "kitchen" }
+      ]
+    },
+    {
+      name: "Door",
+      slug: "door-collection",
+      subCategories: [
+        { name: "Wooden Door", query: "door" },
+        { name: "Segun Door", query: "segun" }
+      ]
+    },
+    {
+      name: "Office",
       slug: "office-furniture",
-      href: "/product-category/office-furniture",
-      megaMenu: false,
-      items: [
-        { name: "Work Station", href: "/product-category/office-furniture/work-station" },
-        { name: "Chair", href: "/product-category/office-furniture/chair" },
-        { name: "Office Sofa", href: "/product-category/office-furniture/office-sofa" },
-        { name: "Table", href: "/product-category/office-furniture/table" }
+      subCategories: [
+        { name: "Executive Desk", query: "desk" },
+        { name: "Revolving Chair", query: "chair" }
       ]
     },
     {
-      name: "MATTRESS",
-      slug: "mattress",
-      href: "/product-category/mattress"
-    },
-    {
-      name: "DOOR",
-      slug: "door",
-      href: "/product-category/door",
-      megaMenu: false,
-      items: [
-        { name: "Flash Door", href: "/product-category/door/flash-door" },
-        { name: "Frame", href: "/product-category/door/frame" },
-        { name: "Wooden Door", href: "/product-category/door/wooden-door" }
-      ]
-    },
-    {
-      name: "MISCELLANEOUS",
+      name: "More",
       slug: "miscellaneous",
-      href: "/product-category/miscellaneous",
-      megaMenu: false,
-      items: [
-        { name: "Iron Stand", href: "/product-category/miscellaneous/iron-stand" },
-        { name: "TV Cabinet", href: "/product-category/miscellaneous/tv-cabinet" }
+      subCategories: [
+        { name: "Orthopedic Mattress", query: "mattress" },
+        { name: "Interior Accessories", query: "accessories" }
       ]
-    },
-    {
-      name: "ABOUT US",
-      href: "/about-us"
     }
   ];
 
@@ -642,11 +609,11 @@ export default function Home() {
     { title: "Solid Wood Suite", image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg", query: "suite" }
   ];
 
-  // Auto-play Hero Slider every 7 seconds (Cinematic Slow Motion)
+  // Auto-play Hero Slider every 4 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % slides.length);
-    }, 7000);
+    }, 4000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -821,61 +788,43 @@ export default function Home() {
                 onMouseEnter={() => setActiveDropdown(menu.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link
-                  href={menu.href || '#'}
-                  className={`flex items-center gap-1 transition-all py-1 border-b-2 text-xs font-extrabold tracking-wider ${
+                <button
+                  onClick={() => {
+                    setSelectedCategory(menu.slug);
+                    setSelectedSubCategory("");
+                    setSearchQuery("");
+                    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`flex items-center gap-1 transition-all py-1 border-b-2 ${
                     selectedCategory === menu.slug
-                      ? 'text-amber-600 border-amber-600'
+                      ? 'text-amber-600 border-amber-600 font-black'
                       : 'text-slate-800 border-transparent hover:text-amber-600 hover:border-amber-600'
                   }`}
                 >
                   <span>{menu.name}</span>
-                  {(menu.groups || menu.items) && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
-                </Link>
+                  {menu.subCategories.length > 0 && <span className="text-[8px] opacity-70 group-hover:rotate-180 transition-transform duration-300">▼</span>}
+                </button>
 
-                {/* 1. Multi-Column Mega Dropdown for HOME FURNITURE */}
-                {menu.megaMenu && menu.groups && activeDropdown === menu.name && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 min-w-[750px] bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-6 z-50 animate-entrance grid grid-cols-4 gap-6">
-                    {menu.groups.map((group, gIdx) => (
-                      <div key={gIdx} className="space-y-3">
-                        <Link 
-                          href={group.href} 
-                          className="block text-xs font-black text-slate-900 hover:text-amber-600 uppercase tracking-wider pb-2 border-b border-slate-100"
-                        >
-                          {group.title} →
-                        </Link>
-                        <div className="space-y-1.5">
-                          {group.items.map((item, iIdx) => (
-                            <Link
-                              key={iIdx}
-                              href={item.href}
-                              className="block text-[11px] font-semibold text-slate-600 hover:text-amber-600 hover:translate-x-1 transition-all"
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* 2. Single Column Dropdown for OFFICE / DOOR / MISCELLANEOUS */}
-                {!menu.megaMenu && menu.items && activeDropdown === menu.name && (
-                  <div className="absolute top-full left-0 w-56 bg-white text-slate-900 shadow-2xl rounded-xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
+                {/* Sub-Category Multi-Column Dropdown */}
+                {menu.subCategories.length > 0 && activeDropdown === menu.name && (
+                  <div className="absolute top-full left-0 w-64 bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 p-3 space-y-1 z-50 animate-entrance">
                     <div className="px-3 py-1.5 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 mb-1">
                       {menu.name} Collections
                     </div>
 
-                    {menu.items.map((sub, sIdx) => (
-                      <Link
+                    {menu.subCategories.map((sub, sIdx) => (
+                      <button
                         key={sIdx}
-                        href={sub.href}
-                        className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-600 rounded-lg transition-all"
+                        onClick={() => handleSelectSubCategory(sub.name, sub.query)}
+                        className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-between ${
+                          selectedSubCategory === sub.name
+                            ? 'bg-slate-900 text-white shadow-md'
+                            : 'hover:bg-slate-100 hover:text-blue-600'
+                        }`}
                       >
                         <span>{sub.name}</span>
-                        <span className="text-[10px] opacity-40">→</span>
-                      </Link>
+                        <span className="text-[10px] opacity-60">→</span>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -944,7 +893,7 @@ export default function Home() {
             key={heroSlide}
             src={slides[heroSlide].bgImage}
             alt={slides[heroSlide].title}
-            className="w-full h-full object-cover transition-all duration-[2000ms] ease-in-out filter brightness-90 animate-slow-kenburns"
+            className="w-full h-full object-cover transition-all duration-1000 animate-entrance filter brightness-90"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/40"></div>
         </div>
@@ -976,6 +925,32 @@ export default function Home() {
               >
                 20 YEARS GUARANTEE
               </a>
+            </div>
+
+            <div className="flex items-center gap-4 pt-8">
+              <button
+                onClick={prevSlide}
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
+              >
+                ‹
+              </button>
+              
+              <div className="flex items-center gap-2">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setHeroSlide(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-500 ${heroSlide === idx ? 'w-10 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/70'}`}
+                  ></button>
+                ))}
+              </div>
+
+              <button
+                onClick={nextSlide}
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center text-lg font-bold border border-white/30 backdrop-blur-md transition-all hover:scale-110"
+              >
+                ›
+              </button>
             </div>
           </div>
         </div>
@@ -1426,7 +1401,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Dining", "dining")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Dining →
+                  View All Dining (সবগুলো দেখুন) →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1581,7 +1556,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Living Room", "sofa")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Living →
+                  View All Living (সবগুলো দেখুন) →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1736,7 +1711,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Bed Room", "bed")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Bedroom →
+                  View All Bedroom (সবগুলো দেখুন) →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -1905,7 +1880,7 @@ export default function Home() {
                   onClick={() => handleSelectSubCategory("Office", "desk")}
                   className="hidden sm:inline-block text-xs font-extrabold text-slate-700 hover:text-blue-600 border-b-2 border-slate-800 hover:border-blue-600 pb-0.5 transition-all mr-2"
                 >
-                  View All Office & Doors →
+                  View All Office & Doors (সবগুলো দেখুন) →
                 </button>
 
                 <div className="flex items-center gap-2">
@@ -2391,13 +2366,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="px-3 py-1.5 bg-white rounded-xl shadow-sm border border-slate-200">
-                  <img
-                    src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
-                    alt="HAAT FURNITURE LIMITED Logo"
-                    className="h-8 w-auto object-contain"
-                  />
+                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-black text-xl text-white">
+                  H
                 </div>
+                <h4 className="text-lg font-bold text-white">HAAT FURNITURE</h4>
               </div>
               <p className="text-xs leading-relaxed text-slate-400">
                 Premium solid Chittagong Teak wood furniture handcrafted for luxury living dining, office, and bedroom spaces in Bangladesh.
@@ -2431,14 +2403,14 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 text-center text-[10px] text-slate-500 border-t border-slate-800/60">
-            <p className="font-normal">
+          <div className="pt-8 text-center text-xs space-y-2 text-slate-400 border-t border-slate-800/80">
+            <p className="font-medium">
               © {new Date().getFullYear()} Haat Furniture Limited | All rights reserved | Design & Development By —{' '}
               <a
                 href="https://shoeb-devops.github.io"
                 target="_blank"
                 rel="noreferrer"
-                className="text-slate-500 hover:text-slate-300 transition-colors"
+                className="text-amber-400 font-extrabold hover:text-amber-300 hover:underline transition-colors"
               >
                 shoeb-devops.github.io
               </a>
