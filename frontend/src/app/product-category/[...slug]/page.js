@@ -166,97 +166,118 @@ export default function CategoryPage() {
   return (
     <div className="min-h-screen bg-[#fbf9f5] text-slate-800 font-sans antialiased">
       
-      {/* 1. Official Header Bar */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img 
-              src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg" 
-              alt="HAAT FURNITURE LIMITED" 
-              className="h-10 w-auto object-contain"
-            />
-          </Link>
-
-          {/* Search Box */}
-          <div className="flex-1 max-w-md mx-8 hidden md:block">
-            <div className="relative">
-              <input 
-                type="text" 
-                placeholder="Search Chittagong Teak Furniture..." 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-10 py-2 border border-slate-300 rounded-full text-xs focus:outline-none focus:border-amber-700"
-              />
-              <span className="absolute right-3 top-2.5 text-slate-400">🔍</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <div className="hidden sm:flex items-center gap-2">
-              <span className="w-9 h-9 rounded-full bg-lime-600 text-white flex items-center justify-center text-base font-bold">📞</span>
-              <div>
-                <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Hotline</p>
-                <p className="text-xs font-bold text-slate-800">+8809617333990</p>
-              </div>
-            </div>
-
-            <Link href="/checkout" className="flex items-center gap-2 bg-lime-600 hover:bg-lime-700 text-white px-4 py-2 rounded-full font-bold text-xs shadow transition">
-              <span>🛍️</span>
-              <span>Cart / Checkout</span>
-            </Link>
-          </div>
+      {/* TOP THIN NOTIFICATION & CONTACT RIBBON */}
+      <div className="bg-[#f8f6f0] text-slate-700 text-xs py-2.5 px-4 sm:px-8 flex flex-wrap items-center justify-between border-b border-slate-200/80 relative z-50">
+        <div className="flex items-center gap-3">
+          <span className="flex h-2.5 w-2.5 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-emerald-500"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
+          </span>
+          <span className="font-extrabold text-slate-900 tracking-wide">
+            HAAT FURNITURE LIMITED — Official 100% Solid Chittagong Segun Wood Outlet
+          </span>
+          <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-amber-100 border border-amber-300 text-amber-800 text-[10px] font-black uppercase tracking-wider">
+            20 Yrs Warranty
+          </span>
         </div>
 
-        {/* Top Category Navigation Bar */}
-        <nav className="bg-[#1e1b4b] text-white">
-          <div className="max-w-7xl mx-auto px-4 flex items-center gap-1 overflow-x-auto">
+        <div className="hidden md:flex items-center gap-6 text-slate-600 text-xs font-bold">
+          <span className="flex items-center gap-1.5">
+            <span className="text-amber-600">📍</span>
+            <span>Showrooms: Badda & Mirpur, Dhaka</span>
+          </span>
+          <span className="text-slate-300">•</span>
+          <a href="tel:+8809617333990" className="flex items-center gap-1.5 font-extrabold text-amber-700 hover:text-amber-800 transition-colors">
+            <span>📞 Hotline:</span>
+            <span>+8809617333990</span>
+          </a>
+        </div>
+      </div>
+
+      {/* ULTRA-LUXURY SINGLE ROW HEADER */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl text-slate-900 border-b border-slate-200/90 shadow-sm transition-all w-full">
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+          
+          {/* Official HAAT FURNITURE Logo */}
+          <Link href="/" className="flex items-center cursor-pointer group flex-shrink-0">
+            <div className="p-2 bg-white rounded-2xl shadow-sm border border-slate-200 group-hover:scale-102 transition-all">
+              <img
+                src="https://haatfurniture.com/wp-content/uploads/2023/02/haalogo.jpg"
+                alt="HAAT FURNITURE LIMITED Logo"
+                className="h-9 sm:h-10 w-auto object-contain"
+              />
+            </div>
+          </Link>
+
+          {/* Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-7 text-xs font-black tracking-wider uppercase">
             {CATEGORIES_TREE.map((rootCat) => (
-              <div key={rootCat.slug} className="group relative py-3 px-4 text-xs font-bold uppercase tracking-wider cursor-pointer hover:bg-indigo-900 transition flex items-center gap-1 whitespace-nowrap">
-                <Link href={`/product-category/${rootCat.slug}`} className="text-white hover:text-amber-300">
-                  {rootCat.name}
+              <div key={rootCat.slug} className="group relative py-6 cursor-pointer">
+                <Link 
+                  href={`/product-category/${rootCat.slug}`}
+                  className={`flex items-center gap-1.5 transition-all py-1 font-extrabold text-xs tracking-wider uppercase ${
+                    currentSlug === rootCat.slug ? 'text-amber-600 border-b-2 border-amber-600' : 'text-slate-900 hover:text-amber-600'
+                  }`}
+                >
+                  <span>{rootCat.name}</span>
+                  {rootCat.children && rootCat.children.length > 0 && <span className="text-[9px] text-slate-400 group-hover:rotate-180 transition-transform">▼</span>}
                 </Link>
-                {rootCat.children && rootCat.children.length > 0 && <span className="text-[10px]">⌄</span>}
 
-                {/* Sub-menu Dropdown */}
+                {/* Dropdown Menu */}
                 {rootCat.children && rootCat.children.length > 0 && (
-                  <div className="absolute left-0 top-full hidden group-hover:flex bg-white text-slate-800 shadow-2xl rounded-b-lg border border-slate-200 min-w-[240px] z-50 p-2">
-                    <div className="w-full">
-                      {rootCat.children.map((childCat) => (
-                        <div key={childCat.slug} className="group/child relative">
-                          <Link 
-                            href={`/product-category/${rootCat.slug}/${childCat.slug}`}
-                            className="flex items-center justify-between px-3 py-2 text-xs font-medium hover:bg-slate-100 hover:text-amber-700 rounded transition"
-                          >
-                            <span>{childCat.name}</span>
-                            {childCat.children && childCat.children.length > 0 && <span className="text-[10px] text-slate-400">›</span>}
-                          </Link>
-
-                          {/* Nested Sub-Sub Menu */}
-                          {childCat.children && childCat.children.length > 0 && (
-                            <div className="absolute left-full top-0 hidden group-hover/child:block bg-white text-slate-800 shadow-2xl rounded-lg border border-slate-200 min-w-[200px] p-2 z-50">
-                              {childCat.children.map((subChild) => (
-                                <Link
-                                  key={subChild.slug}
-                                  href={`/product-category/${rootCat.slug}/${childCat.slug}/${subChild.slug}`}
-                                  className="block px-3 py-1.5 text-xs text-slate-600 hover:text-amber-700 hover:bg-slate-50 rounded transition"
-                                >
-                                  {subChild.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                  <div className="absolute left-0 top-full hidden group-hover:block bg-white text-slate-900 shadow-2xl rounded-2xl border border-slate-200 min-w-[240px] z-50 p-3 space-y-1">
+                    {rootCat.children.map((childCat) => (
+                      <Link 
+                        key={childCat.slug}
+                        href={`/product-category/${rootCat.slug}/${childCat.slug}`}
+                        className="flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-600 rounded-xl transition-all"
+                      >
+                        <span>{childCat.name}</span>
+                        <span className="text-[10px] opacity-40">→</span>
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
-            <Link href="/about-us" className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white hover:text-amber-300 hover:bg-indigo-900 transition whitespace-nowrap">
+            <Link href="/about-us" className="py-6 text-xs font-extrabold uppercase tracking-wider text-slate-900 hover:text-amber-600 transition">
               ABOUT US
             </Link>
+          </nav>
+
+          {/* Action Tools */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="relative hidden md:block w-48 lg:w-56">
+              <input
+                type="text"
+                placeholder="Search Chittagong teak..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-7 py-2.5 rounded-full bg-slate-100/90 border border-slate-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-600 focus:bg-white transition-all font-medium"
+              />
+              <span className="absolute left-3 top-3 text-slate-400 text-xs">🔍</span>
+            </div>
+
+            <Link
+              href="/checkout"
+              className="px-4 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-white text-xs font-black transition-all shadow-md flex items-center gap-2"
+            >
+              <span>🛒</span>
+              <span>Cart / Checkout</span>
+            </Link>
+
+            <a
+              href="https://wa.me/8801957909186?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20HAAT%20Furniture%20products."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black shadow-md transition-all flex items-center gap-1.5 uppercase tracking-wider"
+            >
+              <span>💬</span>
+              <span className="hidden sm:inline">WhatsApp</span>
+            </a>
           </div>
-        </nav>
+
+        </div>
       </header>
 
       {/* 2. Black Woodmart Hero Header Banner */}
