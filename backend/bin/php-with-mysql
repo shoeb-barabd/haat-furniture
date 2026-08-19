@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+export PHP_INI_SCAN_DIR="/etc/php/8.3/cli/conf.d:/home/barabd/haat-furniture-v2/backend/storage/php-ext"
+exec php "$@"
