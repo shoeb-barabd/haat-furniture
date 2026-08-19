@@ -275,7 +275,7 @@ export default function CheckoutPage() {
 
             <div className="space-y-1.5 text-xs">
               <label className="font-bold text-slate-700">Street address <span className="text-red-500">*</span></label>
-              <input type="text" name="streetAddress" value={formData.streetAddress} onChange={handleInputChange} required placeholder="House, road, area (e.g. Badda, Dhaka)" className={inputClass} />
+              <input type="text" name="streetAddress" value={formData.streetAddress} onChange={handleInputChange} required placeholder="House, road, area (e.g. Jatrabari, Dhaka)" className={inputClass} />
               <input type="text" name="apartment" value={formData.apartment} onChange={handleInputChange} placeholder="Apartment / floor (optional)" className={inputClass} />
             </div>
 
@@ -408,7 +408,7 @@ export default function CheckoutPage() {
 
                 {(paymentMethod === 'bkash' || paymentMethod === 'nagad') && (
                   <div className="p-3 rounded-2xl bg-[#fbf9f5] border border-[#e4d8c4] space-y-2 text-[11px]">
-                    <p>Send to <strong>01957909186</strong> ({paymentMethod === 'bkash' ? 'bKash' : 'Nagad'})</p>
+                    <p>Send to <strong>09617333990</strong> ({paymentMethod === 'bkash' ? 'bKash' : 'Nagad'})</p>
                     <input
                       type="text"
                       name="bkashTrxId"

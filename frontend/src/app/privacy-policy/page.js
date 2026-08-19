@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="bg-white rounded-2xl border border-[#e4d8c4] p-6 shadow-sm">
             <h2 className="text-lg font-black text-[#5c4a32]">Who we are</h2>
-            <p className="mt-2 text-sm text-slate-600 leading-7">Our website address is: https://www.haatfurniture.com/</p>
+            <p className="mt-2 text-sm text-slate-600 leading-7">Our website address is: https://haat.barabdonline.com</p>
           </div>
           <div className="bg-white rounded-2xl border border-[#e4d8c4] p-6 shadow-sm">
             <h2 className="text-lg font-black text-[#5c4a32]">Who we share your data with</h2>

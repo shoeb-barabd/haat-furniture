@@ -155,23 +155,26 @@ input, textarea, select, [contenteditable="true"] {
 
 /* Home hero: slow cinematic Ken Burns (luxury dolly-in + soft crossfade) */
 @keyframes heroKenBurnsZoom {
-  from {
+  0% {
     transform: scale(1) translateZ(0);
   }
-  to {
-    transform: scale(1.18) translateZ(0);
+  50% {
+    transform: scale(1.15) translateZ(0);
+  }
+  100% {
+    transform: scale(1) translateZ(0);
   }
 }
 
 .hero-kenburns-zoom {
-  animation: heroKenBurnsZoom 10s cubic-bezier(0.25, 0.08, 0.25, 1) forwards;
+  animation: heroKenBurnsZoom 14s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   transform-origin: 50% 42%;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .hero-kenburns-hold {
-  transform: scale(1.18) translateZ(0);
+  transform: scale(1.05) translateZ(0);
   transform-origin: 50% 42%;
 }
 
@@ -182,23 +185,51 @@ input, textarea, select, [contenteditable="true"] {
   filter: none;
 }
 
-.hero-slide-fade {
-  transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
+.hero-slide-crossfade {
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+.hero-slide-active {
+  opacity: 1;
+  z-index: 1;
+  transition: opacity 5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-slide-prev {
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 6s cubic-bezier(0.22, 1, 0.36, 1) 2s;
+}
+
+.hero-slide-hidden {
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-glow-overlay {
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%);
+  mix-blend-mode: soft-light;
 }
 
 @keyframes heroCaptionFade {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(16px);
   }
-  to {
+  50% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 .hero-caption-fade {
-  animation: heroCaptionFade 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: heroCaptionFade 6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes entrance {

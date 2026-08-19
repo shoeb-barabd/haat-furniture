@@ -209,13 +209,16 @@ export default function AdminDashboard() {
     kicker: "Limited offer",
     title: "Free home delivery",
     subtitle: "inside Dhaka",
-    note: "5-year service warranty · Badda & Mirpur showrooms",
+    note: "5-year service warranty · Rasulpur Tower, Jatrabari, Dhaka",
     cta: "Claim offer →",
     link: "https://wa.me/8809617333990?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20the%20current%20HAAT%20Furniture%20offer.",
     hotline: "09617 333990"
   };
   const [bannerForm, setBannerForm] = useState(defaultBannerForm);
   const [heroSlideBanners, setHeroSlideBanners] = useState([
+    { image: "", title: "", subtitle: "", cta: "", badge: "" },
+    { image: "", title: "", subtitle: "", cta: "", badge: "" },
+    { image: "", title: "", subtitle: "", cta: "", badge: "" },
     { image: "", title: "", subtitle: "", cta: "", badge: "" },
     { image: "", title: "", subtitle: "", cta: "", badge: "" },
     { image: "", title: "", subtitle: "", cta: "", badge: "" }
@@ -314,7 +317,9 @@ export default function AdminDashboard() {
           setBannerForm({ ...defaultBannerForm, ...payload.data.heroOffer });
         }
         if (Array.isArray(payload.data.heroSlides) && payload.data.heroSlides.length) {
-          setHeroSlideBanners(payload.data.heroSlides);
+          const empty = { image: "", title: "", subtitle: "", cta: "", badge: "" };
+          const merged = Array.from({ length: 6 }, (_, i) => payload.data.heroSlides[i] || { ...empty });
+          setHeroSlideBanners(merged);
         }
       })
       .catch(() => {});
@@ -478,7 +483,7 @@ export default function AdminDashboard() {
     }
     const cleanPhone = order.phone.replace(/[^0-9]/g, '');
     const formattedPhone = cleanPhone.startsWith('880') ? cleanPhone : `880${cleanPhone.replace(/^0/, '')}`;
-    const message = `Assalamu Alaikum ${order.customer}! 🌟\n\nYour HAAT Furniture Limited Order #${order.id} for "${order.items}" (Total: ৳${order.total.toLocaleString()} BDT) has been confirmed and dispatched for home delivery!\n\n🛡️ Includes 5-Year Service Warranty Card (manufacturing fault).\n📞 Hotline: +8809617333990\n🏬 Showrooms: Badda & Mirpur, Dhaka.`;
+    const message = `Assalamu Alaikum ${order.customer}! 🌟\n\nYour HAAT Furniture Limited Order #${order.id} for "${order.items}" (Total: ৳${order.total.toLocaleString()} BDT) has been confirmed and dispatched for home delivery!\n\n🛡️ Includes 5-Year Service Warranty Card (manufacturing fault).\n📞 Hotline: +8809617333990\n🏬 Address: Rasulpur Tower, 49 Rasulpur, Dania, Jatrabari, Dhaka-1236.`;
     
     const waUrl = `https://wa.me/${formattedPhone}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
@@ -521,7 +526,7 @@ export default function AdminDashboard() {
 
   // FEATURE 5: DRAG & DROP MULTI-ANGLE GALLERY UPLOADER
   const handleAddGalleryImageUrl = () => {
-    const url = prompt("Enter additional angle image URL (e.g. https://haatfurniture.com/wp-content/uploads/...)");
+    const url = prompt("Enter additional angle image URL (e.g. /uploads/...)");
     if (url) {
       setFormData({ ...formData, gallery_images: [...formData.gallery_images, url] });
       showToast("Added gallery image!");
@@ -658,7 +663,7 @@ export default function AdminDashboard() {
         category_slug: formData.category_slug || 'home-furniture',
         categories: [formData.category_slug || 'home-furniture'],
         category_names: [formData.category],
-        image: formData.image || "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+        image: formData.image || "/uploads/1-2.jpg",
         gallery: formData.gallery_images.length > 0 ? formData.gallery_images : [formData.image],
         description: formData.description || "Solid Chittagong Segun Teak Wood."
       };
@@ -855,7 +860,7 @@ export default function AdminDashboard() {
             <div>
               <h1 className="text-2xl font-black uppercase tracking-tight">HAAT FURNITURE LIMITED</h1>
               <p className="text-xs font-bold">100% Solid Chittagong Segun Teak Wood Heritage</p>
-              <p className="text-[10px]">Showrooms: Merul Badda & Mirpur 10, Dhaka | Hotline: +8809617333990</p>
+              <p className="text-[10px]">Rasulpur Tower, 49 Rasulpur, Jatrabari, Dhaka-1236 | Hotline: +8809617333990</p>
             </div>
             <div className="text-right">
               <h2 className="text-xl font-bold uppercase">OFFICIAL CASH MEMO & CHALLAN</h2>
@@ -1017,7 +1022,7 @@ export default function AdminDashboard() {
                   </div>
                   <input
                     type="text"
-                    placeholder="Or paste image URL (https://haatfurniture.com/...)"
+                    placeholder="Or paste image URL (/uploads/...)"
                     value={formData.image}
                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                     className="w-full px-3 py-2 border rounded-xl bg-white text-xs font-medium"
@@ -1267,7 +1272,14 @@ export default function AdminDashboard() {
                   />
                   {uploading && <p className="text-[10px] text-amber-600 mt-1">Uploading...</p>}
                   {bannerForm.image && (
-                    <img src={bannerForm.image} alt="Offer banner preview" className="mt-3 w-full h-40 object-cover rounded-xl border border-slate-200" />
+                    <div className="relative mt-3">
+                      <img src={bannerForm.image} alt="Offer banner preview" className="w-full h-40 object-cover rounded-xl border border-slate-200" />
+                      <button
+                        type="button"
+                        onClick={() => setBannerForm({ ...bannerForm, image: "" })}
+                        className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shadow"
+                      >&times;</button>
+                    </div>
                   )}
                 </div>
 
@@ -1281,7 +1293,7 @@ export default function AdminDashboard() {
 
               <div className="rounded-2xl bg-white border border-slate-200 p-5 space-y-5 shadow-sm">
                 <h3 className="text-sm font-black text-slate-900">Hero background pictures (optional)</h3>
-                <p className="text-[11px] text-slate-500">Upload 1–3 photos to replace the big homepage slider images.</p>
+                <p className="text-[11px] text-slate-500">Upload 1–6 photos to replace the big homepage slider images. Use high-res (1920x1080+) images for best quality.</p>
                 {heroSlideBanners.map((slide, idx) => (
                   <div key={idx} className="rounded-xl border border-slate-100 p-3 space-y-2">
                     <p className="text-[10px] font-black uppercase text-slate-500">Slide {idx + 1}</p>
@@ -1296,7 +1308,18 @@ export default function AdminDashboard() {
                       className="block w-full text-xs"
                     />
                     {slide.image && (
-                      <img src={slide.image} alt={`Hero slide ${idx + 1}`} className="w-full h-28 object-cover rounded-lg" />
+                      <div className="relative">
+                        <img src={slide.image} alt={`Hero slide ${idx + 1}`} className="w-full h-28 object-cover rounded-lg" />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const next = [...heroSlideBanners];
+                            next[idx] = { ...next[idx], image: "", title: "" };
+                            setHeroSlideBanners(next);
+                          }}
+                          className="absolute top-1 right-1 bg-red-600 hover:bg-red-700 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shadow"
+                        >&times;</button>
+                      </div>
                     )}
                     <input
                       value={slide.title || ''}
@@ -1305,7 +1328,27 @@ export default function AdminDashboard() {
                         next[idx] = { ...next[idx], title: e.target.value };
                         setHeroSlideBanners(next);
                       }}
-                      placeholder="Optional title"
+                      placeholder="Title (e.g. Luxury Segun Bedroom)"
+                      className="w-full px-3 py-2 rounded-lg bg-slate-50 border text-xs"
+                    />
+                    <input
+                      value={slide.subtitle || ''}
+                      onChange={(e) => {
+                        const next = [...heroSlideBanners];
+                        next[idx] = { ...next[idx], subtitle: e.target.value };
+                        setHeroSlideBanners(next);
+                      }}
+                      placeholder="Subtitle (e.g. Crafted for peaceful living...)"
+                      className="w-full px-3 py-2 rounded-lg bg-slate-50 border text-xs"
+                    />
+                    <input
+                      value={slide.badge || ''}
+                      onChange={(e) => {
+                        const next = [...heroSlideBanners];
+                        next[idx] = { ...next[idx], badge: e.target.value };
+                        setHeroSlideBanners(next);
+                      }}
+                      placeholder="Badge (e.g. 5 Years Warranty)"
                       className="w-full px-3 py-2 rounded-lg bg-slate-50 border text-xs"
                     />
                   </div>

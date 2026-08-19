@@ -50,13 +50,14 @@ export default function SingleProductPage() {
     if (liveProduct && String(liveProduct.id) === String(productId)) {
       return liveProduct;
     }
-    if (!productId) return productsData[0];
+    if (!productId) return productsData[0] || null;
     const found = productsData.find(p => String(p.id) === String(productId));
-    return found || productsData[0];
+    return found || productsData[0] || null;
   }, [liveProduct, productId]);
 
   // Gallery List
   const galleryList = useMemo(() => {
+    if (!product) return [];
     if (product.gallery && Array.isArray(product.gallery) && product.gallery.length > 0) {
       return product.gallery.map((gUrl, idx) => ({
         url: gUrl,
@@ -69,8 +70,8 @@ export default function SingleProductPage() {
     ];
   }, [product]);
 
-  const catNames = product.category_names || [product.category || 'Home Furniture'];
-  const catSlugs = product.categories || ['home-furniture'];
+  const catNames = product?.category_names || [product?.category || 'Home Furniture'];
+  const catSlugs = product?.categories || ['home-furniture'];
 
   const showToastMsg = (msg) => {
     setToast(msg);
@@ -141,6 +142,17 @@ export default function SingleProductPage() {
 
   const cartCount = cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  if (!product) {
+    return (
+      <div className="min-h-screen bg-[#fbf9f5] flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <div className="text-4xl animate-bounce">🪵</div>
+          <p className="text-slate-500 font-semibold text-sm">Loading product...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#fbf9f5] text-slate-800 font-sans antialiased">

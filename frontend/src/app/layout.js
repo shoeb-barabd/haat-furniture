@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" href="/images/hero_slide_1.jpg" as="image" />
+        <link rel="preload" href="/images/hero_1.png" as="image" />
       </head>
       <body className="antialiased font-sans">
         {children}

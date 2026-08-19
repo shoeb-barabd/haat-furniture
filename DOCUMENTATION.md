@@ -180,6 +180,7 @@ Tabs: products, add/edit product, orders, categories, analytics, bulk discount (
 - Bulk discount (sudo) → `POST /api/v1/products/bulk-discount` `{percent, category}` writes new prices + `old_price`.
 - Audit log is **browser `localStorage`** (`haat_admin_audit_logs`).
 - Image upload → Laravel `POST /api/v1/upload` (admin write token, field `file`) → `frontend/storage/uploads/` → public URL `/uploads/{filename}` (Next.js route; files added after build still work).
+- **Backend runs on PHP-FPM** (pool `haat`, socket `/run/php/haat-fpm.sock`). `artisan serve` is stopped. Nginx `/api/` → FPM directly.
 
 ---
 
@@ -361,9 +362,9 @@ After **Laravel PHP changes**, restart `haat-backend` (artisan serve reloads man
 1. Cart is device-local; clearing browser data empties the cart.
 2. Inquiries tab is sample data (not a live contact-form inbox).
 3. `/products` catalog page has no add-to-cart (homepage + product page do).
-4. MariaDB is a user-space install (no `sudo apt` package). It depends on PM2 `haat-mariadb` and files under `backend/storage/mariadb/`. A reboot is covered if `pm2 startup` + `pm2 save` are configured.
-5. Duplicate Nginx vhosts (`frontend` + `haat-furniture`) both use `server_name _` (P2).
-6. No automated tests covering shop APIs.
+4. MariaDB is a user-space install. It depends on PM2 `haat-mariadb` and files under `backend/storage/mariadb/`. PM2 startup is configured.
+5. No automated tests covering shop APIs.
+6. Mail not configured (`MAIL_MAILER=log`). Needs SMTP provider credentials to send order confirmation.
 
 Optional later upgrade: install distro `mariadb-server` + `php8.3-mysql` with `sudo bash backend/scripts/setup-mysql.sh`.
 

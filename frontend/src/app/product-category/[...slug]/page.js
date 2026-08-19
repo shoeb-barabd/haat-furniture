@@ -234,7 +234,7 @@ export default function CategoryPage() {
         <div className="hidden md:flex items-center gap-6 text-[#8a6a3a] text-xs font-bold">
           <span className="flex items-center gap-1.5">
             <span className="text-amber-600">📍</span>
-            <span>Showrooms: Badda & Mirpur, Dhaka</span>
+            <span>Rasulpur Tower, 49 Rasulpur, Jatrabari, Dhaka-1236</span>
           </span>
           <span className="text-[#d4c4ae]">•</span>
           <a href="tel:+8809617333990" className="flex items-center gap-1.5 font-extrabold text-amber-700 hover:text-amber-800 transition-colors">
@@ -355,7 +355,7 @@ export default function CategoryPage() {
             </Link>
 
             <a
-              href="https://wa.me/8801957909186?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20HAAT%20Furniture%20products."
+              href="https://wa.me/8809617333990?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20HAAT%20Furniture%20products."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center h-11 px-4 rounded-full bg-[#25D366] hover:bg-[#1fb857] text-white text-sm font-bold shadow-md"
@@ -583,7 +583,7 @@ export default function CategoryPage() {
       <footer className="bg-[#efe6d8] text-[#6d5a3f] py-10 mt-4 border-t border-[#e0d2bc]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} HAAT Furniture Limited · 100% Solid Chittagong Segun</p>
-          <p>Showrooms: Badda & Mirpur, Dhaka · Hotline +8809617333990</p>
+          <p>Rasulpur Tower, 49 Rasulpur, Jatrabari, Dhaka-1236 · Hotline +8809617333990</p>
         </div>
       </footer>
     </div>

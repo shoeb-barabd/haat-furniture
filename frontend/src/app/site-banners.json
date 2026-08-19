@@ -1,18 +1,1 @@
-{
-  "heroOffer": {
-    "enabled": true,
-    "image": "",
-    "kicker": "Limited offer",
-    "title": "Free home delivery",
-    "subtitle": "inside Dhaka",
-    "note": "5-year service warranty · Badda & Mirpur showrooms",
-    "cta": "Claim offer →",
-    "link": "https://wa.me/8809617333990?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20the%20current%20HAAT%20Furniture%20offer.",
-    "hotline": "09617 333990"
-  },
-  "heroSlides": [
-    { "image": "", "title": "", "subtitle": "", "cta": "", "badge": "" },
-    { "image": "", "title": "", "subtitle": "", "cta": "", "badge": "" },
-    { "image": "", "title": "", "subtitle": "", "cta": "", "badge": "" }
-  ]
-}
+{}

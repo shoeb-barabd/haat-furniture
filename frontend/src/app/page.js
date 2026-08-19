@@ -48,6 +48,8 @@ export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
   const [heroSlide, setHeroSlide] = useState(0);
+  const [offerVisible, setOfferVisible] = useState(true);
+  const offerTimerRef = useRef(null);
   const [heroOffer, setHeroOffer] = useState(null);
   const [heroSlideOverrides, setHeroSlideOverrides] = useState([]);
 
@@ -146,7 +148,7 @@ export default function Home() {
       name: "Purley Segun King Bed",
       price: "৳ 23,000 BDT",
       badge: "Master Bedroom",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+      image: "/uploads/Purley-Bed-Angle-2.jpg",
       query: "bed"
     },
     {
@@ -154,7 +156,7 @@ export default function Home() {
       name: "Beijing Dining 4 Chair Set",
       price: "৳ 40,000 BDT",
       badge: "Royal Dining",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+      image: "/uploads/T1.jpg",
       query: "dining"
     },
     {
@@ -162,7 +164,7 @@ export default function Home() {
       name: "Cream L-Shape Sofa Set",
       price: "৳ 65,000 BDT",
       badge: "Living Luxury",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+      image: "/uploads/S1-1.jpg",
       query: "sofa"
     }
   ];
@@ -173,7 +175,7 @@ export default function Home() {
       name: "Wheel Solid Teak Bed",
       price: "৳ 24,500 BDT",
       badge: "Solid Teak Wood",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+      image: "/uploads/Wheel-Bed-Angle.jpg",
       query: "bed"
     },
     {
@@ -181,7 +183,7 @@ export default function Home() {
       name: "Executive Segun Desk",
       price: "৳ 45,000 BDT",
       badge: "Executive Suite",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/office-desk-haat-furniture.jpg",
+      image: "/uploads/office-desk-haat-furniture.jpg",
       query: "desk"
     },
     {
@@ -189,7 +191,7 @@ export default function Home() {
       name: "Solid Teak Carved Door",
       price: "৳ 28,500 BDT",
       badge: "Teak Door",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/door-haat-furniture.jpg",
+      image: "/uploads/door-haat-furniture.jpg",
       query: "door"
     }
   ];
@@ -198,109 +200,109 @@ export default function Home() {
   const flagshipItems = [
     {
       name: "Pentagon Royal Segun Bed",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
+      image: "/uploads/Pentagon-Bed-Angle.jpg",
       query: "bed",
       bgColor: "bg-[#f5ebd9]"
     },
     {
       name: "Segun Dinner Wagon",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+      image: "/uploads/1-2.jpg",
       query: "wagon",
       bgColor: "bg-[#e6f2ed]"
     },
     {
       name: "Cream & Brown L-Shape Sofa Set",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+      image: "/uploads/S1-1.jpg",
       query: "sofa",
       bgColor: "bg-[#eaeff5]"
     },
     {
       name: "Beijing Dining 4 Chair Set",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+      image: "/uploads/T1.jpg",
       query: "dining",
       bgColor: "bg-[#f7ebe8]"
     },
     {
       name: "Bridge Dining 6 Chair Set",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg",
+      image: "/uploads/18.jpg",
       query: "dining",
       bgColor: "bg-[#f2edf7]"
     },
     {
       name: "Boxer Solid Teak King Bed",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Boxer-Bed-Angle.jpg",
+      image: "/uploads/Boxer-Bed-Angle.jpg",
       query: "bed",
       bgColor: "bg-[#fbf4e6]"
     },
     {
       name: "Purley Segun Bedroom Set",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+      image: "/uploads/Purley-Bed-Angle-2.jpg",
       query: "bed",
       bgColor: "bg-[#faf0e6]"
     },
     {
       name: "Wheel Solid Teak Bed",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+      image: "/uploads/Wheel-Bed-Angle.jpg",
       query: "bed",
       bgColor: "bg-[#f7e8ee]"
     },
     {
       name: "Galaxy Modern Teak Bed",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
+      image: "/uploads/Galaxy-Bed-Angle-3.jpg",
       query: "bed",
       bgColor: "bg-[#e6f4f5]"
     },
     {
       name: "Solid Segun Shoe Cabinet",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+      image: "/uploads/1-2.jpg",
       query: "shoe",
       bgColor: "bg-[#f4efe8]"
     },
     {
       name: "Leatherette Upholstered Center Table",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg",
+      image: "/uploads/sofa.jpg?v=2",
       query: "sofa",
       bgColor: "bg-[#edf2f7]"
     },
     {
       name: "Geometric Glass Top Coffee Table",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg",
+      image: "/uploads/sofa-set-haat-furniture.jpg?v=2",
       query: "sofa",
       bgColor: "bg-[#f5e6f3]"
     },
     {
       name: "Segun Royal Showcase",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg",
+      image: "/uploads/dining-table-6-chair-haat-furniture.jpg?v=2",
       query: "dining",
       bgColor: "bg-[#f5f0e6]"
     },
     {
       name: "Executive Solid Teak Desk",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/office-desk-haat-furniture.jpg",
+      image: "/uploads/office-desk-haat-furniture.jpg",
       query: "desk",
       bgColor: "bg-[#e6edf5]"
     },
     {
       name: "Solid Teak Carved Door",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/door-haat-furniture.jpg",
+      image: "/uploads/door-haat-furniture.jpg",
       query: "door",
       bgColor: "bg-[#f2e6db]"
     },
     {
       name: "Executive Office School Bench",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
+      image: "/uploads/school-bench.jpg",
       query: "office",
       bgColor: "bg-[#eaf5e6]"
     },
     {
       name: "Segun Wood Suite Door",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Door-2.jpg",
+      image: "/uploads/Door-2.jpg",
       query: "door",
       bgColor: "bg-[#f5efe6]"
     },
     {
       name: "Abalone 4 Door Wardrobe",
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+      image: "/uploads/1-2.jpg",
       query: "wardrobe",
       bgColor: "bg-[#e8f5f4]"
     }
@@ -355,53 +357,69 @@ export default function Home() {
   // TOP HERO BANNER: ULTRA-HD CINEMATIC BACKGROUND SLIDER IMAGES
   const slides = [
     {
-      title: "Luxury Modern Living Interior",
-      subtitle: "Aesthetically handcrafted 100% solid Chittagong Segun wood furniture tailored for your home.",
-      cta: "EXPLORE LIVING COLLECTION",
-      badge: "Nordic Minimalist Segun 2026",
-      bgImage: "/images/hero_slide_1.jpg"
-    },
-    {
-      title: "Elegant Segun Sectional Lounge",
-      subtitle: "Crafted for timeless comfort — borer-proof teak wood living sofa sets with premium finish.",
-      cta: "EXPLORE SOFA COLLECTION",
-      badge: "Contemporary Living Luxury",
-      bgImage: "/images/hero_slide_2.jpg"
+      title: "Luxury Segun Master Bedroom",
+      subtitle: "Crafted for peaceful living — solid borer-proof teak bed with premium lacquer finish.",
+      cta: "EXPLORE BEDROOM SETS",
+      badge: "5 Years Service Warranty",
+      bgImage: "/images/hero_1.png"
     },
     {
       title: "Crafting Teak Masterpieces",
       subtitle: "Sets your home as a trend — aesthetically handcrafted 100% solid Chittagong Teak wood dining sets.",
       cta: "EXPLORE DINING COLLECTION",
       badge: "Royal Dining Collection 2026",
-      bgImage: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&auto=format&fit=crop&q=80"
+      bgImage: "/images/cat_2.png"
     },
     {
-      title: "Luxury Segun Master Bedroom",
-      subtitle: "Crafted for peaceful living — solid borer-proof teak bed with premium lacquer finish.",
+      title: "Elegant Segun Sectional Lounge",
+      subtitle: "Crafted for timeless comfort — borer-proof teak wood living sofa sets with premium finish.",
+      cta: "EXPLORE SOFA COLLECTION",
+      badge: "Contemporary Living Luxury",
+      bgImage: "/images/hero_3.png"
+    },
+    {
+      title: "Premium Crafted Sofa Collection",
+      subtitle: "Aesthetically handcrafted 100% solid Chittagong Segun wood furniture tailored for your home.",
+      cta: "EXPLORE LIVING COLLECTION",
+      badge: "Nordic Minimalist Segun 2026",
+      bgImage: "/images/hero_4.png"
+    },
+    {
+      title: "Timeless Elegance",
+      subtitle: "Discover mid-century inspired comfort — solid teak wood sofa sets with premium finish.",
+      cta: "SHOP THE COLLECTION",
+      badge: "Mid-Century Modern",
+      bgImage: "/images/hero_5.png"
+    },
+    {
+      title: "Modern Bedroom Interior",
+      subtitle: "Transform your bedroom with handcrafted solid Segun teak wood furniture — wardrobe, bed & dressing table.",
       cta: "EXPLORE BEDROOM SETS",
-      badge: "5 Years Service Warranty",
-      bgImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Architectural Teak Entrance Doors",
-      subtitle: "25-year wood guarantee 1.5-inch solid teak carved main entrance doors for elegant homes.",
-      cta: "VIEW DOOR COLLECTION",
-      badge: "Solid Teak Doors",
-      bgImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format&fit=crop&q=80"
+      badge: "Complete Bedroom Package",
+      bgImage: "/images/hero_6.png"
     }
   ];
 
   const customHeroSlides = (heroSlideOverrides || []).filter((s) => s.image);
+
+  const genericSlide = {
+    title: "100% Solid Segun Teak Wood",
+    subtitle: "Aesthetically handcrafted furniture with 5-year service warranty — Rasulpur, Jatrabari, Dhaka.",
+    cta: "EXPLORE COLLECTION",
+    badge: "HAAT Furniture Limited"
+  };
+
   const displaySlides = customHeroSlides.length
-    ? customHeroSlides.map((s, i) => ({
-        title: s.title || slides[i % slides.length].title,
-        subtitle: s.subtitle || slides[i % slides.length].subtitle,
-        cta: s.cta || slides[i % slides.length].cta,
-        badge: s.badge || slides[i % slides.length].badge,
+    ? customHeroSlides.map((s) => ({
+        title: s.title || genericSlide.title,
+        subtitle: s.subtitle || genericSlide.subtitle,
+        cta: s.cta || genericSlide.cta,
+        badge: s.badge || genericSlide.badge,
         bgImage: s.image
       }))
     : slides;
   const activeHero = displaySlides.length ? heroSlide % displaySlides.length : 0;
+  const prevHero = displaySlides.length ? (activeHero - 1 + displaySlides.length) % displaySlides.length : 0;
   const nextHero = displaySlides.length ? (activeHero + 1) % displaySlides.length : 0;
 
   useEffect(() => {
@@ -419,10 +437,24 @@ export default function Home() {
     kicker: heroOffer?.kicker || 'Limited offer',
     title: heroOffer?.title || 'Free home delivery',
     subtitle: heroOffer?.subtitle || 'inside Dhaka',
-    note: heroOffer?.note || '5-year service warranty · Badda & Mirpur showrooms',
+    note: heroOffer?.note || '5-year service warranty · Rasulpur Tower, Jatrabari, Dhaka',
     cta: heroOffer?.cta || 'Claim offer →',
     link: heroOffer?.link || 'https://wa.me/8809617333990?text=Assalamu%20Alaikum!%20I%20want%20to%20know%20about%20the%20current%20HAAT%20Furniture%20offer.',
     hotline: heroOffer?.hotline || '09617 333990'
+  };
+
+  useEffect(() => {
+    offerTimerRef.current = setTimeout(() => setOfferVisible(false), 5000);
+    return () => clearTimeout(offerTimerRef.current);
+  }, []);
+
+  const handleOfferMouseEnter = () => {
+    clearTimeout(offerTimerRef.current);
+    setOfferVisible(true);
+  };
+
+  const handleOfferMouseLeave = () => {
+    offerTimerRef.current = setTimeout(() => setOfferVisible(false), 3000);
   };
 
   // Navigation Menu matching HATIL layout
@@ -532,7 +564,7 @@ export default function Home() {
     {
       name: "Boxer Solid Teak Bed",
       price: 21000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Boxer-Bed-Angle.jpg",
+      image: "/uploads/Boxer-Bed-Angle.jpg",
       category: "Bed",
       tabGroup: "Bed",
       bgColor: "bg-[#fbf2f4]"
@@ -540,7 +572,7 @@ export default function Home() {
     {
       name: "Purley Teak King Bed",
       price: 23000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+      image: "/uploads/Purley-Bed-Angle-2.jpg",
       category: "Bed",
       tabGroup: "Bed",
       bgColor: "bg-[#f8f2f8]"
@@ -548,7 +580,7 @@ export default function Home() {
     {
       name: "Abalone Teak Wardrobe",
       price: 30000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+      image: "/uploads/1-2.jpg",
       category: "Wardrobe",
       tabGroup: "Bed",
       bgColor: "bg-[#f9f6f0]"
@@ -556,7 +588,7 @@ export default function Home() {
     {
       name: "Wheel Teak Master Bed",
       price: 24500,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+      image: "/uploads/Wheel-Bed-Angle.jpg",
       category: "Bed",
       tabGroup: "Bed",
       bgColor: "bg-[#fbf2f4]"
@@ -566,7 +598,7 @@ export default function Home() {
     {
       name: "Beijing Dining 4 Chair Set",
       price: 40000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+      image: "/uploads/T1.jpg",
       category: "Dining",
       tabGroup: "Dining",
       bgColor: "bg-[#edf6f2]"
@@ -574,7 +606,7 @@ export default function Home() {
     {
       name: "Bridge Dining 6 Chair Set",
       price: 55000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg",
+      image: "/uploads/18.jpg",
       category: "Dining",
       tabGroup: "Dining",
       bgColor: "bg-[#f2f0f8]"
@@ -582,7 +614,7 @@ export default function Home() {
     {
       name: "Royal 6 Chair Segun Dining",
       price: 68000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg",
+      image: "/uploads/dining-table-6-chair-haat-furniture.jpg?v=2",
       category: "Dining",
       tabGroup: "Dining",
       bgColor: "bg-[#fbf9f2]"
@@ -592,7 +624,7 @@ export default function Home() {
     {
       name: "Abalone Teak Sofa",
       price: 50000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+      image: "/uploads/S1-1.jpg",
       category: "Living Room",
       tabGroup: "Living Room",
       bgColor: "bg-[#f0f4f8]"
@@ -600,7 +632,7 @@ export default function Home() {
     {
       name: "Luxury Teak Sofa Set",
       price: 65000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg",
+      image: "/uploads/sofa.jpg?v=2",
       category: "Living Room",
       tabGroup: "Living Room",
       bgColor: "bg-[#f0f8f4]"
@@ -608,7 +640,7 @@ export default function Home() {
     {
       name: "Teak Living Room Suite",
       price: 58000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg",
+      image: "/uploads/sofa-set-haat-furniture.jpg?v=2",
       category: "Living Room",
       tabGroup: "Living Room",
       bgColor: "bg-[#f8f0f8]"
@@ -703,14 +735,14 @@ export default function Home() {
   };
 
   const creationsItems = [
-    { name: "Purley Teak King Bed", category: "Bed Room", space: "Master suite", price: "৳ 23,000", image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg", badge: "5 Yrs" },
-    { name: "Wheel Solid Teak Bed", category: "Master Bedroom", space: "Rest & retreat", price: "৳ 24,500", image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg", badge: "5 Yrs" },
-    { name: "Pentagon Teak Bed", category: "Royal Collection", space: "Heritage chamber", price: "৳ 26,000", image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg", badge: "5 Yrs" },
-    { name: "Galaxy Teak Bed", category: "Modern Teak", space: "Urban bedroom", price: "৳ 22,000", image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg", badge: "5 Yrs" },
-    { name: "Segun Master Bedroom", category: "Full Bedroom Set", space: "Complete suite", price: "৳ 85,000", image: "https://haatfurniture.com/wp-content/uploads/2023/03/HFSB-230403.jpg", badge: "5 Yrs" },
-    { name: "Executive School Bench", category: "Office & School", space: "Study workspace", price: "৳ 14,500", image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg", badge: "5 Yrs" },
-    { name: "Beijing Dining Set", category: "Royal Dining", space: "Family table", price: "৳ 40,000", image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg", badge: "5 Yrs" },
-    { name: "Abalone Teak Sofa", category: "Living Room", space: "Lounge living", price: "৳ 50,000", image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg", badge: "5 Yrs" }
+    { name: "Purley Teak King Bed", category: "Bed Room", space: "Master suite", price: "৳ 23,000", image: "/uploads/Purley-Bed-Angle-2.jpg", badge: "5 Yrs" },
+    { name: "Wheel Solid Teak Bed", category: "Master Bedroom", space: "Rest & retreat", price: "৳ 24,500", image: "/uploads/Wheel-Bed-Angle.jpg", badge: "5 Yrs" },
+    { name: "Pentagon Teak Bed", category: "Royal Collection", space: "Heritage chamber", price: "৳ 26,000", image: "/uploads/Pentagon-Bed-Angle.jpg", badge: "5 Yrs" },
+    { name: "Galaxy Teak Bed", category: "Modern Teak", space: "Urban bedroom", price: "৳ 22,000", image: "/uploads/1-2.jpg", badge: "5 Yrs" },
+    { name: "Segun Master Bedroom", category: "Full Bedroom Set", space: "Complete suite", price: "৳ 85,000", image: "/uploads/HFSB-230403.jpg", badge: "5 Yrs" },
+    { name: "Executive School Bench", category: "Office & School", space: "Study workspace", price: "৳ 14,500", image: "/uploads/school-bench.jpg", badge: "5 Yrs" },
+    { name: "Beijing Dining Set", category: "Royal Dining", space: "Family table", price: "৳ 40,000", image: "/uploads/T1.jpg", badge: "5 Yrs" },
+    { name: "Abalone Teak Sofa", category: "Living Room", space: "Lounge living", price: "৳ 50,000", image: "/uploads/S1-1.jpg", badge: "5 Yrs" }
   ];
 
   // Creations carousel: slow continuous move + center focus (own ref)
@@ -774,53 +806,53 @@ export default function Home() {
     {
       name: "Home Furniture",
       price: 68500,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Home-Furniture.jpg",
-      colorTag: "Classic Segun Wood",
+      image: "/images/cat_1.png",
+      colorTag: "Timeless Elegance Collection",
       bgColor: "bg-[#e2dad5]",
       query: "home"
     },
     {
-      name: "Office Furniture",
+      name: "Dining Furniture",
       price: 45000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Office-Furniture.jpg",
-      colorTag: "Executive Modern Suite",
+      image: "/images/cat_2.png",
+      colorTag: "Royal Dining Suite",
       bgColor: "bg-[#d6cbbf]",
-      query: "desk"
+      query: "dining"
     },
     {
-      name: "Kitchen Furniture",
+      name: "Living Room",
       price: 52000,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Kitchen-Furniture.jpg",
-      colorTag: "Luxury Modular Cabinet",
+      image: "/images/cat_3.png",
+      colorTag: "Premium Crafted Sofa",
       bgColor: "bg-[#b8c9c5]",
-      query: "kitchen"
+      query: "sofa"
     },
     {
-      name: "Door",
-      price: 28500,
-      image: "https://haatfurniture.com/wp-content/uploads/2023/03/Door-2.jpg",
-      colorTag: "Solid Teak Wood Door",
-      bgColor: "bg-[#c6a099]",
-      query: "door"
+      name: "Sofa Collection",
+      price: 65000,
+      image: "/images/cat_4.png",
+      colorTag: "Modern White Collection",
+      bgColor: "bg-[#f0ece8]",
+      query: "sofa"
     }
   ];
 
   // REAL HAAT FURNITURE Popular Furniture Thumbnails
   const popularThumbnails = [
-    { title: "Segun Bed", image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg", query: "bed" },
-    { title: "Dining Table", image: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg", query: "dining" },
-    { title: "Teak Sofa", image: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg", query: "sofa" },
-    { title: "Segun Door", image: "https://haatfurniture.com/wp-content/uploads/2023/09/door-haat-furniture.jpg", query: "door" },
-    { title: "Office Desk", image: "https://haatfurniture.com/wp-content/uploads/2023/09/office-desk-haat-furniture.jpg", query: "desk" },
-    { title: "Luxury Sofa", image: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg", query: "sofa" },
-    { title: "Solid Wood Suite", image: "https://haatfurniture.com/wp-content/uploads/2023/11/Sb1.jpg", query: "suite" }
+    { title: "Segun Bed", image: "/uploads/Sb1.jpg", query: "bed" },
+    { title: "Dining Table", image: "/uploads/dining-table-6-chair-haat-furniture.jpg?v=2", query: "dining" },
+    { title: "Teak Sofa", image: "/uploads/sofa.jpg?v=2", query: "sofa" },
+    { title: "Segun Door", image: "/uploads/door-haat-furniture.jpg", query: "door" },
+    { title: "Office Desk", image: "/uploads/office-desk-haat-furniture.jpg", query: "desk" },
+    { title: "Luxury Sofa", image: "/uploads/sofa-set-haat-furniture.jpg?v=2", query: "sofa" },
+    { title: "Solid Wood Suite", image: "/uploads/Sb1.jpg", query: "suite" }
   ];
 
-  // Hero: slow 10s cinematic zoom, then a 2s crossfade into the next image
+  // Hero: slow cinematic zoom with smooth crossfade
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroSlide((prev) => (prev + 1) % displaySlides.length);
-    }, 10000);
+    }, 12000);
     return () => clearInterval(timer);
   }, [displaySlides.length]);
 
@@ -966,7 +998,7 @@ export default function Home() {
         <div className="hidden md:flex items-center gap-6 text-[#8a6a3a] text-xs font-bold">
           <span className="flex items-center gap-1.5">
             <span className="text-amber-600">📍</span>
-            <span>Showrooms: Badda & Mirpur, Dhaka</span>
+            <span>Rasulpur Tower, 49 Rasulpur, Jatrabari, Dhaka-1236</span>
           </span>
           <span className="text-[#d4c4ae]">•</span>
           <a href="tel:+8809617333990" className="flex items-center gap-1.5 font-extrabold text-amber-700 hover:text-amber-800 transition-colors">
@@ -1105,12 +1137,13 @@ export default function Home() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           {displaySlides.map((slide, i) => {
             const isActive = i === activeHero;
-            const shouldLoadImage = i === activeHero || i === nextHero || i === 0;
+            const isPrev = i === prevHero;
+            const shouldLoadImage = isActive || isPrev || i === nextHero || i === 0;
             return (
               <div
                 key={`${slide.bgImage}-${i}`}
-                className={`hero-slide-fade absolute inset-0 overflow-hidden ${
-                  isActive ? "opacity-100 z-[1]" : "opacity-0 z-0"
+                className={`hero-slide-crossfade absolute inset-0 overflow-hidden ${
+                  isActive ? "hero-slide-active" : isPrev ? "hero-slide-prev" : "hero-slide-hidden"
                 }`}
               >
                 {shouldLoadImage ? (
@@ -1129,7 +1162,8 @@ export default function Home() {
               </div>
             );
           })}
-          <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-r from-slate-950/55 via-slate-950/12 to-transparent"></div>
+          <div className="hero-glow-overlay absolute inset-0 z-[2] pointer-events-none"></div>
+          <div className="absolute inset-0 z-[3] pointer-events-none bg-gradient-to-r from-slate-950/40 via-slate-950/10 to-transparent"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 sm:py-20 text-white">
@@ -1163,33 +1197,37 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="lg:col-span-5 flex lg:justify-end">
+            <aside
+              className="lg:col-span-5 flex lg:justify-end"
+              onMouseEnter={handleOfferMouseEnter}
+              onMouseLeave={handleOfferMouseLeave}
+            >
               {offerBanner.enabled && (
                 <a
                   href={offerBanner.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full max-w-[340px] rounded-3xl overflow-hidden bg-white/95 backdrop-blur-md border border-white shadow-[0_20px_40px_-18px_rgba(26,17,13,0.35)] hover:-translate-y-0.5 transition-all"
+                  className={`hidden lg:block w-full max-w-[280px] rounded-3xl overflow-hidden bg-white/20 backdrop-blur-2xl border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] hover:-translate-y-0.5 ring-1 ring-white/10 transition-all duration-700 ${offerVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'}`}
                 >
                   {offerBanner.image ? (
                     <img src={offerBanner.image} alt={offerBanner.title} className="w-full h-44 object-cover" />
                   ) : null}
                   <div className="p-5">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-amber-700">{offerBanner.kicker}</p>
-                    <h3 className="mt-2 text-xl font-black leading-snug text-slate-900">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-amber-300 drop-shadow">{offerBanner.kicker}</p>
+                    <h3 className="mt-2 text-xl font-black leading-snug text-white drop-shadow-lg">
                       {offerBanner.title}
                       {offerBanner.subtitle ? (
-                        <span className="block font-serif-luxury italic font-medium text-amber-700 text-lg">{offerBanner.subtitle}</span>
+                        <span className="block font-serif-luxury italic font-medium text-amber-300 text-lg drop-shadow">{offerBanner.subtitle}</span>
                       ) : null}
                     </h3>
                     {offerBanner.note ? (
-                      <p className="mt-2 text-xs text-slate-600 leading-relaxed">{offerBanner.note}</p>
+                      <p className="mt-2 text-xs text-white/80 leading-relaxed drop-shadow">{offerBanner.note}</p>
                     ) : null}
                     <div className="mt-4 flex items-center justify-between gap-2">
-                      <span className="inline-flex items-center px-3.5 py-2 rounded-full bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-black uppercase tracking-wider">
+                      <span className="inline-flex items-center px-3.5 py-2 rounded-full bg-amber-500/80 hover:bg-amber-500 text-white text-[11px] font-black uppercase tracking-wider backdrop-blur-sm">
                         {offerBanner.cta}
                       </span>
-                      <span className="text-[11px] font-bold text-slate-500">{offerBanner.hotline}</span>
+                      <span className="text-[11px] font-bold text-white/70">{offerBanner.hotline}</span>
                     </div>
                   </div>
                 </a>
@@ -1678,28 +1716,28 @@ export default function Home() {
                   name: "Beijing Dining 4 Chair Set",
                   price: 40000,
                   old_price: 52000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/T1.jpg",
+                  image: "/uploads/T1.jpg",
                   category: "Dinning Room"
                 },
                 {
                   name: "Bridge Dining 6 Chair Set",
                   price: 55000,
                   old_price: 68000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/18.jpg",
+                  image: "/uploads/18.jpg",
                   category: "Dinning Room"
                 },
                 {
                   name: "Dinner Wagon 3 Door Segun",
                   price: 78000,
                   old_price: 95000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+                  image: "/uploads/1-2.jpg",
                   category: "Dinning Room"
                 },
                 {
                   name: "Segun Royal Showcase",
                   price: 85000,
                   old_price: 105000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/09/dining-table-6-chair-haat-furniture.jpg",
+                  image: "/uploads/dining-table-6-chair-haat-furniture.jpg?v=2",
                   category: "Dinning Room"
                 }
               ]).map((item, idx) => (
@@ -1835,28 +1873,28 @@ export default function Home() {
                   name: "Solid Segun Shoe Cabinet",
                   price: 28000,
                   old_price: 35000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+                  image: "/uploads/1-2.jpg",
                   category: "Living Room"
                 },
                 {
                   name: "Cream & Brown L-Shape Sofa Set",
                   price: 65000,
                   old_price: 78000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/S1-1.jpg",
+                  image: "/uploads/S1-1.jpg",
                   category: "Living Room"
                 },
                 {
                   name: "Leatherette Upholstered Center Table",
                   price: 22000,
                   old_price: 28000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/sofa.jpg",
+                  image: "/uploads/sofa.jpg?v=2",
                   category: "Living Room"
                 },
                 {
                   name: "Geometric Glass Top Coffee Table",
                   price: 18500,
                   old_price: 24000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/09/sofa-set-haat-furniture.jpg",
+                  image: "/uploads/sofa-set-haat-furniture.jpg?v=2",
                   category: "Living Room"
                 }
               ]).map((item, idx) => (
@@ -1992,42 +2030,42 @@ export default function Home() {
                   name: "Boxer Solid Teak King Bed",
                   price: 21000,
                   old_price: 28000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Boxer-Bed-Angle.jpg",
+                  image: "/uploads/Boxer-Bed-Angle.jpg",
                   category: "Bed Room"
                 },
                 {
                   name: "Purley Segun Bedroom Set",
                   price: 23000,
                   old_price: 30000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Purley-Bed-Angle-2.jpg",
+                  image: "/uploads/Purley-Bed-Angle-2.jpg",
                   category: "Bed Room"
                 },
                 {
                   name: "Wheel Solid Teak Bed",
                   price: 24500,
                   old_price: 32000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Wheel-Bed-Angle.jpg",
+                  image: "/uploads/Wheel-Bed-Angle.jpg",
                   category: "Bed Room"
                 },
                 {
                   name: "Pentagon Teak Bed",
                   price: 26000,
                   old_price: 34000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Pentagon-Bed-Angle.jpg",
+                  image: "/uploads/Pentagon-Bed-Angle.jpg",
                   category: "Bed Room"
                 },
                 {
                   name: "Galaxy Modern Teak Bed",
                   price: 22000,
                   old_price: 29000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Galaxy-Bed-Angle-3.jpg",
+                  image: "/uploads/Galaxy-Bed-Angle-3.jpg",
                   category: "Bed Room"
                 },
                 {
                   name: "Abalone 4 Door Wardrobe",
                   price: 30000,
                   old_price: 39000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/02/1-2.jpg",
+                  image: "/uploads/1-2.jpg",
                   category: "Bed Room"
                 }
               ]).map((item, idx) => (
@@ -2163,28 +2201,28 @@ export default function Home() {
                   name: "Executive Solid Teak Desk",
                   price: 45000,
                   old_price: 55000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/09/office-desk-haat-furniture.jpg",
+                  image: "/uploads/office-desk-haat-furniture.jpg",
                   category: "Office Furniture"
                 },
                 {
                   name: "Solid Teak Carved Door",
                   price: 28500,
                   old_price: 36000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/09/door-haat-furniture.jpg",
+                  image: "/uploads/door-haat-furniture.jpg",
                   category: "Door Collection"
                 },
                 {
                   name: "Executive Office School Bench",
                   price: 14500,
                   old_price: 18500,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/11/school-bench.jpg",
+                  image: "/uploads/school-bench.jpg",
                   category: "Office Furniture"
                 },
                 {
                   name: "Segun Wood Suite Door",
                   price: 26000,
                   old_price: 33000,
-                  image: "https://haatfurniture.com/wp-content/uploads/2023/03/Door-2.jpg",
+                  image: "/uploads/Door-2.jpg",
                   category: "Door Collection"
                 }
               ]).map((item, idx) => (
@@ -2701,7 +2739,7 @@ export default function Home() {
               <h5 className="text-sm font-bold text-white mb-4">Showroom Outlets</h5>
               <p className="text-xs leading-relaxed">
                 <strong>Dhaka Flagship Store:</strong><br />
-                Middle Badda, Pragati Sarani & Mirpur-10, Dhaka, Bangladesh.
+                Rasulpur Tower, 49 Rasulpur, Dania, Jatrabari, Dhaka-1236, Bangladesh.
               </p>
             </div>
 

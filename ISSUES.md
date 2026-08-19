@@ -70,14 +70,18 @@ Severity: **P0** = security / data loss · **P1** = broken feature · **P2** = o
 
 ---
 
-## P2 — Server / deploy / database ops
+## P2 — Server / deploy / database ops — mostly FIXED 19 Aug 2026
 
-| ID | Issue | Detail |
+| ID | Was | Now |
 |---|---|---|
-| P2-14 | Nginx upload limit ~1MB | Default `client_max_body_size`. PHP allows 8MB. Large admin photos can 413 until sudo sets `client_max_body_size 10m;` |
-| P2-2 | Leftover `/var/www/frontend` vhost | Old static SPA config, API proxy commented `BACKEND_SERVER_IP`. Should be disabled. |
-| P2-3 | No PHP-FPM / no `php artisan` production | Using `artisan serve` (single-thread PHP built-in server). php-fpm is installed but unused. Slow under concurrent checkout. |
-| P2-4 | Distro MariaDB / `pdo_mysql` not installed | Relies on extracted `.deb` binaries + `bin/php-with-mysql`. `sudo apt` was never completed. Fragile. |
+| P2-14 | Nginx upload ~1MB | `client_max_body_size 10m;` set |
+| P2-1/2 | Duplicate Nginx vhosts | `frontend` symlink removed; only `haat-furniture` active |
+| P2-3 | artisan serve (single-thread) | PHP-FPM pool `haat` via unix socket; `artisan serve` stopped |
+| P2-4 | pdo_mysql not installed | `php8.3-mysql` installed via apt |
+| P2-6 | No git | `git init` + initial commit |
+| P2-8 | PM2 startup missing | `pm2 startup` configured; nginx/fpm enabled on boot |
+
+### Remaining P2
 | P2-5 | Queue/cache/session = `database` | `QUEUE_CONNECTION=database` but **no queue worker**. Jobs table unused. Session/cache on MySQL for an API that barely uses sessions. |
 | P2-6 | No git repository on server | `haat-furniture-v2` is not a git repo. No version history, no rollback. |
 | P2-7 | `pm2` frontend restarted 67 times | History of instability (likely rebuilds). Fine now, but no deploy script — manual `npm run build && pm2 restart`. |
@@ -95,9 +99,9 @@ Severity: **P0** = security / data loss · **P1** = broken feature · **P2** = o
 
 | ID | Issue | Detail |
 |---|---|---|
-| P3-1 | Two WhatsApp numbers | Hotline/checkout: **09617 333990**. Category page + bKash UI: **01957909186**. Confusing for customers. |
-| P3-2 | Images hosted on old domain | Most gallery URLs are `https://haatfurniture.com/wp-content/...`. If old WP dies, all photos break. Not copied to this server. |
-| P3-3 | Privacy policy still says haatfurniture.com | `privacy-policy/page.js` website address is the old domain. |
+| P3-1 | ~~Two WhatsApp numbers~~ | **FIXED** — unified to 09617333990 |
+| P3-2 | ~~Images hosted on old domain~~ | **FIXED** — 284 images downloaded to `frontend/storage/uploads/`; DB + homepage updated to `/uploads/` |
+| P3-3 | ~~Privacy policy says haatfurniture.com~~ | **FIXED** — URL changed to haat.barabdonline.com |
 | P3-4 | “Dinning” typo (WordPress slug) | `dinning-room` / `dinning-set` used everywhere. Changing slug would break URLs. |
 | P3-5 | Cart only in `localStorage` | No login, no server cart. Phone change / clear cache = empty cart. |
 | P3-6 | Coupon only on frontend | `HAAT10` not stored in DB. Easy to abuse (see P0-5). |
